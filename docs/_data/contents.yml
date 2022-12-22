@@ -1,0 +1,9 @@
+toc:
+  - title: Contents
+    subfolderitems:
+      - page: the_manual - MODULE 00_introduction
+        url:  ./00_introduction.html
+      - page: the_manual - MODULE bits_and_pieces
+        url:  ./bits_and_pieces.html
+      - page: the_manual - MODULE index
+        url:  ./index.html
