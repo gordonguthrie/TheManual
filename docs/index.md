@@ -1,9 +1,6 @@
-```supercollider
-/# The Manual - Writing Super Collider Synthesisers For Sonic Pi
+# The Manual - Writing Super Collider Synthesisers For Sonic Pi
 
-/## Gordon Guthrie
-
-```
+## Gordon Guthrie
 
  <div>
  {% for item in site.data.contents.toc %}
