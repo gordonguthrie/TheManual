@@ -1,8 +1,6 @@
-// # The Manual - Writing Super Collider Synthesisers For Sonic Pi
+# The Manual - Writing Super Collider Synthesisers For Sonic Pi
 
-// ## Gordon Guthrie
-
-/*
+```
  __          __        _      _____
  \ \        / /       | |    |_   _|
   \ \  /\  / /__  _ __| | __   | |  _ __
@@ -16,15 +14,6 @@
  |_|   |_|  \___/ \__, |_|  \___||___/___/
                    __/ |
                   |___/
-*/
+```
 
-/jekyll <div>
-/jekyll {% for item in site.data.contents.toc %}
-/jekyll     <h3>{{ item.title }}</h3>
-/jekyll       <ul>
-/jekyll         {% for entry in item.subfolderitems %}
-/jekyll           <li><a href="{{ entry.url }}">{{ entry.page }}</a></li>
-/jekyll         {% endfor %}
-/jekyll       </ul>
-/jekyll   {% endfor %}
-/jekyll </div>
+[Read It Now](https://gordonguthrie.github.io/TheManual/)
