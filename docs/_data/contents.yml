@@ -1,9 +1,17 @@
 toc:
-  - title: Contents
+  - title: Chapter 1
     subfolderitems:
-      - page: the_manual - MODULE 00_introduction
-        url:  ./00_introduction.html
-      - page: the_manual - MODULE bits_and_pieces
-        url:  ./bits_and_pieces.html
-      - page: the_manual - MODULE index
-        url:  ./index.html
+    - page: Who Is This For?
+      url:  ./chapter1/who_is_this_for.html
+    - page:  Installing Supercollider
+      url:  ./chapter1/installing_supercollider.html
+    - page: First Beep In SuperCollider
+      url:  ./chapter1/first_beep_in_supercollider.html
+    - page: First Synth In Sonic Pi
+      url:  ./chapter1/first_synth_in_sonic_pi.html
+    - page: Funky Stuff Part Uno - Variables
+      url:  ./chapter1/funky_stuff_part_uno_variables.html
+  - title: Chapter 2
+    subfolderitems:
+    - page: bingo
+      url:  ./chapter2/bingo.html
