@@ -1,5 +1,7 @@
 # The Manual
 
+## Writing Super Collider Synthesisers For Sonic Pi
+
 ## Gordon Guthrie
 
 
