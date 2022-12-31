@@ -8,26 +8,83 @@ We will make this oscillator into a synthesiser that we can use in Sonic Pi:
 {SinOsc.ar(440, 0, 0.2)}.play;
 ```
 
-There are somethings we will have to do to make it usable:
-
-* it will need to turn off and not play endlessly. Sonic Pi expects notes to have a duration
-* we will need to be able to pass the note in so it will play different notes
-     * Sonic Pi expresses notes in terms of the midi note table, so `A4` not `440hz` - the synth will need to be able to accept Sonic Pi notes in and convert them into frequencies on the way out
-* we will want to be able to make the note louder or quieter
-
-First up lets convert this function into on that is callable:
+If we run this definition in Super Collider we can get a synth that we can play in Sonic Pi. Notice that it is writing the synthdef to a default location in my home directory (on a Mac) where Sonic Pi will find it - you will need to put your home directory in whatever operating system you use into that path.
 
 ```supercollider
-f={SinOsc.ar(440, 0, 0.2)};
+(SynthDef("myfirstsynth", {arg out = 0;
+     var note, envelope;
+     envelope = Line.kr(0.1, 0.0, 1.0, doneAction: 2);
+     note = SinOsc.ar(440, 0, envelope);
+     Out.ar(out, note);
+}).writeDefFile("/Users/gordonguthrie/.synthdefs"))
 ```
 
-This defines the variable `synth` as our function. (You need to put the cursor on the line and do `[SHIFT][ENTER]` to invoke it.)
+To use it in Sonic Pi we need to first load it and then just use it as normal
 
-Once you have set the variable you can now call `play` on it:
+```ruby
+load_synthdefs "/Users/gordonguthrie/.synthdefs"
+
+use_synth(:myfirstsynth)
+
+play 69
+```
+
+Play about with this. There are a couple of things to notice - the sound will always be coming from one side of the speakers. that's a bit odd. And also as you change the note up and down it makes no difference. It just plays A4 that fades out in 1 second.
+
+We will fix both of these things later on. But first lets breakdown the synth definition:
 
 ```supercollider
-f.play;
+/*
+Define the synth - give it a name "myfirstsynth"
+let it take one argument: `out`
+*/
+
+(SynthDef("myfirstsynth", {arg out = 0;
+
+     // define 2 variables
+     var note, envelope;
+
+     /*
+     Create a sound envelope that goes from 0.1 to 0 in 1 second
+     and when it has done that trigger an action
+     that destroys the running instance of
+     the synthesiser and frees all memory
+     */
+     envelope = Line.kr(0.1, 0.0, 1.0, doneAction: 2);
+
+     // define the note we are going to play A4 at 440Hz and set the volume to be the envelope
+     note = SinOsc.ar(440, 0, envelope);
+
+     // send the new note to the output channel 0
+     Out.ar(out, note);
+}).writeDefFile("/Users/gordonguthrie/.synthdefs"))
 ```
 
-And remember `[COMMAND][.]` to stop it.
+We have had to do a bit more work to get it to play nice with Sonic Pi.
 
+It now has a fixed duration envelope - the volume goes to 0 after 1 second.
+
+That envelope also calls a self-destruct function that cleans up and frees resources - without it your computer would gradually fill up with unused instances of synthesisers consuming both memory and CPU and eventually would just crash.
+
+In Chapter 2 we will gradually build up this synthesiser until it is a clone of the `sine` synthesiser that is built into Sonic Pi.
+
+We will add the following functions and defaults:
+
+* `note` - default `52` - slideable
+* `amp` - default `1` - slideable
+* `pan` - default `0` - slideable
+* `attack`
+* `decay` - default `0`
+* `sustain` - default `0`
+* `release` - default `1`
+* `attack_level`
+* `decay_level`
+* `sustain_level`
+* `sustain_level` - default `1`
+* `env_curve` - default `2`
+
+and the following slide options:
+
+* `_slide`
+* `_slide_shape`
+* `_slide_curve`

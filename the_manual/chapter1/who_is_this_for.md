@@ -1,4 +1,4 @@
-# Chapter 1
+# Chapter 1 - First Beeps
 
 ## Who Is This For?
 

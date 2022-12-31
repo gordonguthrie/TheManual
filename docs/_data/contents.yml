@@ -1,5 +1,5 @@
 toc:
-  - title: Chapter 1
+  - title: Chapter 1 - First Beeps
     subfolderitems:
     - page: Who Is This For?
       url:  ./chapter1/who_is_this_for.html
@@ -9,9 +9,9 @@ toc:
       url:  ./chapter1/first_beep_in_supercollider.html
     - page: First Synth In Sonic Pi
       url:  ./chapter1/first_synth_in_sonic_pi.html
-    - page: Funky Stuff Part Uno - Variables
-      url:  ./chapter1/funky_stuff_part_uno_variables.html
-  - title: Chapter 2
+  - title: Chapter 2 - Recreating the sine synth
     subfolderitems:
-    - page: bingo
-      url:  ./chapter2/bingo.html
+    - page: Synth With Notes
+      url:  ./chapter2/synth_with_notes.html
+    - page: Funky Stuff Part Uno - Variables
+      url:  ./chapter2/funky_stuff_part_uno_variables.html

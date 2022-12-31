@@ -1,10 +1,8 @@
-# Chapter 1
+# Chapter 1 - First Beeps
 
 ## First Beep In SuperCollider
 
-**It assumes that you already know how to use Sonic PI.**
-
-All the synths you are used to calling in Sonic Pi are implemented in Super Collider (actually the legacy ones are implemented in a different one.
+Most of the synths you are used to calling in Sonic Pi are implemented in Super Collider.
 
 This tutorial is to enable you to write your own synths and for you, or other people, to use them in Sonic Pi.
 
@@ -15,16 +13,10 @@ Like Sonic Pi this manual has an overriding design principle - to get from nothi
 With Sonic Pi that's just:
 
 ```ruby
-play :beep 40
+play :beep 69
 ```
 
 With Super Collider it is nearly as fast.
-
-One of the key differences between Super Collider and Sonic Pi is that Sonic Pi is sound-based (play this sound for this time period) and Super Collider is state-based - get this synthesiser into this state. By default sounds in Super Collider are of indefinite duration. The Super Collider version of `play :beep 40` is:
-
-```supercollider
-{SinOsc.ar(440, 0, 0.2)}.play;
-```
 
 Lets have a go.
 
@@ -34,11 +26,19 @@ This can be done with the menu item: `Server -> Boot Server`
 
 You then need to check the log window to see if there are error messages. Sometimes you will need to edit audio settings on your machine to get SuperCollider to work.
 
+The Super Collider version of `play :beep 69` is:
+
+```supercollider
+{SinOsc.ar(440, 0, 0.2)}.play;
+```
+
 Copy the snippet into the coding window on SuperCollider. Place the cursor in the code line and press `[SHIFT][ENTER]` and you will hear an `A4` note (the Stuttgart pitch for standard tuning).
 
 This will play ***forever***.
 
 To stop it you press `[COMMAND][.]` (the command key and the full stop at the same time.
+
+One of the key differences between Super Collider and Sonic Pi is that Sonic Pi is sound-based (play this sound for this time period) and Super Collider is state-based - get this synthesiser into this state. By default sounds in Super Collider are of indefinite duration.
 
 Lets break down that beep:
 
@@ -73,9 +73,9 @@ SinOsc.kr(freq: 440.0, phase: 0.0, mul: 1.0, add: 0.0)
 
 We can see that the parameters in our invocation are:
 
-* `440` - the frequency, A4
+* `440` - the frequency, corresponding to the note A4
 * `0` - the phase
-* `0.2` - the mul (or multiplier)
+* `0.2` - the `mul` (or multiplier)
 
 In this instance the `mul` is effectively the volume, make it higher and the note will sound lounder, lower it will be quieter.
 
