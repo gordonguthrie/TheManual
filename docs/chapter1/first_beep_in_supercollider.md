@@ -84,5 +84,6 @@ Lets look again at the interface and the two methods `ar` and `kr`. The `ar`/`kr
 * `ar` means **audio rate**
 * `kr` means **control rate**
 
-For the moment we will stick to `ar`.
+For the moment we will stick to `ar`. Later on when we start building a proper synthesiser for Sonic Pi we will look again at the meaning of these.
+
 

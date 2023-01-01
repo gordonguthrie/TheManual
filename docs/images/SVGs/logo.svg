@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="355"
+   height="129"
+   viewBox="0 0 93.927082 34.13125"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1.1 (c3084ef, 2021-09-22)"
+   sodipodi:docname="logo.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     units="px"
+     inkscape:zoom="1.209131"
+     inkscape:cx="227.02255"
+     inkscape:cy="74.020103"
+     inkscape:window-width="1578"
+     inkscape:window-height="969"
+     inkscape:window-x="0"
+     inkscape:window-y="23"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <g
+       id="g7458"
+       transform="translate(1.3129264,-4.1576003)"
+       style="fill:#ffffff"
+       inkscape:export-filename="/Users/gordonguthrie/Dev/manual/TheManual/docs/images/manual_logo.png"
+       inkscape:export-xdpi="98.507797"
+       inkscape:export-ydpi="98.507797">
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:14.1111px;line-height:1.25;font-family:sans-serif;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.264583"
+         x="3.779259"
+         y="23.349798"
+         id="text946"><tspan
+           sodipodi:role="line"
+           id="tspan944"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.1111px;font-family:'Cooper Black';-inkscape-font-specification:'Cooper Black, ';stroke-width:0.264583;fill:#ffffff"
+           x="3.779259"
+           y="23.349798">The Manual</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:4.93889px;line-height:1.25;font-family:sans-serif;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.264583"
+         x="2.9327052"
+         y="28.153969"
+         id="text5382"><tspan
+           sodipodi:role="line"
+           id="tspan5380"
+           style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.93889px;font-family:'Figgins Sans';-inkscape-font-specification:'Figgins Sans Italic';stroke-width:0.264583;fill:#ffffff"
+           x="2.9327052"
+           y="28.153969">Writing SuperCollider Synths For Sonic Pi</tspan></text>
+    </g>
+  </g>
+</svg>
