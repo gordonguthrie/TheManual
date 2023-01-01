@@ -12,21 +12,4 @@ There are somethings we will have to do to make it usable:
 
 
 
-```supercollider
-
-a={SinOsc(440, 1.0. 2)};
-
-
-```
-
-```
-yando
-```
-
-
-bingo
-bongo
-
-* sfads
-* sdfsd
 

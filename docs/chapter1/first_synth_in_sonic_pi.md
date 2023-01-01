@@ -29,7 +29,7 @@ use_synth(:myfirstsynth)
 play 69
 ```
 
-Play about with this. There are a couple of things to notice - the sound will always be coming from one side of the speakers. that's a bit odd. And also as you change the note up and down it makes no difference. It just plays A4 that fades out in 1 second.
+Play about with this. There are a couple of things to notice - the sound will always be coming from one side of the speakers. That's a bit odd. And also as you change the note up and down it makes no difference. It just plays A4 that fades out in 1 second.
 
 We will fix both of these things later on. But first lets breakdown the synth definition:
 
@@ -62,7 +62,7 @@ let it take one argument: `out`
 
 We have had to do a bit more work to get it to play nice with Sonic Pi. It has a few problems:
 
-* it only plays one note (A4) - it needs to play anynote
+* it only plays one note (A4) - it needs to play any note
 * it only plays one note at a time - it needs to play chords
 * it plays in the left speaker only - it needs to be in stereo
 * each note is 1 second in duration - we need to be able to control how long a note lasts
