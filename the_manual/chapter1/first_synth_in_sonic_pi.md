@@ -1,4 +1,4 @@
-# Chapter 1
+# Chapter 1 - First Beeps
 
 ## First Synth In Sonic Pi
 
@@ -60,11 +60,14 @@ let it take one argument: `out`
 }).writeDefFile("/Users/gordonguthrie/.synthdefs"))
 ```
 
-We have had to do a bit more work to get it to play nice with Sonic Pi.
+We have had to do a bit more work to get it to play nice with Sonic Pi. It has a few problems:
 
-It now has a fixed duration envelope - the volume goes to 0 after 1 second.
+* it only plays one note (A4) - it needs to play anynote
+* it only plays one note at a time - it needs to play chords
+* it plays in the left speaker only - it needs to be in stereo
+* each note is 1 second in duration - we need to be able to control how long a note lasts
 
-That envelope also calls a self-destruct function that cleans up and frees resources - without it your computer would gradually fill up with unused instances of synthesisers consuming both memory and CPU and eventually would just crash.
+But its not all bad - the line that determines the length of the note also calls a self-destruct function that cleans up and frees resources - without it your computer would gradually fill up with unused instances of synthesisers consuming both memory and CPU and eventually would just crash.
 
 In Chapter 2 we will gradually build up this synthesiser until it is a clone of the `sine` synthesiser that is built into Sonic Pi.
 
