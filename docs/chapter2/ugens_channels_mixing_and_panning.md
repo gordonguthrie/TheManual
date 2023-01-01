@@ -167,7 +167,7 @@ The way we solve this problem is by `mixing`.
 
 ```
 
-Great so know if we get our `SinOsc` to play a chord, we can mix all the beeps together and actually hear them all, as a single thing. But its still in the left speaker only. Maybe we want it one the left, maybe on the right, maybe in the middle.
+Great, so now if we get our `SinOsc` to play a chord, we can mix all the beeps together and actually hear them all, as a single thing. But its still in the left speaker only. Maybe we want it one the left, maybe on the right, maybe in the middle.
 
 We can use a `UGen` called `Pan` to do this.
 

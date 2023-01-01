@@ -41,7 +41,9 @@ SynthDef('sonic-pi-organ_tonewheel', {|
 
 ```
 
+```
 Organ voices (drawbars) amplitudes
+```
 
 ```supercollider
 	bass = 8, bass_slide = 0, bass_slide_shape = 1, bass_slide_curve = 0,
@@ -56,7 +58,9 @@ Organ voices (drawbars) amplitudes
 
 ```
 
+```
 Rotary speaker arguments
+```
 
 ```supercollider
 	rs_freq = 6.7, rs_freq_slide = 0, rs_freq_slide_shape = 1, rs_freq_slide_curve = 0,
@@ -92,7 +96,9 @@ Rotary speaker arguments
 
 ```
 
+```
 The rotation frequency of the woofer is lower than the horn's and must not be negative.
+```
 
 ```supercollider
 	lf = rs_freq.linlin(0, 6.666667, -0.047619, 5.666667);
@@ -100,8 +106,10 @@ The rotation frequency of the woofer is lower than the horn's and must not be ne
 
 ```
 
+```
 If the rotary speaker is off, the horn's initial phase must be zero, so that the
 loudness and pan are not affected.
+```
 
 ```supercollider
 	hf = rs_freq;
@@ -110,10 +118,12 @@ loudness and pan are not affected.
 
 ```
 
+```
 Loudness oscillation
 Vibrato adds an oscillating proportion to the base frequency, so if the base frequency is 0, then the
 vibrato result is 0. Hence the trick with DC.kr(1). This is used for pan only, as loudness oscillating
 around 1 is good.
+```
 
 ```supercollider
 	lt = Vibrato.kr(
@@ -129,7 +139,9 @@ around 1 is good.
 
 ```
 
+```
 Pan
+```
 
 ```supercollider
 	lp = Vibrato.kr(
@@ -145,7 +157,9 @@ Pan
 
 ```
 
+```
 The vibrato adds the third rotary speaker component, the pitch
+```
 
 ```supercollider
 	pitch = Vibrato.kr(
@@ -156,14 +170,18 @@ The vibrato adds the third rotary speaker component, the pitch
 
 ```
 
+```
 Harmonics relationships between the tonewheel discs
+```
 
 ```supercollider
 	discs = [1/2,3/2,1,2,3,4,5,6,8];
 
 ```
 
+```
 Drawbar settings
+```
 
 ```supercollider
 	drawbars = [bass,quint,fundamental,oct,nazard,blockflute,tierce,larigot,sifflute];
@@ -176,16 +194,20 @@ Drawbar settings
 
 ```
 
+```
 The vibrato actually only makes the base frequency oscillate. It is then used as the frequency of a SinOsc.
 This is the reason why the rotary speaker fx can't easily be split from the synth. The vibrato input to
 the SinOsc yields a far better result than a PitchShift of an arbitrary signal.
+```
 
 ```supercollider
 	snd = Mix.new(SinOsc.ar(pitch*discs, 0, eg*drawbars/144)).distort;
 
 ```
 
+```
 The lower frequencies go into the woofer, the higher ones into the horn, both with their own rotations
+```
 
 ```supercollider
 	lo = Pan2.ar(LPF.ar(snd, 800, lt), lp + pan);

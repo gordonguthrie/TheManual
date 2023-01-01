@@ -11,3 +11,22 @@ There are somethings we will have to do to make it usable:
 * we will want to be able to make the note louder or quieter
 
 
+
+```supercollider
+
+a={SinOsc(440, 1.0. 2)};
+
+
+```
+
+```
+yando
+```
+
+
+bingo
+bongo
+
+* sfads
+* sdfsd
+
