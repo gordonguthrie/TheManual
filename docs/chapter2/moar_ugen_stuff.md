@@ -1,5 +1,9 @@
 # Chapter 2 - Recreating the sine synth
 
+## Why does this matter?
+
+The code for synthesisers is pretty confusing. Good documentation is key to understanding how they are built and why. This chapter lays the ground work for understanding our documentation going forward.
+
 ## Moar UGen Stuff
 
 Generally we can diagram a `UGen` like this:
