@@ -1,4 +1,4 @@
-# Chapter 2 - Recreating the sine synth
+# Chapter 3 - Recreating the sine synth
 
 ## Funky Stuff Part Uno - Variables
 

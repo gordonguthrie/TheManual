@@ -22,7 +22,7 @@ If we scroll down to the [bottom](https://github.com/sonic-pi-net/sonic-pi/blob/
    (core/save-synthdef sonic-pi-dsaw)
    ...
 ```
-If we scroll back up to the [top](https://github.com/sonic-pi-net/sonic-pi/blob/710107fe22c5977b9fa5e83b71e30f847610e240/etc/synthdefs/designs/overtone/sonic-pi/src/sonic_pi/basic.clj#L945) we can find the definition of the synth in `clojure`:
+If we scroll back up to the [top](https://github.com/sonic-pi-net/sonic-pi/blob/710107fe22c5977b9fa5e83b71e30f847610e240/etc/synthdefs/designs/overtone/sonic-pi/src/sonic_pi/basic.clj#L945) we can find the definition of the `beep` synth in `clojure`:
 
 ```clojure
 (without-namespace-in-synthdef
@@ -92,6 +92,8 @@ If we go through this code we can see a lot of things that are clearly UGens and
 * `out` - the [Out UGen](https://doc.sccode.org/Classes/Out.html)
 * `pan` - one of the [Pan UGen](https://doc.sccode.org/Classes/Pan2.html) family
 * `:action` - related to [doneAction](https://doc.sccode.org/Classes/SerialPort.html#-doneAction) somehow
+
+This synth uses the UGen `SinOsc` to generate its output - just like the first synth in Chapter 1. This is the synth we will be recreating in Chapter 3.
 
 If we look at our old first synth definition we can see some of these elements and how we have to compose them:
 
