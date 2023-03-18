@@ -9,13 +9,19 @@ toc:
       url:  ./chapter1/first_beep_in_supercollider.html
     - page: First Synth In Sonic Pi
       url:  ./chapter1/first_synth_in_sonic_pi.html
-  - title: Chapter 2 - Recreating the sine synth
+  - title: Chapter 2 - Existing synths in Sonic Pi
     subfolderitems:
-    - page: Understanding UGens, Channels, Mixing and Panning
-      url:  ./chapter2/ugens_channels_mixing_and_panning.html
+    - page: How Synths Are Currently Defined And Invoked
+      url:  ./chapter2/overtone_synths.html
+    - page: How SonicPi Plays Built In Synths
+      url:  ./chapter2/how_sonic_pi_plays_built_in_synths.html
+  - title: Chapter 3 - Recreating the sine synth
+    subfolderitems:
+    - page: Understanding UGens, Channels, Mixing And Panning
+      url:  ./chapter3/ugens_channels_mixing_and_panning.html
     - page: Second Synth
-      url:  ./chapter2/second_synth.html
+      url:  ./chapter3/second_synth.html
     - page: Moar UGen Stuff
-      url:  ./chapter2/moar_ugen_stuff.html
+      url:  ./chapter3/moar_ugen_stuff.html
     - page: Funky Stuff Part Uno - Variables
-      url:  ./chapter2/funky_stuff_part_uno_variables.html
+      url:  ./chapter3/funky_stuff_part_uno_variables.html
