@@ -93,6 +93,8 @@ If we go through this code we can see a lot of things that are clearly UGens and
 * `pan` - one of the [Pan UGen](https://doc.sccode.org/Classes/Pan2.html) family
 * `:action` - related to [doneAction](https://doc.sccode.org/Classes/SerialPort.html#-doneAction) somehow
 
+We can also see that when a `UGen` offers a `.kr` and `.ar` option the clojure default is `.ar` and we have to specify `.kr` explicitly. This makes sense as we use `.ar` for sound signals (that we care a lot about) and `.kr` for control signals that we are a bit meh about.
+
 This synth uses the UGen `SinOsc` to generate its output - just like the first synth in Chapter 1. This is the synth we will be recreating in Chapter 3.
 
 If we look at our old first synth definition we can see some of these elements and how we have to compose them:
