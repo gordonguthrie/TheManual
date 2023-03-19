@@ -4,4 +4,6 @@ In `Sonic PI V5.0.0 Tech Preview 2` code for built in synths is extended over a 
 
 The class has a whole range of functions which must be overwritten in implementing a new synth> Some refer to the lifetime of the synth like `initialize`, `on_start` and `on_finish`, some are invoked at runtime like `munge_opts` and some relate to how the synth presents to Sonic Pi like `arg_doc` and `introduced`.
 
- 
+The actual playing off the synths happens in 
+
+We can see how Sonic Pi [handles synth arguments](https://github.com/sonic-pi-net/sonic-pi/blob/710107fe22c5977b9fa5e83b71e30f847610e240/app/server/ruby/lib/sonicpi/lang/sound.rb#L3753) in this function.
