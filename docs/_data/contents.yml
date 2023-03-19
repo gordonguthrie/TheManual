@@ -14,7 +14,7 @@ toc:
     - page: How Synths Are Currently Defined And Invoked
       url:  ./chapter2/overtone_synths.html
     - page: Investigating SonicPi Internals
-      url:  investigating_sonic_pi_internals.html
+      url:  ./chapter2/investigating_sonic_pi_internals.html
     - page: How SonicPi Plays Built In Synths
       url:  ./chapter2/how_sonic_pi_plays_built_in_synths.html
   - title: Chapter 3 - Recreating the sine synth
