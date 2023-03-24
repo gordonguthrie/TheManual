@@ -113,7 +113,8 @@ We can prove it is this definition by adding another message push as so:
 
 ```ruby
 	def __info(s, style=0)
-      __msg_queue.push({:type => :info, :style => style, :val => "banjo"}) unless       __msg_queue.push({:type => :info, :style => style, :val => s.to_s}) unless __system_thread_locals.get :sonic_pi_spider_silent
+      __msg_queue.push({:type => :info, :style => style, :val => "banjo"}) unless __system_thread_locals.get :sonic_pi_spider_silent
+      __msg_queue.push({:type => :info, :style => style, :val => s.to_s}) unless __system_thread_locals.get :sonic_pi_spider_silent
     end
 ```
 So now when we stop and start Sonic Pi and run the same code we see that every msg we get in the front end, we get a `banjo` before it.
