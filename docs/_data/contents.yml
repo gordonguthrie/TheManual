@@ -11,6 +11,8 @@ toc:
       url:  ./chapter1/first_synth_in_sonic_pi.html
   - title: Chapter 2 - Existing synths in Sonic Pi
     subfolderitems:
+    - page: Setting Up
+      url:  ./chapter2/setting_up.html
     - page: How Synths Are Currently Defined And Invoked
       url:  ./chapter2/overtone_synths.html
     - page: Investigating SonicPi Internals
