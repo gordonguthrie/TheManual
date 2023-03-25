@@ -1,6 +1,6 @@
 # Chapter 2 - How synths are currently defined and invoked
 
-## Investigating SonicPi internals
+## Loggin, loggin, loggin
 
 To mess around with the bit of SonicPi that handles synths you will need to download the source and compile your own instance of SonicPi.
 

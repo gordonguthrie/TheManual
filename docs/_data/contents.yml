@@ -17,8 +17,8 @@ toc:
       url:  .//chapter2/investigating_sonic_pi_and_error_messages.html
     - page: How synths are currently defined and invoked
       url:  ./chapter2/overtone_synths.html
-    - page: Investigating SonicPi Internals
-      url:  ./chapter2/investigating_sonic_pi_internals.html
+    - page: Loggin, loggin, loggin
+      url:  ./chapter2/loggin_loggin_loggin.html
     - page: How SonicPi Plays Built In Synths
       url:  ./chapter2/how_sonic_pi_plays_built_in_synths.html
   - title: Chapter 3 - Recreating the beep synth
