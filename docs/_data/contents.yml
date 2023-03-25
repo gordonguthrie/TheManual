@@ -13,6 +13,8 @@ toc:
     subfolderitems:
     - page: Setting up
       url:  ./chapter2/setting_up.html
+    - page: Investigating Sonic Pi and error messages
+      url:  .//chapter2/investigating_sonic_pi_and_error_messages.html
     - page: How synths are currently defined and invoked
       url:  ./chapter2/overtone_synths.html
     - page: Investigating SonicPi Internals
