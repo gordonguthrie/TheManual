@@ -1,4 +1,4 @@
-# Chapter 2 - How synths are currently defined and invoked
+# Chapter 2 - Existing Synths in Sonic Pi
 
 ## The Clojure library: Overtone
 
