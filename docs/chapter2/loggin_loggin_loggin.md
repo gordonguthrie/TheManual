@@ -1,4 +1,4 @@
-# Chapter 2 - Existing Synths in Sonic Pi
+# Chapter 2 - Existing synths in Sonic Pi
 
 ## Loggin, loggin, loggin
 
@@ -12,9 +12,10 @@ Luckily once SonicPi is built this is very straightforward. `ruby` is an interpr
 
 Once we have compiled a built SonicPi we can start and run it by invoking the binary `sonic-pi` which is created in the directory `app/build/gui/qt`.
 
-Lets look at 2 techniques for understanding what is going on:
+Lets look at 3 techniques for understanding what is going on:
 
 * built in messaging inside the runtime
+* logging during boot
 * native Ruby Logging
 
 but before we, beware false friends!
@@ -132,6 +133,61 @@ So now when we stop and start Sonic Pi and run the same code we see that every m
 => Completed run 3
 ```
 So by simply adding lines to our ruby that calls this `__info` function we can see what's going on when we do stuff.
+
+## Logging during boot
+
+The runtime logging is great but what happens when you want to figure out what is happening during boot before the GUI is available to show your messages?
+
+Well it turns out that Sonic Pi has that sorted too. You can write a message to a buffer and when the boot is completed the buffer is dumped into the log window. Lets see that in action in the [studio module](https://github.com/sonic-pi-net/sonic-pi/blob/dev/app/server/ruby/lib/sonicpi/studio.rb#L67) which handles the boot process and the creation of the GUI.
+
+If I invoke the function `message` with a string, as I do here, it will appear in the log screen on boot.
+
+```ruby
+    def init_scsynth
+      message "bingo bongo dandy dongo"
+      @server = Server.new(@scsynth_port, @msg_queue, @state, @register_cue_event_lambda, @current_spider_time_lambda)
+      message "Initialised SuperCollider Audio Server #{@server.version}"
+    end
+```
+
+and as expected printing my message in the GUI's log window:
+
+```
+ome to Sonic Pi v5.0.0-Tech Preview 2
+
+=> Running on Ruby v2.7.4
+
+=> Initialised Erlang OSC Scheduler
+
+=> Initialised SuperCollider Audio Server v3.11.2
+
+=> bingo bongo dandy dongo
+
+=> Remember, when live coding music
+   there are no mistakes
+   only opportunities to learn
+   and improve.
+
+=> Let the Live Coding begin...
+
+=> Has Sonic Pi made you smile?
+
+   We need *your* help to fund further development!
+
+   Sonic Pi is not financially supported by
+   any organisation.
+
+   We are therefore crowdsourcing funds from kind
+   people like you using Patreon.
+
+   We need at least 1000 supporters to continue.
+   Currently we have 733 generous individuals.
+
+   Please consider becoming a Patreon supporter too,
+   and help us keep Sonic Pi alive:
+
+   https://patreon.com/samaaron
+```
 
 ## Native ruby logging
 
