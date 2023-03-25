@@ -1,6 +1,6 @@
-# Chapter 1 - First Beeps
+# Chapter 1 - First beeps
 
-## First Synth In Sonic Pi
+## First synth in Sonic Pi
 
 We will make this oscillator into a synthesiser that we can use in Sonic Pi:
 

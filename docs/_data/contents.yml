@@ -1,31 +1,31 @@
 toc:
-  - title: Chapter 1 - First Beeps
+  - title: Chapter 1 - First beeps
     subfolderitems:
-    - page: Who Is This For?
-      url:  ./chapter1/who_is_this_for.html
+    - page: Introduction?
+      url:  ./chapter1/introduction.html
     - page:  Installing Supercollider
       url:  ./chapter1/installing_supercollider.html
-    - page: First Beep In SuperCollider
+    - page: First beep in SuperCollider
       url:  ./chapter1/first_beep_in_supercollider.html
-    - page: First Synth In Sonic Pi
+    - page: First synth in Sonic Pi
       url:  ./chapter1/first_synth_in_sonic_pi.html
   - title: Chapter 2 - Existing synths in Sonic Pi
     subfolderitems:
-    - page: Setting Up
+    - page: Setting up
       url:  ./chapter2/setting_up.html
-    - page: How Synths Are Currently Defined And Invoked
+    - page: How synths are currently defined and invoked
       url:  ./chapter2/overtone_synths.html
     - page: Investigating SonicPi Internals
       url:  ./chapter2/investigating_sonic_pi_internals.html
     - page: How SonicPi Plays Built In Synths
       url:  ./chapter2/how_sonic_pi_plays_built_in_synths.html
-  - title: Chapter 3 - Recreating the sine synth
+  - title: Chapter 3 - Recreating the beep synth
     subfolderitems:
-    - page: Understanding UGens, Channels, Mixing And Panning
+    - page: Understanding UGens, channels, mixing and panning
       url:  ./chapter3/ugens_channels_mixing_and_panning.html
-    - page: Second Synth
+    - page: Second synth
       url:  ./chapter3/second_synth.html
-    - page: Moar UGen Stuff
+    - page: Moar UGen stuff
       url:  ./chapter3/moar_ugen_stuff.html
-    - page: Funky Stuff Part Uno - Variables
+    - page: Funky stuff part uno - variables
       url:  ./chapter3/funky_stuff_part_uno_variables.html

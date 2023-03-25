@@ -1,6 +1,6 @@
-# Chapter 1 - First Beeps
+# Chapter 1 - First beeps
 
-## First Beep In SuperCollider
+## First beep in SuperCollider
 
 Most of the synths you are used to calling in Sonic Pi are implemented in Super Collider.
 

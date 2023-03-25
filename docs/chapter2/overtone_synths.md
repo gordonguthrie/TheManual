@@ -1,6 +1,6 @@
-# Chapter 2 - How Synths Are Currently Defined And Invoked
+# Chapter 2 - How synths are currently defined and invoked
 
-## The Clojure Library: Overtone
+## The Clojure library: Overtone
 
 Currently synths are written not in SuperCollider but with a Clojure libary called `overtone`.
 

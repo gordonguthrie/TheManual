@@ -1,4 +1,4 @@
-# Chapter 2 - How Synths Are Currently Defined And Invoked
+# Chapter 2 - How synths are currently defined and invoked
 
 ## How Sonic Pi plays built-in synths
 

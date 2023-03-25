@@ -1,5 +1,4 @@
-
-# Chapter 3 - Recreating The Sine Synth
+# Chapter 3 - Recreating the beep synth
 
 ## Improving our first synthesiser
 

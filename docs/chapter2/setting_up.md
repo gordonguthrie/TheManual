@@ -1,6 +1,6 @@
-# Chapter 2 - How Synths Are Currently Defined And Invoked
+# Chapter 2 - How synths are currently defined and invoked
 
-## Setting Up
+## Setting up
 
 To investigate how Sonic Pi works and become familiar with the code we are going to have do a couple of things:
 

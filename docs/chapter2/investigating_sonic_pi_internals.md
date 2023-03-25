@@ -1,6 +1,6 @@
-# Chapter 2 - How Synths Are Currently Defined And Invoked
+# Chapter 2 - How synths are currently defined and invoked
 
-## Investigating SonicPi Internals
+## Investigating SonicPi internals
 
 To mess around with the bit of SonicPi that handles synths you will need to download the source and compile your own instance of SonicPi.
 
@@ -19,7 +19,7 @@ Lets look at 2 techniques for understanding what is going on:
 
 but before we, beware false friends!
 
-## False Friends
+## False friends
 
 The Sonic Pi language has a couple of ***false friend*** functions - things that look like they will be helpful in this context, but they mostly aren't.
 
@@ -133,8 +133,7 @@ So now when we stop and start Sonic Pi and run the same code we see that every m
 ```
 So by simply adding calls to our ruby that calls this `__info` function we can see what's going on when we do stuff.
 
-## Native Ruby Logging
-
+## Native ruby logging
 
 Sometimes, maybe, the front end logging might not be enough.
  
