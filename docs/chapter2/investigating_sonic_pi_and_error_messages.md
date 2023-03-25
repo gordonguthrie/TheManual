@@ -4,7 +4,9 @@
 
 We can learn a lot about how a system works by using it and also looking at error messages, so lets try and break Sonic Pi and see what we can learn.
 
-Lets just muck about with this programme.
+Lets just muck about with this programme, first with a built-in Sonic Pi synth (by default `beep`) and then with our own one.
+
+## Built-in synths
 
 ```ruby
 play 60
@@ -131,3 +133,5 @@ Runtime Error: [buffer 5, line 1] - RuntimeError
 Thread death!
 Unable to normalise argument with key :pan and value [3, 4, 5]
 ```
+
+## Custom synths
