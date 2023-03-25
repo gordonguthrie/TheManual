@@ -69,7 +69,7 @@ We have had to do a bit more work to get it to play nice with Sonic Pi. It has a
 
 But its not all bad - the line that determines the length of the note also calls a self-destruct function that cleans up and frees resources - without it your computer would gradually fill up with unused instances of synthesisers consuming both memory and CPU and eventually would just crash.
 
-In Chapter 2 we will gradually build up this synthesiser until it is a clone of the `sine` synthesiser that is built into Sonic Pi.
+In Chapter 3 we will gradually build up this synthesiser until it is a clone of the `sine` synthesiser that is built into Sonic Pi.
 
 We will add the following functions and defaults:
 
@@ -92,3 +92,4 @@ and the following slide options:
 * `_slide_shape`
 * `_slide_curve`
 
+But before we can build a proper synth we need to understand how Sonic Pi calls synthesiser - both built in and user added. Chapter 2 will cover that.

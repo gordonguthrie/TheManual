@@ -131,7 +131,7 @@ So now when we stop and start Sonic Pi and run the same code we see that every m
 
 => Completed run 3
 ```
-So by simply adding calls to our ruby that calls this `__info` function we can see what's going on when we do stuff.
+So by simply adding lines to our ruby that calls this `__info` function we can see what's going on when we do stuff.
 
 ## Native Ruby Logging
 
