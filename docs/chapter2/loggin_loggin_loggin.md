@@ -12,8 +12,9 @@ Luckily once SonicPi is built this is very straightforward. `ruby` is an interpr
 
 Once we have compiled a built SonicPi we can start and run it by invoking the binary `sonic-pi` which is created in the directory `app/build/gui/qt`.
 
-Lets look at 3 techniques for understanding what is going on:
+Lets look at 4 techniques for understanding what is going on:
 
+* existing log messages
 * built in messaging inside the runtime
 * logging during boot
 * native Ruby Logging
@@ -53,6 +54,26 @@ play 60
 ```
 
 This is useful, but not enough for full blown debugging.
+
+## Existing log messages
+
+Sonic Pi writes its log to the directory `~/.sonic-pi/log`. If we pop in there we can see a useful set of logs:
+
+```
+gordon@raspberrypi:~/.sonic-pi/log $ ls
+daemon.log  gui.log  jackd.log    spider.log    tau.log
+debug.log   history  scsynth.log  tau_boot.log
+```
+You can get a lot more info if you go into the [util module](https://github.com/sonic-pi-net/sonic-pi/blob/dev/app/server/ruby/lib/sonicpi/util.rb#L335) and set the debug mode to `true` tho:
+
+```ruby
+    def debug_mode
+      false
+    end
+```
+
+***BEWARE***: there is more than one module called `util.lib` you want the one in `/app/server/ruby/lib/sonicpi/`
+
 
 ## Built in messaging inside the runtime
 
