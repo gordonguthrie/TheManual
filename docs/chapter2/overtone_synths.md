@@ -1,8 +1,8 @@
-# Chapter 2 - How Synths Are Currently Defined And Invoked
+# Chapter 2 - How synths are currently defined and invoked
 
-## The Clojure Library: Overtone
+## The Clojure library: Overtone
 
-Currently synths are written not in SuperCollider but with a Clojure libary called `overtone`.
+Currently synths are written not in SuperCollider but with a Clojure libary called Overtone.
 
 The reason for this is that it is trivial to incorporate Clojure source code into a multi-server compile and tooling chain - but very difficult to do the same with SuperCollider source which is designed to be saved and compiled inside the SuperCollider built in IDE.
 
@@ -22,7 +22,7 @@ If we scroll down to the [bottom](https://github.com/sonic-pi-net/sonic-pi/blob/
    (core/save-synthdef sonic-pi-dsaw)
    ...
 ```
-If we scroll back up to the [top](https://github.com/sonic-pi-net/sonic-pi/blob/710107fe22c5977b9fa5e83b71e30f847610e240/etc/synthdefs/designs/overtone/sonic-pi/src/sonic_pi/basic.clj#L945) we can find the definition of the `beep` synth in `clojure`:
+If we scroll back up to the [top](https://github.com/sonic-pi-net/sonic-pi/blob/710107fe22c5977b9fa5e83b71e30f847610e240/etc/synthdefs/designs/overtone/sonic-pi/src/sonic_pi/basic.clj#L945) we can find the definition of the `beep` synth in Clojure:
 
 ```clojure
 (without-namespace-in-synthdef
@@ -121,6 +121,6 @@ If we look at our old first synth definition we can see some of these elements a
 }).writeDefFile("/Users/gordonguthrie/.synthdefs"))
 ```
 
-So using the `overtone` library we can transcribe a `supercollider` definition of a synthesizer into a Lisp format and then use a compiler against that to emit the appropriate compiled `supercollider` bytecode for Sonic Pi to use.
+So using the Overtone library we can transcribe a SuperCollider definition of a synthesizer into a Lisp format and then use a compiler against that to emit the appropriate compiled `SuperCollider` bytecode for Sonic Pi to use.
 
-We we develop our own version of beep we will reverse engineer this `overtone` description into `supercollider`.
+We we develop our own version of beep we will reverse engineer this Overtone description into SuperCollider code.

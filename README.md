@@ -17,3 +17,7 @@
 ```
 
 [Read It Now](https://gordonguthrie.github.io/TheManual/)
+
+# Building Dockerised Sonic Pi
+
+If you clone Sonic Pi alongside `TheManual/` in the directory `sonic-pi` you can build it inside the docker container we use to build the documentation.
