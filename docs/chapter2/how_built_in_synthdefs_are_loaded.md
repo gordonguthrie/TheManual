@@ -1,6 +1,6 @@
 # Chapter 2 - Existing synths in Sonic Pi
 
-## How Synthdefs are loaded
+## How built-in Synthdefs are loaded
 
 Lets go hunting for the code that loads synth definitions and see what it does.
 
@@ -80,7 +80,55 @@ Spider - v5.0.0-Tech Preview 2, OS raspberry, on Ruby  2.7.4 | 2.7.0.
 Spider - ------------------------------------------
 ```
 
-The SonicPi server is all set up by the module [studio.rb](https://github.com/sonic-pi-net/sonic-pi/blob/dev/app/server/ruby/lib/sonicpi/studio.rb#L25).
+It co-ordinates the dance with the Tau server that handles timing and events and the SuperCollider server which actually makes the sounds.
 
-The intialise function
+If we examine the `initialize` method of the class [Studio](https://github.com/sonic-pi-net/sonic-pi/blob/dev/app/server/ruby/lib/sonicpi/studio.rb#L25) and match what happens we can see how the synthdefinitions are loaded:
 
+```ruby
+    def initialize(ports, msg_queue, state, register_cue_event_lambda, current_spider_time_lambda)
+
+      STDOUT.puts "studio - init"
+      STDOUT.flush
+
+      @state = state
+      @scsynth_port = ports[:scsynth_port]
+      @scsynth_send_port = ports[:scsynth_send_port]
+      @msg_queue = msg_queue
+      @error_occured_mutex = Mutex.new
+      @error_occurred_since_last_check = false
+      @sample_sem = Mutex.new
+      @reboot_mutex = Mutex.new
+      @rebooting = false
+      @cent_tuning = 0
+      @sample_format = "int16"
+      @paused = false
+      @register_cue_event_lambda = register_cue_event_lambda
+      @current_spider_time_lambda = current_spider_time_lambda
+      @global_timewarp = 0
+      init_scsynth
+      reset_server
+      init_studio
+    end
+```
+
+The last function to run on creating a new Studio is [init_studio](https://github.com/sonic-pi-net/sonic-pi/blob/dev/app/server/ruby/lib/sonicpi/studio.rb#L72) and it loads the synthdefs:
+
+```ruby
+    def init_studio
+      @server.load_synthdefs(Paths.synthdef_path)
+      @amp = [0.0, 1.0]
+      @server.add_event_handler("/sonic-pi/amp", "/sonic-pi/amp") do |payload|
+        @amp = [payload[2], payload[3]]
+      end
+```
+
+(Actually it tells the [server](https://github.com/sonic-pi-net/sonic-pi/blob/dev/app/server/ruby/lib/sonicpi/server.rb#L155) to load them: which it does by sending an OSC message to SuperCollider:
+
+```ruby
+    def load_synthdefs(path)
+      info "Loading synthdefs from path: #{path}" if @debug_mode
+      with_done_sync [@osc_path_d_loaddir] do
+        osc @osc_path_d_loaddir, path.to_s
+      end
+    end
+```
