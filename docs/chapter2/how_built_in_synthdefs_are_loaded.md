@@ -31,7 +31,7 @@ That function `__load_buffer` is called in one place and one place only, by the 
 
 We know that the `spider-server` is special because it sits in `app/bin` and not `app/server/ruby/lib/sonicpi` like the rest of the ruby code.
 
-Spider has its own log in `~/.sonci-pi/logs` and if we look at them:
+Spider has its own log in `~/.sonci-pi/logs` and if we look at them we can figure out what's going on:
 
 ```
 Sonic Pi Spider Server booting...
@@ -82,6 +82,8 @@ Spider - ------------------------------------------
 
 It co-ordinates the dance with the Tau server that handles timing and events and the SuperCollider server which actually makes the sounds.
 
+Somewhere in here it starts up the [sound module](https://github.com/sonic-pi-net/sonic-pi/blob/dev/app/server/ruby/lib/sonicpi/lang/sound.rb#L68) that actually starts the `studio`.
+
 If we examine the `initialize` method of the class [Studio](https://github.com/sonic-pi-net/sonic-pi/blob/dev/app/server/ruby/lib/sonicpi/studio.rb#L25) and match what happens we can see how the synthdefinitions are loaded:
 
 ```ruby
@@ -111,6 +113,8 @@ If we examine the `initialize` method of the class [Studio](https://github.com/s
     end
 ```
 
+If we trace down the last three function invocations and match their log messages to those in the `spider.log` we can see this function setting everything up for the user - after the SuperCollider and Tau engines have both started.
+
 The last function to run on creating a new Studio is [init_studio](https://github.com/sonic-pi-net/sonic-pi/blob/dev/app/server/ruby/lib/sonicpi/studio.rb#L72) and it loads the synthdefs:
 
 ```ruby
@@ -132,3 +136,7 @@ The last function to run on creating a new Studio is [init_studio](https://githu
       end
     end
 ```
+
+The format of the message is an instruction to load code and a filepath - so at this stage Sonic Pi doesn't know anything more about the built in synthesisers other than their location `etc/synthdefs/compiled`.
+
+If we pop a new compile synthdef in here it will load on boot automatically.
