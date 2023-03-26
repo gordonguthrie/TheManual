@@ -19,8 +19,8 @@ toc:
       url:  ./chapter2/overtone_synths.html
     - page: Loggin, loggin, loggin
       url:  ./chapter2/loggin_loggin_loggin.html
-    - page: How synthdefs are loaded
-      url:  ./chapter2/how_synthdefs_are_loaded.html
+    - page: How built-in synthdefs are loaded
+      url:  ./chapter2/how_built_in_synthdefs_are_loaded.html
     - page: How SonicPi plays built-in synths
       url:  ./chapter2/how_sonic_pi_plays_built_in_synths.html
   - title: Chapter 3 - Recreating the beep synth
