@@ -19,7 +19,7 @@ Lets look at 4 techniques for understanding what is going on:
 * logging during boot
 * native Ruby Logging
 
-but before we, beware false friends!
+but before we do, beware false friends!
 
 ## False friends
 
@@ -53,7 +53,7 @@ use_synth :bass_foundation
 play 60
 ```
 
-This is useful, but not enough for full blown debugging.
+This is just a convenience function for front end users and not a proper debugging tool.
 
 ## Existing log messages
 
