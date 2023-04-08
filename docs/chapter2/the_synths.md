@@ -60,6 +60,6 @@ There is a directory with all the [Clojure synths](https://github.com/sonic-pi-n
 
 The synths marked `special` are the ones that use the soundcard as a synthesiser and won't be discussed here.
 
-When you look at the sources you will find lots of other stuff that doesn't appear as a `synth` in Sonic Pi. This is because all the effects are also created in SuperCollider, as are sample handing.
+When you look at the sources you will find lots of other stuff that doesn't appear as a `synth` in Sonic Pi. This is because all the effects are also created in SuperCollider. The sample handling code also uses it.
 
 Later on in this chapter we will investigate how these synths are defined and invoked.
