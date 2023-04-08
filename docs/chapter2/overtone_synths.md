@@ -4,6 +4,8 @@
 
 For earlier versions of Sonic Pi synths were written not in SuperCollider but with a Clojure libary called Overtone.
 
+Remember that FX and sample handling and anything that also affects sound is handled in SuperCollider under the covers and the source code that you find in the [Clojure synths](https://github.com/sonic-pi-net/sonic-pi/tree/710107fe22c5977b9fa5e83b71e30f847610e240/etc/synthdefs/designs/overtone/sonic-pi/src/sonic_pi) directory will include code to do that too.
+
 The reason for this is that it is easier to incorporate Clojure source code into a multi-server compile and tooling chain - but harder to do the same with SuperCollider source which is designed to be saved and compiled inside the SuperCollider built in IDE.
 
 `Sonic PI V5.0.0 Tech Preview 2` has some mewer, more sophisticated synths written directly in SuperCollider. 
