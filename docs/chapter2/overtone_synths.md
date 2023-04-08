@@ -2,11 +2,13 @@
 
 ## The Clojure library: Overtone
 
-Currently synths are written not in SuperCollider but with a Clojure libary called Overtone.
+For earlier versions of Sonic Pi synths were written not in SuperCollider but with a Clojure libary called Overtone.
 
-The reason for this is that it is trivial to incorporate Clojure source code into a multi-server compile and tooling chain - but very difficult to do the same with SuperCollider source which is designed to be saved and compiled inside the SuperCollider built in IDE.
+The reason for this is that it is easier to incorporate Clojure source code into a multi-server compile and tooling chain - but harder to do the same with SuperCollider source which is designed to be saved and compiled inside the SuperCollider built in IDE.
 
-In `Sonic PI V5.0.0 Tech Preview 2` the built in synths can be found in the file [basic.clj](https://github.com/sonic-pi-net/sonic-pi/blob/710107fe22c5977b9fa5e83b71e30f847610e240/etc/synthdefs/designs/overtone/sonic-pi/src/sonic_pi/basic.clj)
+`Sonic PI V5.0.0 Tech Preview 2` has some mewer, more sophisticated synths written directly in SuperCollider. 
+
+To see how `Sonic PI V5.0.0 Tech Preview 2` handles the built in synths written in `overtone` lets look the file [basic.clj](https://github.com/sonic-pi-net/sonic-pi/blob/710107fe22c5977b9fa5e83b71e30f847610e240/etc/synthdefs/designs/overtone/sonic-pi/src/sonic_pi/basic.clj)
 
 If we scroll down to the [bottom](https://github.com/sonic-pi-net/sonic-pi/blob/710107fe22c5977b9fa5e83b71e30f847610e240/etc/synthdefs/designs/overtone/sonic-pi/src/sonic_pi/basic.clj#L945) we can see the synths being compiled:
 

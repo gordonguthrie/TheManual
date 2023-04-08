@@ -11,12 +11,16 @@ toc:
       url:  ./chapter1/first_synth_in_sonic_pi.html
   - title: Chapter 2 - Existing synths in Sonic Pi
     subfolderitems:
+    - page: All the synths
+      url:  ./chapter2/the_synths.html
     - page: Setting up
       url:  ./chapter2/setting_up.html
     - page: Investigating Sonic Pi and error messages
       url:  .//chapter2/investigating_sonic_pi_and_error_messages.html
-    - page: How synths are currently defined and invoked
+    - page: How synths are currently defined and invoked (Part 1 Overtone)
       url:  ./chapter2/overtone_synths.html
+    - page: How synths are currently defined and invoked (Part 2 SuperCollider)
+      url:  ./chapter2/supercollider_synths.html
     - page: Loggin, loggin, loggin
       url:  ./chapter2/loggin_loggin_loggin.html
     - page: How built-in synthdefs are loaded

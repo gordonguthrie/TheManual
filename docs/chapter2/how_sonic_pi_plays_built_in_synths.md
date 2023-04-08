@@ -72,7 +72,6 @@ at the end of `normalise_and_resolve_synth_args` all the user supplied arguments
 
 If we try the same thing with our custom synth we see that these transforms have also been made:
 
-
 ```ruby
 use_synth :myfirstsynth
 play note: 44, duration: 0.3, pan: -0.3, george: 44

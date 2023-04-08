@@ -1,0 +1,65 @@
+# Chapter 2 - Existing synths in Sonic Pi
+
+## The synths
+
+These are all the synths in Sonic Pi:
+
+
+| Synth name      | Where defined |
+|-----------------|---------------|
+| Bass Foundation | SuperCollider |
+| Bass Highend    | SuperCollider |
+| Beep            | Clojure       |
+| Blade           | Clojure       |
+| Bnoise          | Clojure       |
+| Chipbass        | Clojure       |
+| Chiplead        | Clojure       |
+| Chipnoise       | Clojure       |
+| Cnoise          | Clojure       |
+| Dark Ambience   | Clojure       |
+| Dpulse          | Clojure       |
+| Dsaw            | Clojure       |
+| Dtri            | Clojure       |
+| Dull Bell       | Clojure       |
+| Fm              | Clojure       |
+| Gnoise          | Clojure       |
+| Growl           | Clojure       |
+| Hollow          | Clojure       |
+| Hoover          | Clojure       |
+| Kalimba         | SuperCollider |
+| Mod Beep        | Clojure       |
+| Mod Dsaw        | Clojure       |
+| Mod Fm          | Clojure       |
+| Mod Pulse       | Clojure       |
+| Mod Saw         | Clojure       |
+| Mod Sine        | Clojure       |
+| Mod Tri         | Clojure       |
+| Noise           | Clojure       |
+| Organ Tonewheel | SuperCollider |
+| Piano           | SuperCollider |
+| Pluck           | Clojure       |
+| Pnoise          | Clojure       |
+| Pretty Bell     | Clojure       |
+| Prophet         | Clojure       |
+| Pulse           | Clojure       |
+| Rodeo           | SuperCollider |
+| Saw             | Clojure       |
+| Sine            | Clojure       |
+| Sound In        | Special       |
+| Sound In Stereo | Special       |
+| Square          | Clojure       |
+| Subpulse        | Clojure       |
+| Supersaw        | Clojure       |
+| Tb303           | Clojure       |
+| Tech Saws       | Clojure       |
+| Tri             | Clojure       |
+| Winwood Lead    | SuperCollider |
+| Zawa            | Clojure       |
+
+There is a directory with all the [Clojure synths](https://github.com/sonic-pi-net/sonic-pi/tree/710107fe22c5977b9fa5e83b71e30f847610e240/etc/synthdefs/designs/overtone/sonic-pi/src/sonic_pi) synths defined in it, and another directory with all the [SuperCollider](https://github.com/sonic-pi-net/sonic-pi/tree/59047cace0cab464943e7532ccde3eaa97aa93b7/etc/synthdefs/designs/supercollider) synths.
+
+The synths marked `special` are the ones that use the soundcard as a synthesiser and won't be discussed here.
+
+When you look at the sources you will find lots of other stuff that doesn't appear as a `synth` in Sonic Pi. This is because all the effects are also created in SuperCollider, as are sample handing.
+
+Later on in this chapter we will investigate how these synths are defined and invoked.
