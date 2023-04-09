@@ -34,7 +34,7 @@ toc:
   - title: Chapter 4 - The world of built-in synths
     subfolderitems:
     - page: How built in synths behave
-      url:  ./chapter4/how_build_in_synths_behave.html
+      url:  ./chapter4/how_built_in_synths_behave.html
   - title: Chapter 5 - Recreating the beep synth
     subfolderitems:
     - page: Understanding UGens, channels, mixing and panning

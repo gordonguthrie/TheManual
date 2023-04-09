@@ -1,4 +1,4 @@
-# Chapter 2 - Existing synths in Sonic Pi
+# Chapter 3 - Deep dive
 
 ## How Sonic Pi plays built-in synths
 
