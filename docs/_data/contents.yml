@@ -20,6 +20,7 @@ toc:
     - page: How synths are currently defined and invoked (Part 2 SuperCollider)
       url:  ./chapter2/supercollider_synths.html
   - title: Chapter 3 - Deep dive
+    subfolderitems:
     - page: Deep dive
       url:  ./chapter3/deep_dive.html
     - page: Investigating Sonic Pi and error messages
@@ -31,6 +32,7 @@ toc:
     - page: How SonicPi plays built-in synths
       url:  ./chapter3/how_sonic_pi_plays_built_in_synths.html
   - title: Chapter 4 - The world of built-in synths
+    subfolderitems:
     - page: How built in synths behave
       url:  ./chapter4/how_build_in_synths_behave.html
   - title: Chapter 5 - Recreating the beep synth
