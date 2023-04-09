@@ -128,4 +128,3 @@ If we look at our old first synth definition we can see some of these elements a
 So using the Overtone library we can transcribe a SuperCollider definition of a synthesizer into a Lisp format and then use a compiler against that to emit the appropriate compiled `SuperCollider` bytecode for Sonic Pi to use.
 
 We we develop our own version of beep we will reverse engineer this Overtone description into SuperCollider code.
-

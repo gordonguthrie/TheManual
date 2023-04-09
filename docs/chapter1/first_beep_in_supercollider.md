@@ -87,3 +87,4 @@ Lets look again at the interface and the two methods `ar` and `kr`. The `ar`/`kr
 For the moment we will stick to `ar`. Later on when we start building a proper synthesiser for Sonic Pi we will look again at the meaning of these.
 
 
+

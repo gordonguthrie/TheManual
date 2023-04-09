@@ -1,6 +1,6 @@
-# Chapter 1 - First Beeps
+# Chapter 1 - First beeps
 
-## First Beep In SuperCollider
+## First beep in SuperCollider
 
 Most of the synths you are used to calling in Sonic Pi are implemented in Super Collider.
 
@@ -85,4 +85,5 @@ Lets look again at the interface and the two methods `ar` and `kr`. The `ar`/`kr
 * `kr` means **control rate**
 
 For the moment we will stick to `ar`. Later on when we start building a proper synthesiser for Sonic Pi we will look again at the meaning of these.
+
 

@@ -1,4 +1,4 @@
-# Chapter 2 - Recreating the sine synth
+# Chapter 5 - Recreating the beep synth
 
 ## Why does this matter?
 
@@ -37,7 +37,7 @@ a=3;
 b={SinOsc(440, 0.1, 1)};
 ```
 
-Where `a` is a constant and `b` is a signal. Reading supercollider code it often seems like these are different things, parameters and streams. In fact `a` is a constant signal, not a discrete constant. Anywhere you see numbers passed in, as volume parameters, as panning parameters to place sounds in the stereo field, you can also pass in variable streams.
+Where `a` is a constant and `b` is a signal. Reading SuperCollider code it often seems like these are different things, parameters and streams. In fact `a` is a constant signal, not a discrete constant. Anywhere you see numbers passed in, as volume parameters, as panning parameters to place sounds in the stereo field, you can also pass in variable streams.
 
 Sonic Pi uses this to control synths:
 

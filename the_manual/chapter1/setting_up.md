@@ -31,4 +31,3 @@ We can now start SuperCollider from the command line:
 scide
 ```
 
-

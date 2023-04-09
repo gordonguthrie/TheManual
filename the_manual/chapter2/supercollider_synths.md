@@ -7,4 +7,3 @@ There is a directory [SuperCollider](https://github.com/sonic-pi-net/sonic-pi/tr
 This manual will not spend a lot of time looking at these - but as we build out our version of `beep` directly in SuperCollider it will end up looking a lot like any of these ones.
 
 Remember that all sound manipulation in Sonic Pi is done in SuperCollider so don't be surprise when you find things in this directory that aren't synthesisers but FX etc (for instance `autotuner`).
-

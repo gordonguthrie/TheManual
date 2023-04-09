@@ -355,4 +355,3 @@ Giving:
 We have learned that Sonic Pi monkey's about with the parameters you have passed in before it sends them on to SuperCollider.
 
 In the next section we will look at ways to find out what is happening in the code, and in the one after that we will peek inside Sonic Pi to figure out what's really going on.
-

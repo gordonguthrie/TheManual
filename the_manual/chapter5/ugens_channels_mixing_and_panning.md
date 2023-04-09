@@ -1,6 +1,6 @@
-# Chapter 2 - Recreating the sine synth
+# Chapter 5 - Recreating the beep synth
 
-## Ugens, Channels, Mixing and Panning
+## UGens, channels, mixing and panning
 
 Before we can start making our simple synthesizer fit for use with Sonic Pi we need to learn a little about SuperCollider, in particular:
 
@@ -183,7 +183,7 @@ We can use a `UGen` called `Pan` to do this.
                  ╚════════════╝
 ```
 
-## Put It All Together
+## Put it all together
 
 So the first thing we have to do to get our synth ready is put all these things together:
 

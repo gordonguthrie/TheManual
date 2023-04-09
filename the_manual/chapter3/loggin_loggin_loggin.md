@@ -228,4 +228,3 @@ logger.debug("normalising synth args")
 ```
 
 I am telling [Logger](https://ruby-doc.org/stdlib-2.4.0/libdoc/logger/rdoc/Logger.html) to use a file in my home directory, you need to get it write it to wherever suits you. The file must already exist and the path must be fully qualified so no `../..` or `~`s.
-

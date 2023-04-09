@@ -1,6 +1,6 @@
-# Chapter 2 - Recreating the sine synth
+# Chapter 5 - Recreating the beep synth
 
-## Funky Stuff Part Uno - Variables
+## Funky stuff part uno - Variables
 
 In the last section we started by creating a named function and calling it:
 

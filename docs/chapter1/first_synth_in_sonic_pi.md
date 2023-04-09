@@ -100,3 +100,4 @@ But before we can build a proper synth we need to understand a lot of stuff:
 * how SuperCollider works
 
 Subsequent chapters of this book step through these in a systematic fashion.
+

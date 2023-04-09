@@ -84,4 +84,3 @@ synth :myfirstsynth, {note: 44.0, pan: -0.3, george: 44, sustain: 0.3}
 ```
 
 
-

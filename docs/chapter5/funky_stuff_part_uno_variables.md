@@ -1,6 +1,6 @@
 # Chapter 5 - Recreating the beep synth
 
-## Funky stuff part uno - variables
+## Funky stuff part uno - Variables
 
 In the last section we started by creating a named function and calling it:
 

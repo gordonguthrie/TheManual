@@ -1,5 +1,5 @@
 /*
-# Chapter 2 - Recreating the sine synth
+# Chapter 5 - Recreating the beep synth
 
 ## Improving our first synthesiser
 

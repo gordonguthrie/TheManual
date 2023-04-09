@@ -15,3 +15,4 @@ The left hand panel `untitled` is the **coding panel**, the top right has the Su
 ## Reference
 
 There is a guide to [using the code panel](https://doc.sccode.org/Guides/How-to-Use-the-Interpreter.html) (also known as **the interpreter**).
+
