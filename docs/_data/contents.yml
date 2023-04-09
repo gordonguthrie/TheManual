@@ -45,3 +45,7 @@ toc:
       url:  ./chapter5/moar_ugen_stuff.html
     - page: Funky stuff part uno - variables
       url:  ./chapter5/funky_stuff_part_uno_variables.html
+  - title: Chapter 6 - What's next
+    subfolderitems:
+    - page: What's next
+      url:  ./chapter6/whats_next.html
