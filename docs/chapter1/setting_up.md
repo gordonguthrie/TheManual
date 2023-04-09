@@ -1,6 +1,6 @@
 # Chapter 2 - Existing synths in Sonic Pi
 
-## Setting up
+## Setting up Sonic Pi from source
 
 To investigate how Sonic Pi works and become familiar with the code we are going to have do a couple of things:
 

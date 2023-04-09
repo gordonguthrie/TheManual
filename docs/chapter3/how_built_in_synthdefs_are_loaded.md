@@ -126,7 +126,7 @@ The last function to run on creating a new Studio is [init_studio](https://githu
       end
 ```
 
-(Actually it tells the [server](https://github.com/sonic-pi-net/sonic-pi/blob/dev/app/server/ruby/lib/sonicpi/server.rb#L155) to load them: which it does by sending an OSC message to SuperCollider:
+Actually it tells the [server](https://github.com/sonic-pi-net/sonic-pi/blob/dev/app/server/ruby/lib/sonicpi/server.rb#L155) to load them: which it does by sending an OSC message to SuperCollider:
 
 ```ruby
     def load_synthdefs(path)
@@ -139,4 +139,4 @@ The last function to run on creating a new Studio is [init_studio](https://githu
 
 The format of the message is an instruction to load code and a filepath - so at this stage Sonic Pi doesn't know anything more about the built in synthesisers other than their location `etc/synthdefs/compiled`.
 
-If we pop a new compile synthdef in here it will load on boot automatically.
+If we pop a new compiled synthdef in here it will load on boot automatically.

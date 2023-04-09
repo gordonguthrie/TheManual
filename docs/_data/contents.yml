@@ -9,31 +9,37 @@ toc:
       url:  ./chapter1/first_beep_in_supercollider.html
     - page: First synth in Sonic Pi
       url:  ./chapter1/first_synth_in_sonic_pi.html
+    - page: Setting up Sonic Pi from source
+      url:  ./chapter1/setting_up.html
   - title: Chapter 2 - Existing synths in Sonic Pi
     subfolderitems:
     - page: All the synths
       url:  ./chapter2/the_synths.html
-    - page: Setting up
-      url:  ./chapter2/setting_up.html
-    - page: Investigating Sonic Pi and error messages
-      url:  .//chapter2/investigating_sonic_pi_and_error_messages.html
     - page: How synths are currently defined and invoked (Part 1 Overtone)
       url:  ./chapter2/overtone_synths.html
     - page: How synths are currently defined and invoked (Part 2 SuperCollider)
       url:  ./chapter2/supercollider_synths.html
+  - title: Chapter 3 - Deep dive
+    - page: Deep dive
+      url:  ./chapter3/deep_dive.html
+    - page: Investigating Sonic Pi and error messages
+      url:  ./chapter3/investigating_sonic_pi_and_error_messages.html
     - page: Loggin, loggin, loggin
-      url:  ./chapter2/loggin_loggin_loggin.html
+      url:  ./chapter3/loggin_loggin_loggin.html
     - page: How built-in synthdefs are loaded
-      url:  ./chapter2/how_built_in_synthdefs_are_loaded.html
+      url:  ./chapter3/how_built_in_synthdefs_are_loaded.html
     - page: How SonicPi plays built-in synths
-      url:  ./chapter2/how_sonic_pi_plays_built_in_synths.html
-  - title: Chapter 3 - Recreating the beep synth
+      url:  ./chapter3/how_sonic_pi_plays_built_in_synths.html
+  - title: Chapter 4 - The world of built-in synths
+    - page: How built in synths behave
+      url:  ./chapter4/how_build_in_synths_behave.html
+  - title: Chapter 5 - Recreating the beep synth
     subfolderitems:
     - page: Understanding UGens, channels, mixing and panning
-      url:  ./chapter3/ugens_channels_mixing_and_panning.html
+      url:  ./chapter5/ugens_channels_mixing_and_panning.html
     - page: Second synth
-      url:  ./chapter3/second_synth.html
+      url:  ./chapter5/second_synth.html
     - page: Moar UGen stuff
-      url:  ./chapter3/moar_ugen_stuff.html
+      url:  ./chapter5/moar_ugen_stuff.html
     - page: Funky stuff part uno - variables
-      url:  ./chapter3/funky_stuff_part_uno_variables.html
+      url:  ./chapter5/funky_stuff_part_uno_variables.html

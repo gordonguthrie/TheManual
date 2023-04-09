@@ -1,4 +1,4 @@
-# Chapter 3 - Recreating the beep synth
+# Chapter 5 - Recreating the beep synth
 
 ## Why does this matter?
 
