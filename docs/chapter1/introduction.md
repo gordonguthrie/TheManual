@@ -34,8 +34,27 @@ Do learn how to do this, you will need to install SuperCollider.
 
 This chapter shows you how to make a beep in SuperCollider and then how to make that same beep from within Sonic Pi.
 
-### Chapter 2 - How synths are currently defined and invoked
+### Chapter 2 - Existing synths in Sonic Pi
 
-This chapter investigates how Sonic Pi uses its in-built synthesisers and how the code is organised
+This chapter looks at the existing synths and the two different ways they are implemented - the old way (Overtone) and the new approved way (SuperCollider).
 
-## Chapter 3 -
+## Chapter 3 - Deep dive
+
+This OPTIONAL chapter does a deep dive into how synths are loaded and invoked - not strictly necessary for you to absorb all this to write your own synths.
+
+## Chapter 4 - How built-in synths behave
+
+The chapter goes through how built in synths behave in terms of:
+
+* paramaters, default values and validations
+* error messages
+* integration with the documentation/in Sonic Pi help
+* in relation to other synths - to be well behaved members of the Sonic Pi synth family
+
+## Chapter 5 - Recreating the beep synth
+
+In this chapter it all comes together and we rebuild our own version of the Beep synthesiser directly in SuperCollider and integrate it into our Sonic Pi instance.
+
+## Chapter 6 - Next steps
+
+What the future holds for user-defined synths in Sonic Pi

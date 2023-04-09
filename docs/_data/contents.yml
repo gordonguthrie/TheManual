@@ -1,7 +1,7 @@
 toc:
   - title: Chapter 1 - First beeps
     subfolderitems:
-    - page: Introduction?
+    - page: Introduction
       url:  ./chapter1/introduction.html
     - page:  Installing Supercollider
       url:  ./chapter1/installing_supercollider.html

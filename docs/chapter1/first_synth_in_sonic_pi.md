@@ -92,4 +92,11 @@ and the following slide options:
 * `_slide_shape`
 * `_slide_curve`
 
-But before we can build a proper synth we need to understand how Sonic Pi calls synthesiser - both built in and user added. Chapter 2 will cover that.
+But before we can build a proper synth we need to understand a lot of stuff:
+
+* how synths are currently defined
+* how they are invoked
+* why they are built like they are
+* how SuperCollider works
+
+Subsequent chapters of this book step through these in a systematic fashion.

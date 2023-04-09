@@ -1,4 +1,4 @@
-# Chapter 2 - Existing synths in Sonic Pi
+# Chapter 1 - First beeps
 
 ## Setting up Sonic Pi from source
 
