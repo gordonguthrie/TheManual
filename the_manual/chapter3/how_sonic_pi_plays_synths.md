@@ -2,33 +2,41 @@
 
 ## How Sonic Pi plays synths
 
-
-Lets put some logging in and see what happens when we write simple synth command:
+Lets put some logging in and see what happens when we write a simple synth command:
 
 ```ruby
 use_synth :beep
 play chord(:E3, :minor) , pan: -0.3, george: 44
 ```
 
+### `use_synth` in `sound.rb`
+
 The function [use_synth](https://github.com/sonic-pi-net/sonic-pi/blob/710107fe22c5977b9fa5e83b71e30f847610e240/app/server/ruby/lib/sonicpi/lang/sound.rb#L867) sets the name of the synth into a shared memory area where it can be used later.
 
+### `play` in `sound.rb`
+
 Then the function [play](https://github.com/sonic-pi-net/sonic-pi/blob/710107fe22c5977b9fa5e83b71e30f847610e240/app/server/ruby/lib/sonicpi/lang/sound.rb#L1190) is called - it does some preparatory work on setting up the call to the synthesisers - in particular taking an unnamed first value `n` passed in that isn't a hash of any sort and tagging it as `{note: n}`.
+
+### `synth` in `sound.rb`
 
 It then calls the function [synth](https://github.com/sonic-pi-net/sonic-pi/blob/710107fe22c5977b9fa5e83b71e30f847610e240/app/server/ruby/lib/sonicpi/lang/sound.rb#L1190). If the option to use external synths isn't checked and the synth isn't a built-in one it will crash out with an error here. If no synthesiser is specified in this call (which in our example there won't be) then the synth name is taken from the thread-shared storage that `use_synth` popped it into.
 
 `synth` does a call to `Synths::SynthInfo.get_info(sn_sym)` to pick up the information about the synth - this will be used later on.
 
-It takes the arguments passed in and call the function [resolve_synth_opts_hash_or_array](https://github.com/sonic-pi-net/sonic-pi/blob/710107fe22c5977b9fa5e83b71e30f847610e240/app/server/ruby/lib/sonicpi/lang/sound.rb#L1190) which does the first munge - it looks at the data structure that is passed in and checks it is an object that it can use, or it needs to be sanitised elsewhere. If this function is called with an `SPVector` it is sent off to [merge_synth_arg_maps_array](https://github.com/sonic-pi-net/sonic-pi/blob/710107fe22c5977b9fa5e83b71e30f847610e240/app/server/ruby/lib/sonicpi/util.rb#L418) to fix up.
-
-
-
-
+***This is the critical part for the difference between handling built-in synths and user-defined ones***. If the call to `get_info` returns `nil` then SonicPi knows that its not a built-in synthdef and will simply not try and use the validation that comes with built-in synths.
 
 In `Sonic PI V5.0.0 Tech Preview 2` code for built in synths is extended over a base class called [BaseInfo](https://github.com/sonic-pi-net/sonic-pi/blob/710107fe22c5977b9fa5e83b71e30f847610e240/app/server/ruby/lib/sonicpi/synths/synthinfo.rb#L16) in the file `synthinfo.rb`.
 
 The class has a whole range of functions which must be overwritten in implementing a new synth. Some refer to the lifetime of the synth like `initialize`, `on_start` and `on_finish`, some are invoked at runtime like `munge_opts` and some relate to how the synth presents to Sonic Pi like `arg_doc` and `introduced`.
 
+The functions in `synthinfo.rb` and its role in defining the behaviour of Sonic Pi will be covered extensively in *Chapter 4 - the world of built-in synths*.
 
+`synth` takes the arguments passed in and call the external utility function [resolve_synth_opts_hash_or_array](https://github.com/sonic-pi-net/sonic-pi/blob/710107fe22c5977b9fa5e83b71e30f847610e240/app/server/ruby/lib/sonicpi/util.rb#L347) which does the first munge - it looks at the data structure that is passed in and checks it is an object that it can use, or it needs to be sanitised elsewhere. If this function is called with an `SPVector` it is sent off to [merge_synth_arg_maps_array](https://github.com/sonic-pi-net/sonic-pi/blob/710107fe22c5977b9fa5e83b71e30f847610e240/app/server/ruby/lib/sonicpi/util.rb#L418) to fix up.
+
+
+
+
+### FINISH UP PROPERLY
 
 We can see how Sonic Pi [handles synth arguments](https://github.com/sonic-pi-net/sonic-pi/blob/710107fe22c5977b9fa5e83b71e30f847610e240/app/server/ruby/lib/sonicpi/lang/sound.rb#L3753) in this function.
 

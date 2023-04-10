@@ -13,7 +13,7 @@
               |___/
 ```
 
-Don't feel that you MUST read this chapter, you can skip it if you want.
+Don't feel that you ***MUST*** read this chapter, you can skip it if you want.
 
 ## How does it all work?
 
