@@ -23,7 +23,7 @@ It then calls the function [synth](https://github.com/sonic-pi-net/sonic-pi/blob
 
 `synth` does a call to `Synths::SynthInfo.get_info(sn_sym)` to pick up the information about the synth - this will be used later on.
 
-***This is the critical part for the difference between handling built-in synths and user-defined ones***. If the call to `get_info` returns `nil` then SonicPi knows that its not a built-in synthdef and will simply not try and use the validation that comes with built-in synths.
+***This is the critical part for the difference between handling built-in synths and user-defined ones***. If the call to `get_info` returns `nil` then SonicPi knows that its not a built-in synth and will simply not try and use the validation that comes with built-in synths.
 
 In `Sonic PI V5.0.0 Tech Preview 2` code for built in synths is extended over a base class called [BaseInfo](https://github.com/sonic-pi-net/sonic-pi/blob/710107fe22c5977b9fa5e83b71e30f847610e240/app/server/ruby/lib/sonicpi/synths/synthinfo.rb#L16) in the file `synthinfo.rb`.
 
@@ -55,7 +55,7 @@ A call to a built-in synth may (if it is a chord) be passed onto the function [t
 
 ### trigger_chord function in sound.rb
 
-***Nota Bene/Take Note***: the function `trigger_chord` ***DOESN'T*** call the synth in SuperCollider and pass it a chord - it asks SuperCollider to play each note seperately.
+***Nota Bene/Take Note***: the function `trigger_chord` ***DOESN'T*** call the synth in SuperCollider and pass it a chord - it asks SuperCollider to play each note separately.
 
 IT does some housekeeping - including calling [normalise_and_resolve_synth_args](https://github.com/sonic-pi-net/sonic-pi/blob/710107fe22c5977b9fa5e83b71e30f847610e240/app/server/ruby/lib/sonicpi/lang/sound.rb#L3753) - to make sure that SuperCollider behaves well - the synth that plays each note is grouped, the volume of each note is normalised - the volume of each note is divided by the number of the notes so that the chord as a whole sounds as loud as the specified volume.
 
@@ -123,12 +123,12 @@ synth :myfirstsynth, {note: 44.0, pan: -0.3, george: 44, sustain: 0.3}
 
 ### trigger_synth function in sound.rb
 
-This function actually makes the sound happen - but before it does that it does validation of the arguements in [validate_if_necessary!](https://github.com/sonic-pi-net/sonic-pi/blob/710107fe22c5977b9fa5e83b71e30f847610e240/app/server/ruby/lib/sonicpi/lang/sound.rb#L3908)
+This function actually makes the sound happen - but before it does that it does validation of the arguments in [validate_if_necessary!](https://github.com/sonic-pi-net/sonic-pi/blob/710107fe22c5977b9fa5e83b71e30f847610e240/app/server/ruby/lib/sonicpi/lang/sound.rb#L3908)
 
 This call to `validate_if_necessary!` is the end of our deep dive. This function takes the current synth object from all the way back up in the call to `play` and asks it to validate itself.
 
-If the synth is built-in, it calls its validator function and borks if the parameters are invalid. If the synth is user-defined there is no validator and the parameters are sent accross to SuperCollider as-is.
+If the synth is built-in, it calls its validator function and borks if the parameters are invalid. If the synth is user-defined there is no validator and the parameters are sent across to SuperCollider as-is.
 
 ## What you need and don't need to know to write your own synth
 
-You don't need to know anything of this chapter to write your own well-behaved synthesiser - to write a badly-behaved one, this spelunk should get your started.
+You don't need to know anything of this chapter to write your own well-behaved synthesiser - to write a badly-behaved one, this spelunk should get you started.
