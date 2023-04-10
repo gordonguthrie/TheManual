@@ -9,15 +9,15 @@ use_synth :beep
 play chord(:E3, :minor) , pan: -0.3, george: 44
 ```
 
-### `use_synth` in `sound.rb`
+### use_synth function in sound.rb
 
 The function [use_synth](https://github.com/sonic-pi-net/sonic-pi/blob/710107fe22c5977b9fa5e83b71e30f847610e240/app/server/ruby/lib/sonicpi/lang/sound.rb#L867) sets the name of the synth into a shared memory area where it can be used later.
 
-### `play` in `sound.rb`
+### play function in sound.rb
 
 Then the function [play](https://github.com/sonic-pi-net/sonic-pi/blob/710107fe22c5977b9fa5e83b71e30f847610e240/app/server/ruby/lib/sonicpi/lang/sound.rb#L1190) is called - it does some preparatory work on setting up the call to the synthesisers - in particular taking an unnamed first value `n` passed in that isn't a hash of any sort and tagging it as `{note: n}`.
 
-### `synth` in `sound.rb`
+### synth function in sound.rb
 
 It then calls the function [synth](https://github.com/sonic-pi-net/sonic-pi/blob/710107fe22c5977b9fa5e83b71e30f847610e240/app/server/ruby/lib/sonicpi/lang/sound.rb#L1064). If the option to use external synths isn't checked and the synth isn't a built-in one it will crash out with an error here. If no synthesiser is specified in this call (which in our example there won't be) then the synth name is taken from the thread-shared storage that `use_synth` popped it into.
 
@@ -53,7 +53,7 @@ Playing chords requires a transform which is only done for built-in functions.
 
 A call to a built-in synth may (if it is a chord) be passed onto the function [trigger_chord](https://github.com/sonic-pi-net/sonic-pi/blob/710107fe22c5977b9fa5e83b71e30f847610e240/app/server/ruby/lib/sonicpi/lang/sound.rb#L3475) but if it is a user-defined one it will always be passed to [trigger_inst](https://github.com/sonic-pi-net/sonic-pi/blob/710107fe22c5977b9fa5e83b71e30f847610e240/app/server/ruby/lib/sonicpi/lang/sound.rb#L3452).
 
-### `trigger_chord` in `sound.rb`
+### trigger_chord function in sound.rb
 
 ***Nota Bene/Take Note***: the function `trigger_chord` ***DOESN'T*** call the synth in SuperCollider and pass it a chord - it asks SuperCollider to play each note seperately.
 
@@ -61,12 +61,12 @@ IT does some housekeeping - including calling [normalise_and_resolve_synth_args]
 
 `trigger_chord` ends up calling [trigger_synth](https://github.com/sonic-pi-net/sonic-pi/blob/710107fe22c5977b9fa5e83b71e30f847610e240/app/server/ruby/lib/sonicpi/lang/sound.rb#L3525).
 
-### `trigger_inst` in `sound.rb`
+### trigger_inst function in sound.rb
 
 `trigger_inst` does a little housekeeping - including calling [normalise_and_resolve_synth_args](https://github.com/sonic-pi-net/sonic-pi/blob/710107fe22c5977b9fa5e83b71e30f847610e240/app/server/ruby/lib/sonicpi/lang/sound.rb#L3753) and possibly tweaking the slide times in [add_arg_slide_times](https://github.com/sonic-pi-net/sonic-pi/blob/710107fe22c5977b9fa5e83b71e30f847610e240/app/server/ruby/lib/sonicpi/lang/sound.rb#L4032) - before moving on to calling  [trigger_synth](https://github.com/sonic-pi-net/sonic-pi/blob/710107fe22c5977b9fa5e83b71e30f847610e240/app/server/ruby/lib/sonicpi/lang/sound.rb#L3525).
 
 
-### `normalise_and_resolve_synth_args` in `sound.rb`
+### normalise_and_resolve_synth_args function in sound.rb
 
 Lets look at how Sonic Pi [handles synth arguments](https://github.com/sonic-pi-net/sonic-pi/blob/710107fe22c5977b9fa5e83b71e30f847610e240/app/server/ruby/lib/sonicpi/lang/sound.rb#L3753) in some more details. Here is the function:
 
@@ -121,7 +121,7 @@ is transformed to:
 synth :myfirstsynth, {note: 44.0, pan: -0.3, george: 44, sustain: 0.3}
 ```
 
-### `trigger_synth` in `sound.rb`
+### trigger_synth function in sound.rb
 
 This function actually makes the sound happen - but before it does that it does validation of the arguements in [validate_if_necessary!](https://github.com/sonic-pi-net/sonic-pi/blob/710107fe22c5977b9fa5e83b71e30f847610e240/app/server/ruby/lib/sonicpi/lang/sound.rb#L3908)
 
