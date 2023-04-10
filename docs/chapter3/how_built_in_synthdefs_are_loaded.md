@@ -5,6 +5,7 @@
 Lets go hunting for the code that loads synth definitions and see what it does.
 
 This is the boot sequence:
+
 ![boot sequence](../images/uml/boot_sequence.png)
 
 Using a combination of the logging techiques in the previous section we can soon find out roughly how it works.
