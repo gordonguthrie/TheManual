@@ -19,7 +19,7 @@ Then the function [play](https://github.com/sonic-pi-net/sonic-pi/blob/710107fe2
 
 ### `synth` in `sound.rb`
 
-It then calls the function [synth](https://github.com/sonic-pi-net/sonic-pi/blob/710107fe22c5977b9fa5e83b71e30f847610e240/app/server/ruby/lib/sonicpi/lang/sound.rb#L1190). If the option to use external synths isn't checked and the synth isn't a built-in one it will crash out with an error here. If no synthesiser is specified in this call (which in our example there won't be) then the synth name is taken from the thread-shared storage that `use_synth` popped it into.
+It then calls the function [synth](https://github.com/sonic-pi-net/sonic-pi/blob/710107fe22c5977b9fa5e83b71e30f847610e240/app/server/ruby/lib/sonicpi/lang/sound.rb#L1064). If the option to use external synths isn't checked and the synth isn't a built-in one it will crash out with an error here. If no synthesiser is specified in this call (which in our example there won't be) then the synth name is taken from the thread-shared storage that `use_synth` popped it into.
 
 `synth` does a call to `Synths::SynthInfo.get_info(sn_sym)` to pick up the information about the synth - this will be used later on.
 
@@ -33,12 +33,42 @@ The functions in `synthinfo.rb` and its role in defining the behaviour of Sonic 
 
 `synth` takes the arguments passed in and call the external utility function [resolve_synth_opts_hash_or_array](https://github.com/sonic-pi-net/sonic-pi/blob/710107fe22c5977b9fa5e83b71e30f847610e240/app/server/ruby/lib/sonicpi/util.rb#L347) which does the first munge - it looks at the data structure that is passed in and checks it is an object that it can use, or it needs to be sanitised elsewhere. If this function is called with an `SPVector` it is sent off to [merge_synth_arg_maps_array](https://github.com/sonic-pi-net/sonic-pi/blob/710107fe22c5977b9fa5e83b71e30f847610e240/app/server/ruby/lib/sonicpi/util.rb#L418) to fix up.
 
+Next `synth` checks if the note is a rest note - and if it does it returns nothing.
+
+ Now we start getting to where built-in and user-defined synths are treated differently.
+
+ `synth` checks if the synth info is `nil` - if it isn't it then knows that this is a built-in synth and is well behaved.
+
+ There are a number of global settings that can be applied to code blocks to change the notes being played:
+
+ * `use_cent_tuning`/`with_cent_tuning`
+ * `use_octave`/`with_octave`
+ * `use_transpose`/`with_transpose`
+
+If the synth is well behaved these global settings will be applied in [normalise_transpose_and_tune_note_from_args](https://github.com/sonic-pi-net/sonic-pi/blob/710107fe22c5977b9fa5e83b71e30f847610e240/app/server/ruby/lib/sonicpi/util.rb#L4052).
+
+Earlier we looked at error messages and saw that you could play chords with built-in synths but not with user-defined ones.
+
+Playing chords requires a transform which is only done for built-in functions.
+
+A call to a built-in synth may (if it is a chord) be passed onto the function [trigger_chord](https://github.com/sonic-pi-net/sonic-pi/blob/710107fe22c5977b9fa5e83b71e30f847610e240/app/server/ruby/lib/sonicpi/lang/sound.rb#L3475) but if it is a user-defined one it will always be passed to [trigger_inst](https://github.com/sonic-pi-net/sonic-pi/blob/710107fe22c5977b9fa5e83b71e30f847610e240/app/server/ruby/lib/sonicpi/lang/sound.rb#L3452).
+
+### `trigger_chord` in `sound.rb`
+
+***Nota Bene/Take Note***: the function `trigger_chord` ***DOESN'T*** call the synth in SuperCollider and pass it a chord - it asks SuperCollider to play each note seperately.
+
+IT does some housekeeping - including calling [normalise_and_resolve_synth_args](https://github.com/sonic-pi-net/sonic-pi/blob/710107fe22c5977b9fa5e83b71e30f847610e240/app/server/ruby/lib/sonicpi/lang/sound.rb#L3753) - to make sure that SuperCollider behaves well - the synth that plays each note is grouped, the volume of each note is normalised - the volume of each note is divided by the number of the notes so that the chord as a whole sounds as loud as the specified volume.
+
+`trigger_chord` ends up calling [trigger_synth](https://github.com/sonic-pi-net/sonic-pi/blob/710107fe22c5977b9fa5e83b71e30f847610e240/app/server/ruby/lib/sonicpi/lang/sound.rb#L3525).
+
+### `trigger_inst` in `sound.rb`
+
+`trigger_inst` does a little housekeeping - including calling [normalise_and_resolve_synth_args](https://github.com/sonic-pi-net/sonic-pi/blob/710107fe22c5977b9fa5e83b71e30f847610e240/app/server/ruby/lib/sonicpi/lang/sound.rb#L3753) and possibly tweaking the slide times in [add_arg_slide_times](https://github.com/sonic-pi-net/sonic-pi/blob/710107fe22c5977b9fa5e83b71e30f847610e240/app/server/ruby/lib/sonicpi/lang/sound.rb#L4032) - before moving on to calling  [trigger_synth](https://github.com/sonic-pi-net/sonic-pi/blob/710107fe22c5977b9fa5e83b71e30f847610e240/app/server/ruby/lib/sonicpi/lang/sound.rb#L3525).
 
 
+### `normalise_and_resolve_synth_args` in `sound.rb`
 
-### FINISH UP PROPERLY
-
-We can see how Sonic Pi [handles synth arguments](https://github.com/sonic-pi-net/sonic-pi/blob/710107fe22c5977b9fa5e83b71e30f847610e240/app/server/ruby/lib/sonicpi/lang/sound.rb#L3753) in this function.
+Lets look at how Sonic Pi [handles synth arguments](https://github.com/sonic-pi-net/sonic-pi/blob/710107fe22c5977b9fa5e83b71e30f847610e240/app/server/ruby/lib/sonicpi/lang/sound.rb#L3753) in some more details. Here is the function:
 
 ```ruby
       def normalise_and_resolve_synth_args(args_h, info, combine_tls=false)
@@ -91,5 +121,15 @@ is transformed to:
 synth :myfirstsynth, {note: 44.0, pan: -0.3, george: 44, sustain: 0.3}
 ```
 
+### `trigger_synth` in `sound.rb`
 
+This function actually makes the sound happen - but before it does that it does validation of the arguements in [validate_if_necessary!](https://github.com/sonic-pi-net/sonic-pi/blob/710107fe22c5977b9fa5e83b71e30f847610e240/app/server/ruby/lib/sonicpi/lang/sound.rb#L3908)
+
+This call to `validate_if_necessary!` is the end of our deep dive. This function takes the current synth object from all the way back up in the call to `play` and asks it to validate itself.
+
+If the synth is built-in, it calls its validator function and borks if the parameters are invalid. If the synth is user-defined there is no validator and the parameters are sent accross to SuperCollider as-is.
+
+## What you need and don't need to know to write your own synth
+
+You don't need to know anything of this chapter to write your own well-behaved synthesiser - to write a badly-behaved one, this spelunk should get your started.
 
