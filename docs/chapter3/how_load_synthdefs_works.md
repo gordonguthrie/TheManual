@@ -8,5 +8,5 @@ Both of these functions load synthdefs the same way that the boot sequence does 
 
 The sequence is:
 
-![load_synths](../images/uml/load_synthdefs.png]
+![load_synths](../images/uml/load_synthdefs.png)
 
