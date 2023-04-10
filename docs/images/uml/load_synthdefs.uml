@@ -1,7 +1,6 @@
 @startuml
 
-User -> SonicPi: switch on
-SonicPi -> SonicPi: start boot
+User -> SonicPi: load_synthdefs (dir)
 SonicPi -> SuperCollider: send OSC cmd\nload synths from dir
 SuperCollider -> FileSystem: load all synthdefs in dir
 
