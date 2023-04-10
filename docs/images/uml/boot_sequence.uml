@@ -1,0 +1,7 @@
+@startuml
+
+User -> SonicPi: switch on
+SonicPi -> SonicPi: start boot
+SonicPi -> SuperCollider: load synthesisers from a directory
+
+@enduml

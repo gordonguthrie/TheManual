@@ -140,3 +140,5 @@ Actually it tells the [server](https://github.com/sonic-pi-net/sonic-pi/blob/dev
 The format of the message is an instruction to load code and a filepath - so at this stage Sonic Pi doesn't know anything more about the built in synthesisers other than their location `etc/synthdefs/compiled`.
 
 If we pop a new compiled synthdef in here it will load on boot automatically.
+
+[The boot sequence](./images/uml/boot_sequence.png)
