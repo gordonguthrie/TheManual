@@ -31,8 +31,8 @@ toc:
       url:  ./chapter3/how_built_in_synthdefs_are_loaded.html
     - page: How load_synthdefs works
       url:  ./chapter3/how_load_synthdefs_works.html
-    - page: How SonicPi plays built-in synths
-      url:  ./chapter3/how_sonic_pi_plays_built_in_synths.html
+    - page: How SonicPi plays synths
+      url:  ./chapter3/how_sonic_pi_plays_synths.html
   - title: Chapter 4 - The world of built-in synths
     subfolderitems:
     - page: How built in synths behave

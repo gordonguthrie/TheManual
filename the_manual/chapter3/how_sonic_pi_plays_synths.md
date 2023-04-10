@@ -1,6 +1,6 @@
 # Chapter 3 - Deep dive
 
-## How Sonic Pi plays built-in synths
+## How Sonic Pi plays synths
 
 
 Lets put some logging in and see what happens when we write simple synth command:
