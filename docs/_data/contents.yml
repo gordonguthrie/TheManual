@@ -35,8 +35,8 @@ toc:
       url:  ./chapter3/how_sonic_pi_plays_synths.html
   - title: Chapter 4 - The world of built-in synths
     subfolderitems:
-    - page: How built in synths behave
-      url:  ./chapter4/how_built_in_synths_behave.html
+    - page: How built in synths are defined in Sonic Pi
+      url:  ./chapter4/how_built_in_synths_are_defined_in_Sonic_Pi.html
   - title: Chapter 5 - Recreating the beep synth
     subfolderitems:
     - page: Understanding UGens, channels, mixing and panning
