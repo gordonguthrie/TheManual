@@ -54,6 +54,7 @@ The dev process is:
 * open a branch
 * make changes/add page
 * edit `./docs/_data/contents.yml` to add the page
+* edit the shell script `make_pdf.sh` to add the page
 * push to github and open a pull request
 
 Don't worry about the `literate_compiler` and jekyll build process that will be done after your changes have been merged.
@@ -66,7 +67,7 @@ Due to the build process, new images are ***NOT*** added under `the_manual/` but
 
 The sources for the book are in the filed under `the_manual/` where edits and commits are made. If you wish to add a SuperCollider synthesiser please commit an `.scd` page with comments that are internally formatted with `markdown` (see the page `./the_manual/chapter5/second_synth.scd` for an example.
 
-Also edit `./docs/_data/contents.yml` to add the page to the book.
+Also edit `./docs/_data/contents.yml` to add the page to the book and edit the shell script `make_pdf.sh` to add the page to it too.
 
 But you need to check that your page transforms correctly.
 
