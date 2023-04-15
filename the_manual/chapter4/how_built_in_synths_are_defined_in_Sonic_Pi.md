@@ -153,7 +153,11 @@ These names are also aliased in the definition of [`@@synth_infos``](https://git
 
 This function is used by FXs and not synths - so don't worry about it.
 
-### function
+### function specific_arg_info
+
+TODO
+
+## Adding your own synth
 
 The functions you must add are:
 * name
