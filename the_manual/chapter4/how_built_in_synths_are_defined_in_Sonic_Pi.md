@@ -54,11 +54,13 @@ We can tell what functions are designed to be implemented in the sub-classes by 
       end
 ```
 
+There is an extra function `specific_arg_info` which isn't in this list and by default which returns an empty hashes.
+
 Lets go through them one by one.
 
 ### function doc
 
-This function is called when the displaying the gui. If we go to [the `doc` function for the `beeb` synth](https://github.com/sonic-pi-net/sonic-pi/blob/710107fe22c5977b9fa5e83b71e30f847610e240/app/server/ruby/lib/sonicpi/synths/synthinfo.rb#L805) and edit it to:
+This function is called when the displaying the gui. If we go to [the `doc` function for the `beeb` synth](https://github.com/sonic-pi-net/sonic-pi/blob/710107fe22c5977b9fa5e83b71e30f847610e240/app/server/ruby/lib/sonicpi/synths/synthinfo.rb#L805) and edit it to add the word ***yowza***:
 
 ```ruby
       def doc
@@ -70,13 +72,96 @@ This function is called during the compile process (not at run time) and is used
 
 ![Screenshot of edited synth entry](../images/chapter4/synths_in_the_gui.png).
 
+### function arg_defaults
+
+Here is the `arg_defaults` function of the `beep` synthesizer:
+
+```ruby
+       {
+          :note => 52,
+          :note_slide => 0,
+          :note_slide_shape => 1,
+          :note_slide_curve => 0,
+          :amp => 1,
+          :amp_slide => 0,
+          :amp_slide_shape => 1,
+          :amp_slide_curve => 0,
+          :pan => 0,
+          :pan_slide => 0,
+          :pan_slide_shape => 1,
+          :pan_slide_curve => 0,
+
+          :attack => 0,
+          :decay => 0,
+          :sustain => 0,
+          :release => 1,
+          :attack_level => 1,
+          :decay_level => :sustain_level,
+          :sustain_level => 1,
+          :env_curve => 2
+        }
+      end
+```
+
+It is simply the list of all the arguments and their default values - note how the values are chained - the default value of `:decay_level` is defined as `:sustain_level`.
+
+Oftentimes this function is shared between multiple synths by use of an intermediate class. See later on where the following functions inherit their arguments from the `Noise` synth:
+
+* BNoise
+* ChipNoise
+* CNoise
+* GNoise
+* PNoise
+
+If you are writing a family of synths you should consider this strategy.
+
+### function name
+
+This is the name of the synth as it appears in the GUI - the name you use in code is defined in the function `synth_name`.
+
+### functions category and prefix
+
+Both of these are preset for you during the [class inheritance chain](https://github.com/sonic-pi-net/sonic-pi/blob/710107fe22c5977b9fa5e83b71e30f847610e240/app/server/ruby/lib/sonicpi/synths/synthinfo.rb#L589): `MySynth > SynthInfo > BaseInfo`
+
+```ruby
+    class SynthInfo < BaseInfo
+      def category
+        :general
+      end
+
+      def prefix
+        "sonic-pi-"
+      end
+    end
+```
+
+Remember that SonicPi uses SuperCollider to:
+
+* define and play synths
+* define and wire up FX
+* play samples
+
+This code base is used to support all three - but the dip into `SynthInfo` makes a synth a synth and your class invoked wherever synths are in play.
+
+### function synth_name
+
+This is the name of the synth as used in SonicPi code - all lowercase and spaces replaced with `_`s.
+
+These names are also aliased in the definition of [`@@synth_infos``](https://github.com/sonic-pi-net/sonic-pi/blob/710107fe22c5977b9fa5e83b71e30f847610e240/app/server/ruby/lib/sonicpi/synths/synthinfo.rb#L8118)
+
+### function trigger_with_logical_clock
+
+This function is used by FXs and not synths - so don't worry about it.
+
+### function
+
 The functions you must add are:
 * name
 * introduced
 * synth_name
 * doc
 
-In addition synths commonly add the functions `art_defaults` and `specific_arg_info`.
+In addition synths commonly add the functions `arg_defaults` and `specific_arg_info`.
 
 | Synth name        | Base Class        | arg_defaults | specific_arg_info |
 |-------------------|-------------------|--------------|-------------------|
