@@ -46,7 +46,7 @@ The dev process is:
 * make changes
 * push to github and open a pull request
 
-Don't worry about the `literate_compiler` and jekyll build process that will be done after you changes have been merged.
+Don't worry about the `literate_compiler` and jekyll build process that will be done after your changes have been merged.
 
 # I am adding a new markdown page
 
@@ -56,17 +56,19 @@ The dev process is:
 * edit `./docs/_data/contents.yml` to add the page
 * push to github and open a pull request
 
-Don't worry about the `literate_compiler` and jekyll build process that will be done after you changes have been merged.
+Don't worry about the `literate_compiler` and jekyll build process that will be done after your changes have been merged.
 
 # I am adding a new synthesiser page
 
 The sources for the book are in the filed under `the_manual/` where edits and commits are made. If you wish to add a SuperCollider synthesiser please commit an `.scd` page with comments that are internally formatted with `markdown` (see the page `./the_manual/chapter5/second_synth.scd` for an example.
 
+Also edit `./docs/_data/contents.yml` to add the page to the book.
+
 But you need to check that your page transforms correctly.
 
-The simple way is to install the `literate_compiler` (see the Section on Dependencies).
+The simple way is to install the `literate_compiler` (see the Section on Dependencies). If you commit your compiled docs to your branch you can inspect the output on https://github.com before you open your pull request.
 
-The slightly more complex way is to also run and check that `jekyll` works
+The slightly more complex way is to also run `jekyll` locally and check it all works
 
 You can do with easily by building this manual inside a docker container. The repo `docker-dev` is set up to make that easy:
 
