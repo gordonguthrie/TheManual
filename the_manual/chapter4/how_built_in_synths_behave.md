@@ -16,54 +16,62 @@ But looking at all the synthesiser classes we see a simple pattern synths come i
 
 Note that sometimes synth names are just aliases for each other `sine`/`beep` and `mod_sine`/`mod_beep`. This aliasing happens in the global variable [@@synth_info](https://github.com/sonic-pi-net/sonic-pi/blob/710107fe22c5977b9fa5e83b71e30f847610e240/app/server/ruby/lib/sonicpi/synths/synthinfo.rb#L8118).
 
-| Synth name        | Base Class        |
-|-------------------|-------------------|
-| Bass Foundation   | SonicPiSynth      |
-| Bass Highend      | SonicPiSynth      |
-| Beep              | SonicPiSynth      |
-| Blade/SynthViolin | SonicPiSynth      |
-| Bnoise            | Noise             |
-| Chipbass          | SonicPiSynth      |
-| Chiplead          | SonicPiSynth      |
-| Chipnoise         | Noise             |
-| Cnoise            | Noise             |
-| Dark Ambience     | SonicPiSynth      |
-| Dpulse            | Dsaw              |
-| Dsaw              | SonicPiSynth      |
-| Dtri              | Dsaw              |
-| Dull Bell         | SonicPiSynth      |
-| Fm                | SonicPiSynth      |
-| Gnoise            | Noise             |
-| Growl             | SonicPiSynth      |
-| Hollow            | SonicPiSynth      |
-| Hoover            | SonicPiSynth      |
-| SynthKalimba      | SonicPiSynth      |
-| Mod Beep          | alias for ModSine |
-| Mod Dsaw          | SonicPiSynth      |
-| Mod Fm            | FM                |
-| Mod Pulse         | SonicPiSynth      |
-| Mod Saw           | SonicPiSynth      |
-| Mod Sine          | SonicPiSynth      |
-| Mod Tri           | SonicPiSynth      |
-| Noise             | Pitchless         |
-| Organ Tonewheel   | SonicPiSynth      |
-| SynthPiano        | SonicPiSynth      |
-| SynthPluck        | SonicPiSynth      |
-| Pnoise            | Noise             |
-| Pretty Bell       | DullBell          |
-| Prophet           | SonicPiSynth      |
-| Pulse             | Square            |
-| Rodeo             | SonicPiSynth      |
-| Saw               | Beep              |
-| Sine              | alias for Beep    |
-| Square            | SonicPiSynth      |
-| Subpulse          | Pulse             |
-| Supersaw          | SonicPiSynth      |
-| Tb303             | SonicPiSynth      |
-| Tech Saws         | SonicPiSynth      |
-| Tri               | Pulse             |
-| Winwood Lead      | SonicPiSynth      |
-| Zawa              | SonicPiSynth      |
+To be recognised as a synth you need to be added to the global variable `@@synth_infos` in `synthinfo.rb`.
+
+The functions you must add are:
+* name
+* introduced
+* synth_name
+* doc
+
+| Synth name        | Base Class        | arg_defaults | specific_arg_info |
+|-------------------|-------------------|--------------|-------------------|
+| Bass Foundation   | SonicPiSynth      | Yes          |                   |
+| Bass Highend      | SonicPiSynth      | Yes          | Yes               |
+| Beep/SynthViolin  | SonicPiSynth      | Yes          |                   |
+| Blade             | SonicPiSynth      | Yes          | Yes               |
+| Bnoise            | Noise             |              |                   |
+| Chipbass          | SonicPiSynth      | Yes          | Yes               |
+| Chiplead          | SonicPiSynth      | Yes          | Yes               |
+| Chipnoise         | Noise             | Yes          | Yes               |
+| Cnoise            | Noise             |              |                   |
+| Dark Ambience     | SonicPiSynth      | Yes          | Yes               |
+| Dpulse            | Dsaw              | Yes          | Yes               |
+| Dsaw              | SonicPiSynth      | Yes          |                   |
+| Dtri              | Dsaw              |              |                   |
+| Dull Bell         | SonicPiSynth      | Yes          |                   |
+| Fm                | SonicPiSynth      | Yes          | Yes               |
+| Gnoise            | Noise             |              |                   |
+| Growl             | SonicPiSynth      | Yes          |                   |
+| Hollow            | SonicPiSynth      | Yes          | Yes               |
+| Hoover            | SonicPiSynth      | Yes          |                   |
+| (Synth) Kalimba   | SonicPiSynth      | Yes          | Yes               |
+| Mod Beep          | alias for ModSine | Yes          |                   |
+| Mod Dsaw          | SonicPiSynth      | Yes          |                   |
+| Mod Fm            | FM                | Yes          |                   |
+| Mod Pulse         | SonicPiSynth      | Yes          |                   |
+| Mod Saw           | SonicPiSynth      | Yes          |                   |
+| Mod Sine          | SonicPiSynth      | Yes          |                   |
+| Mod Tri           | SonicPiSynth      | Yes          |                   |
+| Noise             | Pitchless         | Yes          |                   |
+| Organ Tonewheel   | SonicPiSynth      | Yes          | Yes               |
+| (Synth) Piano     | SonicPiSynth      | Yes          | Yes               |
+| (Synth) Pluck     | SonicPiSynth      | Yes          | Yes               |
+| Pnoise            | Noise             |              |                   |
+| Pretty Bell       | DullBell          |              |                   |
+| Prophet           | SonicPiSynth      | Yes          |                   |
+| Pulse             | Square            | Yes          |                   |
+| (Synth) Rodeo     | SonicPiSynth      | Yes          | Yes               |
+| Saw               | Beep              | Yes          |                   |
+| Sine              | alias for Beep    | Yes          |                   |
+| Square            | SonicPiSynth      | Yes          |                   |
+| Subpulse          | Pulse             | Yes          | Yes               |
+| Supersaw          | SonicPiSynth      | Yes          |                   |
+| Tb303             | SonicPiSynth      | Yes          | Yes               |
+| Tech Saws         | SonicPiSynth      | Yes          |                   |
+| Tri               | Pulse             |              |                   |
+| Winwood Lead      | SonicPiSynth      | Yes          | Yes               |
+| Zawa              | SonicPiSynth      | Yes          | Yes               |
 
 The base class broadly defines a well-behaved Sonic Pi synth, particularly in the function [default_arg_info](https://github.com/sonic-pi-net/sonic-pi/blob/710107fe22c5977b9fa5e83b71e30f847610e240/app/server/ruby/lib/sonicpi/synths/synthinfo.rb#L329) which defines a complete set of arguments most built-in synthesisers accept.
 
