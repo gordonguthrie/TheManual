@@ -58,6 +58,10 @@ The dev process is:
 
 Don't worry about the `literate_compiler` and jekyll build process that will be done after your changes have been merged.
 
+# I am adding an image
+
+Due to the build process, new images are ***NOT*** added under `the_manual/` but under `docs/images/chapterN`
+
 # I am adding a new synthesiser page
 
 The sources for the book are in the filed under `the_manual/` where edits and commits are made. If you wish to add a SuperCollider synthesiser please commit an `.scd` page with comments that are internally formatted with `markdown` (see the page `./the_manual/chapter5/second_synth.scd` for an example.

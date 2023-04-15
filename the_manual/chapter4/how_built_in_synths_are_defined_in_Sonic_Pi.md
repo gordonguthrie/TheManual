@@ -18,6 +18,58 @@ Note that sometimes synth names are just aliases for each other `sine`/`beep` an
 
 To be recognised as a synth you need to be added to the global variable `@@synth_infos` in `synthinfo.rb`.
 
+We can tell what functions are designed to be implemented in the sub-classes by looking for base class members that will blow up if they are not. Examining the [code](https://github.com/sonic-pi-net/sonic-pi/blob/710107fe22c5977b9fa5e83b71e30f847610e240/app/server/ruby/lib/sonicpi/synths/synthinfo.rb#L81) we see:
+
+```ruby
+      def doc
+        "Please write documentation!"
+      end
+
+      def arg_defaults
+        raise "please implement arg_defaults for #{self.class}"
+      end
+
+      def name
+        raise "please implement name for synth info: #{self.class}"
+      end
+
+      def category
+        raise "please implement category for synth info: #{self.class}"
+      end
+
+      def prefix
+        ""
+      end
+
+      def synth_name
+        raise "Please implement synth_name for #{self.class}"
+      end
+
+      def introduced
+        raise "please implement introduced version for synth info: #{self.class}"
+      end
+
+      def trigger_with_logical_clock?
+        raise "please implement trigger_with_logical_clock? for synth info: #{self.class}"
+      end
+```
+
+Lets go through them one by one.
+
+### function doc
+
+This function is called when the displaying the gui. If we go to [the `doc` function for the `beeb` synth](https://github.com/sonic-pi-net/sonic-pi/blob/710107fe22c5977b9fa5e83b71e30f847610e240/app/server/ruby/lib/sonicpi/synths/synthinfo.rb#L805) and edit it to:
+
+```ruby
+      def doc
+        "A simple pure sine wave, yowza. The sine wave is the simplest, purest sound there is and is the fundamental building block of all noise. The mathematician Fourier demonstrated that any sound could be built out of a number of sine waves (the more complex the sound, the more sine waves needed). Have a play combining a number of sine waves to design your own sounds!"
+      end
+```
+
+This function is called during the compile process (not at run time) and is used to generate the entry about the synth in the gui.
+
+![Screenshot of edited synth entry](../images/chapter4/synths_in_the_gui.png).
+
 The functions you must add are:
 * name
 * introduced
@@ -76,51 +128,3 @@ In addition synths commonly add the functions `art_defaults` and `specific_arg_i
 | Zawa              | SonicPiSynth      | Yes          | Yes               |
 
 The base class broadly defines a well-behaved Sonic Pi synth, particularly in the function [default_arg_info](https://github.com/sonic-pi-net/sonic-pi/blob/710107fe22c5977b9fa5e83b71e30f847610e240/app/server/ruby/lib/sonicpi/synths/synthinfo.rb#L329) which defines a complete set of arguments most built-in synthesisers accept.
-
-We are going to reimplment `beep` so lets look at that:
-
-```ruby
-    class Beep < SonicPiSynth
-      def name
-        "Sine Wave"
-      end
-
-      def introduced
-        Version.new(2,0,0)
-      end
-
-      def synth_name
-        "beep"
-      end
-
-      def doc
-        "A simple pure sine wave. The sine wave is the simplest, purest sound there is and is the fundamental building block of all noise. The mathematician Fourier demonstrated that any sound could be built out of a number of sine waves (the more complex the sound, the more sine waves needed). Have a play combining a number of sine waves to design your own sounds!"
-      end
-
-      def arg_defaults
-        {
-          :note => 52,
-          :note_slide => 0,
-          :note_slide_shape => 1,
-          :note_slide_curve => 0,
-          :amp => 1,
-          :amp_slide => 0,
-          :amp_slide_shape => 1,
-          :amp_slide_curve => 0,
-          :pan => 0,
-          :pan_slide => 0,
-          :pan_slide_shape => 1,
-          :pan_slide_curve => 0,
-
-          :attack => 0,
-          :decay => 0,
-          :sustain => 0,
-          :release => 1,
-          :attack_level => 1,
-          :decay_level => :sustain_level,
-          :sustain_level => 1,
-          :env_curve => 2
-        }
-      end
-    end
-```
