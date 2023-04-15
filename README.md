@@ -31,6 +31,14 @@ You then need to edit the file `make_book.sh` to point to that
 The process of generating the `pdf` file requires the installation of `wkhtmltopdf` from https://wkhtmltopdf.org/
 
 
+# How documents are built
+
+* the source files are under the directory `the_manual`
+* the `literate_compiler` (invoked by the script `make_book.sh`) runs over the source and generates the markdown into the directory `docs/` - overwriting old content
+* `Jekyll` coverts the markdown under `docs/` into the website at https://gordonguthrie.github.io/TheManual/
+    * You can run Jeklly locally too using the [docker-dev](https://github.com/gordonguthrie/docker-dev/blob/main/README.md) repo
+* the script `make_pdf.sh` uses `wkhtmltopdf` to generate a PDF of the website at https://gordonguthrie.github.io/TheManual/
+
 # I am just making tweaks, correcting typos on existing pages
 
 The dev process is:
