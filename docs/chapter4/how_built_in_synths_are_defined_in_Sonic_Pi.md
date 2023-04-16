@@ -117,6 +117,72 @@ Oftentimes this function is shared between multiple synths by use of an intermed
 
 If you are writing a family of synths you should consider this strategy.
 
+The ***values*** here show one side of the story - but the function [`default_arg_info`](https://github.com/sonic-pi-net/sonic-pi/blob/710107fe22c5977b9fa5e83b71e30f847610e240/app/server/ruby/lib/sonicpi/synths/synthinfo.rb#L329) contains another:
+
+```ruby
+      def default_arg_info
+        {
+          :note =>
+          {
+            :doc => "Note to play. Either a MIDI number or a symbol representing a note. For example: `30`, `52`, `:C`, `:C2`, `:Eb4`, or `:Ds3`",
+            :validations => [v_positive(:note)],
+            :modulatable => true
+          },
+
+          :note_slide =>
+          {
+            :doc => "Amount of time (in beats) for the note to change. A long slide value means that the note takes a long time to slide from the previous note to the new note. A slide of 0 means that the note instantly changes to the new note.",
+            :validations => [v_positive(:note_slide)],
+            :modulatable => true,
+            :bpm_scale => true
+          },
+          ...
+
+```
+
+This function contains a big set of standard, well-named common parameters. Different synthesisers support different subsets (and different families like the detuned ones or the mod ones or the pulse ones) support similar sets of parameters.
+
+* `note`
+* `note_slide`
+* `note_slide_shape`
+* `note_slide_curve`
+* `amp`
+* `amp_slide`
+* `pan`
+* `pan_slide`
+* `attack`
+* `decay`
+* `sustain`
+* `release`
+* `attack_level`
+* `decay_level`
+* `sustain_level`
+* `env_curve`
+* `cuttoff`
+* `cuttoff_slide`
+* `detune`
+* `detune_slide`
+* `mod_phase`
+* `mod_phase_offset`
+* `mod_phase_slide`
+* `mod_range`
+* `mod_range_slide`
+* `res`
+* `res_slide`
+* `pulse_width`
+* `pulse_width_slide`
+* `mod_pulse_width`
+* `mod_pulse_width_slide`
+* `mod_wave`
+* `mod_invert_wave`
+
+Using these parameters (where appropriate) with these names and the default validations in them will determine if your synthesiser ***feels like*** a well behaved SonicPi synthesiser.
+
+To understand that better you will need to study the synthesiser definitions in SonicPi and figure out which synth uses which parameter and then dig in and see how it is defined in the synthdefs.
+
+Some, of course, will be in `Overtone` and you will have to reverse engineer the underlying `SuperCollider` form.
+
+
 ### function name
 
 This is the name of the synth as it appears in the GUI - the name you use in code is defined in the function `synth_name`.
@@ -157,15 +223,9 @@ This function is used by FXs and not synths - so don't worry about it.
 
 ### function specific_arg_info
 
-TODO
+The function `specific_arg_info` lets you do validation on arguements that you have added to your synth that aren't part of the set that was discussed in the section `arg_defaults` - they take the same format.
 
-## Adding your own synth
 
-The functions you must add are:
-* name
-* introduced
-* synth_name
-* doc
 
 In addition synths commonly add the functions `arg_defaults` and `specific_arg_info`.
 

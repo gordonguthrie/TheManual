@@ -50,3 +50,11 @@ Lets look at this, as it is what we are reimplementing:
       end
     end
 ```
+
+## What do you need to add for a new synth
+
+The functions you must add are:
+* name
+* introduced
+* synth_name
+* doc
