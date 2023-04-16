@@ -53,11 +53,11 @@ Lets look at this, as it is what we are reimplementing:
     end
 ```
 
-## What do you need to add for a new synth
+## To make our reimplementation a first-class Sonic Pi synth we will create a new Class for it, inheriting from `SonicPiSynth` and implement the following functions:
 
-The functions you must add are:
-* name
-* introduced
-* synth_name
-* doc
+* `name`
+* `arg_defaults`
+* `introduced`
+* `synth_name`
+* `doc`
 
