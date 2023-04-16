@@ -15,7 +15,6 @@ To see how `Sonic PI V5.0.0 Tech Preview 2` handles the built in synths written 
 If we scroll down to the [bottom](https://github.com/sonic-pi-net/sonic-pi/blob/710107fe22c5977b9fa5e83b71e30f847610e240/etc/synthdefs/designs/overtone/sonic-pi/src/sonic_pi/basic.clj#L945) we can see the synths being compiled:
 
 ```clojure
-
  (comment
    (core/save-synthdef sonic-pi-beep)
    (core/save-synthdef sonic-pi-saw)

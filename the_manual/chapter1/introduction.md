@@ -57,4 +57,4 @@ In this chapter it all comes together and we rebuild our own version of the Beep
 
 ## Chapter 6 - Next steps
 
-What the future holds for user-defined synths in Sonic Pi
+What the future holds for this manual and user-defined synths in Sonic Pi

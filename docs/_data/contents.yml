@@ -41,10 +41,12 @@ toc:
       url:  ./chapter4/the_synth_beep.html
   - title: Chapter 5 - Recreating the beep synth
     subfolderitems:
+    - page: Planning our new synth
+      url:  ./chapter5/planning_our_new_synth.html
+    - page: MySecondSynth
+      url:  ./chapter5/mysecondsynth.html
     - page: Understanding UGens, channels, mixing and panning
       url:  ./chapter5/ugens_channels_mixing_and_panning.html
-    - page: Second synth
-      url:  ./chapter5/second_synth.html
     - page: Moar UGen stuff
       url:  ./chapter5/moar_ugen_stuff.html
     - page: Funky stuff part uno - variables
