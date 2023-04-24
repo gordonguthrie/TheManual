@@ -58,3 +58,5 @@ Lets look at this, as it is what we are reimplementing:
 * `introduced`
 * `synth_name`
 * `doc`
+
+In addition we will need to add an entry into [@@synth_info](https://github.com/sonic-pi-net/sonic-pi/blob/710107fe22c5977b9fa5e83b71e30f847610e240/app/server/ruby/lib/sonicpi/synths/synthinfo.rb#L8118).

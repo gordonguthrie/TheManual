@@ -12,12 +12,13 @@ https://gordonguthrie.github.io/TheManual/chapter2/supercollider_synths.html \
 https://gordonguthrie.github.io/TheManual/chapter3/deep_dive.html \
 https://gordonguthrie.github.io/TheManual/chapter3/investigating_sonic_pi_and_error_messages.html \
 https://gordonguthrie.github.io/TheManual/chapter3/loggin_loggin_loggin.html \
-https://gordonguthrie.github.io/TheManual/chapter3/how_built_in_synthdefs_are_loaded.html \
+https://gordonguthrie.github.io/TheManual/chapter3/how_synthdefs_are_loaded.html \
 https://gordonguthrie.github.io/TheManual/chapter3/how_sonic_pi_plays_synths.html \
 https://gordonguthrie.github.io/TheManual/chapter4/how_built_in_synths_are_defined_in_Sonic_Pi.html \
 https://gordonguthrie.github.io/TheManual/chapter4/the_synth_beep.html \
+https://gordonguthrie.github.io/TheManual/chapter5/planning_our_new_synth.html \
+https://gordonguthrie.github.io/TheManual/chapter5/mysecondsynth.html \
 https://gordonguthrie.github.io/TheManual/chapter5/ugens_channels_mixing_and_panning.html \
-https://gordonguthrie.github.io/TheManual/chapter5/second_synth.html \
 https://gordonguthrie.github.io/TheManual/chapter5/moar_ugen_stuff.html \
 https://gordonguthrie.github.io/TheManual/chapter5/funky_stuff_part_uno_variables.html \
 https://gordonguthrie.github.io/TheManual/chapter6/whats_next.html \

@@ -1,0 +1,9 @@
+@startuml
+
+SonicPi -> SonicPi: play (chord :c3, :major)
+SonicPi -> SonicPi: munge parameters including\nconvert chord to list\n[48, 52, 55]
+SonicPi -> SuperCollider: play note 48
+SonicPi -> SuperCollider: play note 52
+SonicPi -> SuperCollider: play note 55
+
+@enduml

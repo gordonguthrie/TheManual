@@ -10,6 +10,8 @@ The heavy lifting of making actual noises in Sonic Pi is provided by [SuperColli
 
 ## What is the purpose of this manual?
 
+### In scope - custom synths
+
 Sonic Pi has a great range of synthesisers but there is always room for more. This manual will make it easier for a small number of synthesiser designers and developers to make a much large range of synthesisers and effects available to the very large community of normal users of Sonic Pi.
 
 The goal of this project is to enable a small community of sound sculptors to build new synthesisers for the large community of live coders to incorporate by demystifying the messy business of making one coding paradigm available in a completely foreign one.
@@ -17,6 +19,10 @@ The goal of this project is to enable a small community of sound sculptors to bu
 It is a step-by-step manual explaining in detail the intricacies of the relationship between the Sonic Pi front end and the SuperCollider back end.
 
 It is not a substitute for [Sonic Pi book](https://www.amazon.co.uk/Code-Music-Sonic-Sam-Aaron/dp/1908256877) or the [SuperCollider book](https://mitpress.mit.edu/9780262232692/the-supercollider-book/).
+
+### Out of scope - custom FXs
+
+As we go through the book it will become clear that SuperCollider is used for all things that make sounds in Sonic Pi, synths, samples and effects (FXs). This book only covers synths.
 
 ## Who is this for?
 

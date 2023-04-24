@@ -19,7 +19,13 @@ If we run this definition in Super Collider we can get a synth that we can play 
 }).writeDefFile("/Users/gordonguthrie/.synthdefs"))
 ```
 
-To use it in Sonic Pi we need to first load it and then just use it as normal
+To use it in Sonic Pi we need to do two things. Firstly we need to enable it in the GUI:
+
+![enable external synths](../images/chapter1/enable_external_synths.png)
+
+***Nota Bene/Pay Attention*** the GUI enables both external synths and external FXs. This manual only covers synths but in theory you could write your own effects too.
+
+Then in Sonic Pi we have to load it and then just use it as normal
 
 ```ruby
 load_synthdefs "/Users/gordonguthrie/.synthdefs"

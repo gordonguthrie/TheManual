@@ -19,7 +19,7 @@ We get the log:
  └─ synth :beep, {note: 60.0}
 ```
 
-The integer note `60` has become a float `6.0` but we can use floats in our play command quite happily too:
+The integer note `60` has become a float `60.0` but we can use floats in our play command quite happily too:
 
 ```ruby
 play 60.0
@@ -267,6 +267,8 @@ and it just plays:
  └─ synth :myfirstsynth, {note: 60, pan: 3, gordon: 99}
 ```
 
+ `pan` is sanity checked to be between `-1.0` and `1.0` when we use a built-it synth, that doesn't happen here.
+
 When we read the code for our synthesizer we realise this is a bit odd. Our function only takes one argument `out` and yet we are calling it with 3, none of which is `out`.
 
 ```supercollider
@@ -296,6 +298,8 @@ Well the logs say all is well:
 ```
 
 but actually there is no sound. To understand this we need to trace through where the `out` value is used in our code. We use it as the first parameter in the uGen `Out`. It determines the output channel. The way Sonic Pi is wired up the channel `0` makes our computer play noise, any other channel is not connected to something to turn signal into sound - hence the silence.
+
+With a built-in synthesiser we can set `out` to `3` but when the synth is called the output plays - implying that the `out` parameter has been set to `0` in the munging.
 
 Lets look at some other incantations - particularly around notes.
 
@@ -353,5 +357,9 @@ Giving:
 ## So what have we learned?
 
 We have learned that Sonic Pi monkey's about with the parameters you have passed in before it sends them on to SuperCollider.
+
+If you are using a built-in synth, Sonic Pi checks your parameters systematically - but passes on additional parameters unchecked - this makes Sonic Pi work seemlessly, if you switch a built-in synth with additional parameters out for a simpler one the extended values are silently dropped.
+
+By contrast with a synth that Sonic Pi doesn't recognise - it just sends all the parameters unchanged to the synth.
 
 In the next section we will look at ways to find out what is happening in the code, and in the one after that we will peek inside Sonic Pi to figure out what's really going on.

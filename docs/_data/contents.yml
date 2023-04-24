@@ -27,8 +27,8 @@ toc:
       url:  ./chapter3/investigating_sonic_pi_and_error_messages.html
     - page: Loggin, loggin, loggin
       url:  ./chapter3/loggin_loggin_loggin.html
-    - page: How built-in synthdefs are loaded
-      url:  ./chapter3/how_built_in_synthdefs_are_loaded.html
+    - page: How synthdefs are loaded
+      url:  ./chapter3/how_synthdefs_are_loaded.html
     - page: How load_synthdefs works
       url:  ./chapter3/how_load_synthdefs_works.html
     - page: How SonicPi plays synths
