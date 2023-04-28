@@ -4,7 +4,7 @@
 
 ## Chapter 5 - Recreating the beep Synth
 
-A simple beep synthesiser
+A simple beep synthesiser - 2nd version
 
 This synth accepts the following parameters:
 

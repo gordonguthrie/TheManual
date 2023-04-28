@@ -4,7 +4,7 @@
 
 ## Chapter 5 - Recreating the beep Synth
 
-A simple beep synthesiser - third version
+A simple beep synthesiser - fourth and final version
 
 This synth accepts the following parameters:
 
@@ -20,10 +20,18 @@ This synth accepts the following parameters:
 * `amp_slide` - like `note_slide` but for `amp`
 * `amp_slide_shape` - like `note_slide_shape` but for `amp`
 * `amp_slide_curve` - like `note_slide_curve` but for `amp`
+* `attack` amount of time for sound to build up to full amplitude
+* `decay` amount of time for sound to move from the attack to the sustain level
+* `sustain` amount of time the sound is sustained
+* `release` amount of time for sound to go from the sustained level to 0
+* `attack_level` sound level at attack phase
+* `decay_level` sound level in decay phase
+* `sustain_level` sound level in sustain phase
+* `env_curve` shape of the curve of volume transition
 
 
 ```supercollider
-(SynthDef("mythirdsynth", {arg out = 0, note = 52.0, note_slide = 0, note_slide_shape = 1, note_slide_curve = 0, amp = 1, amp_slide = 0, amp_slide_shape = 1, amp_slide_curve = 0, pan = 0, pan_slide = 0, pan_slide_shape = 1, pan_slide_curve = 0;
+(SynthDef("myfourthsynth", {arg out = 0, note = 52.0, note_slide = 0, note_slide_shape = 1, note_slide_curve = 0, amp = 1, amp_slide = 0, amp_slide_shape = 1, amp_slide_curve = 0, pan = 0, pan_slide = 0, pan_slide_shape = 1, pan_slide_curve = 0;
 ```
 
 define the variables that we will use later

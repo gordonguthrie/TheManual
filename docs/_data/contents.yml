@@ -49,6 +49,8 @@ toc:
       url:  ./chapter5/mysecondsynth.html
     - page: My Third Synth
       url:  ./chapter5/mythirdsynth.html
+    - page: My Fourth And Final Synth
+      url:  ./chapter5/myfourthsynth.html
     - page: Moar UGen stuff
       url:  ./chapter5/moar_ugen_stuff.html
     - page: Funky stuff part uno - variables
