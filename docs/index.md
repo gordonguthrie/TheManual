@@ -3,7 +3,7 @@
 
 # The Manual
 
- ## Writing Super Collider Synthesisers For Sonic Pi
+## Writing Super Collider Synthesisers For Sonic Pi
 
 This manual is based on **Sonic Pi 5 (Technical Preview)**.
 
