@@ -4,7 +4,7 @@ toc:
     - page: For first time synth developers
       url:  ./for_reviewers/for_first_timers.html
     - page: For experienced Sonic Pi/SuperCollider Developers
-      url:  ./for_reviers/for_developers.html
+      url:  ./for_reviewers/for_developers.html
   - title: Chapter 1 - First beeps
     subfolderitems:
     - page: Introduction
