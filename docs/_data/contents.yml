@@ -1,4 +1,10 @@
 toc:
+  - title: For Reviewers
+    subfolderitems:
+    - page: For first time synth developers
+      url:  ./for_reviewers/for_first_timers.html
+    - page: For experienced Sonic Pi/SuperCollider Developers
+      url:  ./for_reviers/for_developers.html
   - title: Chapter 1 - First beeps
     subfolderitems:
     - page: Introduction
@@ -43,14 +49,20 @@ toc:
     subfolderitems:
     - page: Planning our new synth
       url:  ./chapter5/planning_our_new_synth.html
+    - page: Compile errors
+      url:  ./chapter5/compile_errors.html
     - page: Understanding UGens, channels, mixing and panning
       url:  ./chapter5/ugens_channels_mixing_and_panning.html
-    - page: My Second Synth
-      url:  ./chapter5/mysecondsynth.html
-    - page: My Third Synth
-      url:  ./chapter5/mythirdsynth.html
-    - page: My Fourth And Final Synth
-      url:  ./chapter5/myfourthsynth.html
+    - page: My Second Synth (SuperCollider)
+      url:  ./chapter5/mysecondsynth_supercollider.html
+    - page: My Second Synth (Ruby)
+      url:  ./chapter5/mysecondsynth_ruby.html
+    - page: My Second Synth (Sonic Pi)
+      url:  ./chapter5/mysecondsynth_sonic_pi.html
+    - page: My Third Synth (SuperCollider)
+      url:  ./chapter5/mythirdsynth_supercollider.html
+    - page: My Fourth And Final Synth (SuperCollider)
+      url:  ./chapter5/myfourthsynth_supercollider.html
     - page: Moar UGen stuff
       url:  ./chapter5/moar_ugen_stuff.html
     - page: Funky stuff part uno - variables

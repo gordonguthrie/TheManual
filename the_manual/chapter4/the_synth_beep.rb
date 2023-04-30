@@ -1,11 +1,11 @@
+=begin
 # Chapter 4 - How built-in synths are defined in Sonic Pi
 
 ## The synth beep
 
 Lets look at this, as it is what we are reimplementing:
+=end
 
-
-```ruby
     class Beep < SonicPiSynth
       def name
         "Sine Wave"
@@ -49,9 +49,9 @@ Lets look at this, as it is what we are reimplementing:
         }
       end
     end
-```
 
-## To make our reimplementation a first-class Sonic Pi synth we will create a new Class for it, inheriting from `SonicPiSynth` and implement the following functions:
+=being
+To make our reimplementation a first-class Sonic Pi synth we will create a new Class for it, inheriting from `SonicPiSynth` and implement the following functions:
 
 * `name`
 * `arg_defaults`
@@ -60,3 +60,4 @@ Lets look at this, as it is what we are reimplementing:
 * `doc`
 
 In addition we will need to add an entry into [@@synth_info](https://github.com/sonic-pi-net/sonic-pi/blob/710107fe22c5977b9fa5e83b71e30f847610e240/app/server/ruby/lib/sonicpi/synths/synthinfo.rb#L8118).
+=end

@@ -75,16 +75,21 @@ There's some wierd stuff tho. The `Overtone` definition has all the default argu
 
 ## So whats the plan?
 
-* `mysecondsynth` will use the `note` parameter and the `midicps` uGen to turn SonicPi midi notes into frequenies and let our synth play plain notes without a bend
-* `mythirdsynth` will use the `amp` and `pan` parameters with the `Pan` uGen to add volume and panning control
+* `mysecondsynth` will use the `note` parameter and the `midicps` uGen to turn SonicPi midi notes into frequencies and let our synth play plain notes without a bend. It will also implement `amp` and `pan` (with the `Pan2` uGen) to let us control the volume and placing the sound on the left or right and `release` to determine the length of the note
+* `mythirdsynth` will use the `VarLag` uGen to let us slide the `note`, `amp` and `pan` paramaters
 * `myfourthsynth` will switch out from a `Line` envelope to a proper one using `env-gen` and take the `attack`, `decay`, `sustain` and `release` parameters - it will also use the `env_curve` to alter the shape of the envelope
-* `myfifthsynth` will use `varlag` to add the sliding behaviour to `note`, `pan` and `amp`
 
-In between these synths we will look at elements of the SuperCollider language.
+Each of these synths will be implemented in both Sonic Pi and SuperCollider so they will have working error checking and can play chords.
 
-***This manual will not teach you SuperCollider - just enough to get a Sonic Pi synth up from scratch.***
+For each synth we will look at:
+
+* what needs to be written in SuperCollider
+* what needs to be added in Sonic Pi (and where)
+* what features are implemented when you play the synths
 
 ### Playing these synths
 
 The synths in this manual are all written in literate SuperCollider - the code that generates the page you are reading is runnable in SuperCollider.
+
+The Ruby parts you need to copy into Sonic Pi are also written in literate Ruby - so runnable Ruby code you can copy and paste.
 
