@@ -51,6 +51,8 @@ toc:
       url:  ./chapter5/planning_our_new_synth.html
     - page: The development cycle
       url:  ./chapter5/the_development_cycle.html
+    - page: Funky stuff part uno - variables
+      url:  ./chapter5/funky_stuff_part_uno_variables.html
     - page: Compile errors
       url:  ./chapter5/compile_errors.html
     - page: Understanding UGens, channels, mixing and panning
@@ -67,8 +69,6 @@ toc:
       url:  ./chapter5/myfourthsynth_supercollider.html
     - page: Moar UGen stuff
       url:  ./chapter5/moar_ugen_stuff.html
-    - page: Funky stuff part uno - variables
-      url:  ./chapter5/funky_stuff_part_uno_variables.html
   - title: Chapter 6 - What's next
     subfolderitems:
     - page: What's next

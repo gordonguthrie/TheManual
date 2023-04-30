@@ -4,6 +4,30 @@
 
 ## Compile errors
 
+There are a number of common errors you might see.
+
+### You haven't started the server
+
+```supercollider
+WARNING: server 'localhost' not running.
+```
+
+If you see this, you are trying to do things in the SuperCollider REPL but haven't started the server. You can use the menu command `Server -> Boot Server` to do it.
+
+Or conventionally you can set the variable `s` to the server and invoke methods on it:
+
+```supercollider
+=Server.local;
+
+s.boot;
+
+s.quit;
+```
+
+(it's only a convention, can use any variable here...)
+
+### Wrong file name error
+
 If you get the error ending in:
 
 ```supercollider

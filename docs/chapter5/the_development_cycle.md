@@ -4,5 +4,56 @@
 
 ## Make it work in SuperCollider
 
-The way to do this is to get your synth working in SuperCollider first before you save it as a SynthDef and start using it in Sonic Pi
+The way to do this is to get your synth working in SuperCollider first before you save it as a SynthDef and start using it in Sonic Pi.
 
+Lets look at some simple sounds:
+
+```supercollider
+{SinOsc.ar(440, 0, 0.2)}.play;
+```
+
+This will give us a continous sound.
+
+You can assign this to a variable and invoke `play` on it:
+
+```supercollider
+(f = {SinOsc.ar(440, 0, 0.2)};
+f.play;)
+```
+
+You don't have to wrap it in a scope ie `(` and `)`.
+
+Similarly when we define Synths using `SynthDef` we have saved them as a compiled thing with:
+
+```supercollider
+(SynthDef("somesynth",{
+	...
+	super collider code
+	...
+}).writeDefFile("/Users/gordonguthrie/.synthdefs"))
+```
+
+We can swap out the `writeDefFile` method with the `add` method like so:
+
+```supercollider
+a = Synth.new("somesynth");
+```
+
+We can pass in different values in the call:
+
+```supercollider
+a = Synth.new("somesynth", [note: 85, release: 6, pan: 0.3, amp: 0.3]);
+```
+
+Or we can control it. First invoke the synth with a long duration:
+
+```supercollider
+a = Synth.new("somesynth", [note: 64, release: 60]);
+```
+
+then while it is playing use `set` to control it:
+
+```supercollider
+a.set("note", 75);
+a.set("amp", 0.5);
+```
