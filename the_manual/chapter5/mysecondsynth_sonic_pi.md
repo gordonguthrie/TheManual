@@ -1,3 +1,8 @@
 # Chapter 5 - Recreating the bep synth
 
-## Running our synth
+## Where's my synth?
+
+If you have just restarted Sonic Pi after editing the Ruby and you look at the synth page our new synth isn't there:
+
+![No synth](../../docs/images/chapter5/no_synth.png)
+

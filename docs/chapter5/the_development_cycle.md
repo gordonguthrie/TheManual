@@ -36,16 +36,29 @@ Similarly when we define Synths using `SynthDef` we have saved them as a compile
 We can swap out the `writeDefFile` method with the `add` method like so:
 
 ```supercollider
+(SynthDef("somesynth",{
+	...
+	super collider code
+	...
+}).add;)
+```
+
+We can then create a new instance of it and assign it to a variable:
+
+
+```supercollider
 a = Synth.new("somesynth");
 ```
 
-We can pass in different values in the call:
+We can pass in different values in the call to create it:
 
 ```supercollider
 a = Synth.new("somesynth", [note: 85, release: 6, pan: 0.3, amp: 0.3]);
 ```
 
-Or we can control it. First invoke the synth with a long duration:
+(This is what happens when you use the `play` command in Sonic Pi.)
+
+And we can control it. First invoke the synth with a long duration:
 
 ```supercollider
 a = Synth.new("somesynth", [note: 64, release: 60]);
@@ -57,3 +70,6 @@ then while it is playing use `set` to control it:
 a.set("note", 75);
 a.set("amp", 0.5);
 ```
+
+Unsurprisingly `set` is what Sonic Pi uses under the covers to control SuperCollider synths.
+
