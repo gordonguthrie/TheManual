@@ -4,6 +4,8 @@
 We need to add this class definition to the file `synthifo.rb` under the path `app/server/ruby/lib/sonicpi/synths`
 
 The name needs to be variable (ie no spaces or funky characters please).
+
+Why do we have to set a non-prefix?
 =end
 
  class MySecondSynth < SonicPiSynth
@@ -21,6 +23,10 @@ The name needs to be variable (ie no spaces or funky characters please).
 
       def doc
         "my sine wave"
+      end
+
+      def prefix
+        ""
       end
 
       def arg_defaults

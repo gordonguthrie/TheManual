@@ -14,11 +14,12 @@ Luckily once SonicPi is built this is very straightforward. `ruby` is an interpr
 
 Once we have compiled a built SonicPi we can start and run it by invoking the binary `sonic-pi` which is created in the directory `app/build/gui/qt`.
 
-Lets look at 4 techniques for understanding what is going on:
+Lets look at 5 techniques for understanding what is going on:
 
 * existing log messages
 * built in messaging inside the runtime
 * logging during boot
+* (some) logging of OSC messages between Sonic Pi and SuperCollider
 * native Ruby Logging
 
 but before we do, beware false friends!
@@ -210,6 +211,25 @@ ome to Sonic Pi v5.0.0-Tech Preview 2
    and help us keep Sonic Pi alive:
 
    https://patreon.com/samaaron
+```
+
+## (Some) logging of OSC messages between Sonic Pi and SuperCollider
+
+We can use this command to get some OSC logging:
+
+```ruby
+use_osc_logging true
+```
+
+It will dump error messages into the Sonic Pi log `scsynth.log in `~/.sonic_pi/logs`
+
+```
+*** ERROR: SynthDef sonic-pi-mysecondsynth not found
+FAILURE IN SERVER /s_new SynthDef not found
+FAILURE IN SERVER /n_set Node 10 not found
+FAILURE IN SERVER /n_set Node 10 not found
+FAILURE IN SERVER /n_set Node 10 not found
+FAILURE IN SERVER /n_set Node 10 not found
 ```
 
 ## Native ruby logging
