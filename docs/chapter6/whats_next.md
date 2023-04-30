@@ -23,3 +23,7 @@ When there is a single integrated way of loading synths without recompiling the 
 This manual is compiled with the [Literate Code Reader](https://gordonguthrie.github.io/literatecodereader/) escript which means that valid SuperCollider code will compile into a readable html page.
 
 This means that simply by commiting a working SuperCollider synth for Sonic Pi it will be added to the book.
+
+## Custom effects (FXs)
+
+In theory you should be able to write and load your own effects (FXs) in Sonic Pi. This is out of scope for this manual, but could be in scope for the 2nd edition.

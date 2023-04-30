@@ -27,8 +27,8 @@ toc:
       url:  ./chapter3/investigating_sonic_pi_and_error_messages.html
     - page: Loggin, loggin, loggin
       url:  ./chapter3/loggin_loggin_loggin.html
-    - page: How built-in synthdefs are loaded
-      url:  ./chapter3/how_built_in_synthdefs_are_loaded.html
+    - page: How synthdefs are loaded
+      url:  ./chapter3/how_synthdefs_are_loaded.html
     - page: How load_synthdefs works
       url:  ./chapter3/how_load_synthdefs_works.html
     - page: How SonicPi plays synths
@@ -43,10 +43,14 @@ toc:
     subfolderitems:
     - page: Planning our new synth
       url:  ./chapter5/planning_our_new_synth.html
-    - page: MySecondSynth
-      url:  ./chapter5/mysecondsynth.html
     - page: Understanding UGens, channels, mixing and panning
       url:  ./chapter5/ugens_channels_mixing_and_panning.html
+    - page: My Second Synth
+      url:  ./chapter5/mysecondsynth.html
+    - page: My Third Synth
+      url:  ./chapter5/mythirdsynth.html
+    - page: My Fourth And Final Synth
+      url:  ./chapter5/myfourthsynth.html
     - page: Moar UGen stuff
       url:  ./chapter5/moar_ugen_stuff.html
     - page: Funky stuff part uno - variables

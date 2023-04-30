@@ -27,4 +27,4 @@ This section doesn't cover all the pathways by which your synth will be called, 
 
 ## Small apology
 
-Its been 25 years since last I wrote Ruby in anger, I can sort-of read it still, but not write it, to ***caveat lector/reader beware***.
+Its been 25 years since last I wrote Ruby in anger, I can sort-of read it still, but not write it, so ***caveat lector/reader beware***.

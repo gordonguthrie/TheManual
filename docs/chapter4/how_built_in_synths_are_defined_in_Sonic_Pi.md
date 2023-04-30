@@ -105,7 +105,7 @@ Here is the `arg_defaults` function of the `beep` synthesizer:
       end
 ```
 
-It is simply the list of all the arguments and their default values - note how the values are chained - the default value of `:decay_level` is defined as `:sustain_level`.
+It is simply the list of all the arguments and their default values - note how the values are chained - the default value of `:decay_level` is defined as `:sustain_level`. (The chaining is only 1 level deep - you can chain a variable to the value of another one, but that one needs an actual value.)
 
 Oftentimes this function is shared between multiple synths by use of an intermediate class. See later on where the following functions inherit their arguments from the `Noise` synth:
 
@@ -215,7 +215,7 @@ This code base is used to support all three - but the dip into `SynthInfo` makes
 
 This is the name of the synth as used in SonicPi code - all lowercase and spaces replaced with `_`s.
 
-These names are also aliased in the definition of [`@@synth_infos``](https://github.com/sonic-pi-net/sonic-pi/blob/710107fe22c5977b9fa5e83b71e30f847610e240/app/server/ruby/lib/sonicpi/synths/synthinfo.rb#L8118)
+These names are also aliased in the definition of [``@@synth_infos``](https://github.com/sonic-pi-net/sonic-pi/blob/710107fe22c5977b9fa5e83b71e30f847610e240/app/server/ruby/lib/sonicpi/synths/synthinfo.rb#L8118)
 
 ### function trigger_with_logical_clock
 
@@ -224,8 +224,6 @@ This function is used by FXs and not synths - so don't worry about it.
 ### function specific_arg_info
 
 The function `specific_arg_info` lets you do validation on arguements that you have added to your synth that aren't part of the set that was discussed in the section `arg_defaults` - they take the same format.
-
-
 
 In addition synths commonly add the functions `arg_defaults` and `specific_arg_info`.
 

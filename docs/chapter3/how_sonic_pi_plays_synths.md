@@ -59,6 +59,8 @@ A call to a built-in synth may (if it is a chord) be passed onto the function [t
 
 ***Nota Bene/Take Note***: the function `trigger_chord` ***DOESN'T*** call the synth in SuperCollider and pass it a chord - it asks SuperCollider to play each note separately.
 
+![Chords as notes](../images/uml/play_chord.png)
+
 IT does some housekeeping - including calling [normalise_and_resolve_synth_args](https://github.com/sonic-pi-net/sonic-pi/blob/710107fe22c5977b9fa5e83b71e30f847610e240/app/server/ruby/lib/sonicpi/lang/sound.rb#L3753) - to make sure that SuperCollider behaves well - the synth that plays each note is grouped, the volume of each note is normalised - the volume of each note is divided by the number of the notes so that the chord as a whole sounds as loud as the specified volume.
 
 `trigger_chord` ends up calling [trigger_synth](https://github.com/sonic-pi-net/sonic-pi/blob/710107fe22c5977b9fa5e83b71e30f847610e240/app/server/ruby/lib/sonicpi/lang/sound.rb#L3525).

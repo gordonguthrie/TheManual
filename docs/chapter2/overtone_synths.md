@@ -10,7 +10,7 @@ Remember that FX and sample handling and anything that also affects sound is han
 
 The reason for this is that it is easier to incorporate Clojure source code into a multi-server compile and tooling chain - but harder to do the same with SuperCollider source which is designed to be saved and compiled inside the SuperCollider built in IDE.
 
-`Sonic PI V5.0.0 Tech Preview 2` has some mewer, more sophisticated synths written directly in SuperCollider. 
+`Sonic PI V5.0.0 Tech Preview 2` has some newer, more sophisticated synths written directly in SuperCollider.
 
 To see how `Sonic PI V5.0.0 Tech Preview 2` handles the built in synths written in `overtone` lets look the file [basic.clj](https://github.com/sonic-pi-net/sonic-pi/blob/710107fe22c5977b9fa5e83b71e30f847610e240/etc/synthdefs/designs/overtone/sonic-pi/src/sonic_pi/basic.clj)
 

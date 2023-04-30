@@ -7,7 +7,7 @@
 
 This manual is based on **Sonic Pi 5 (Technical Preview)**.
 
-## Gordon Guthrie
+## Author - Gordon Guthrie
 
 ```
  __          __        _      _____
