@@ -49,6 +49,8 @@ toc:
     subfolderitems:
     - page: Planning our new synth
       url:  ./chapter5/planning_our_new_synth.html
+    - page: The development cycle
+      url:  ./chapter5/the_development_cycle.html
     - page: Compile errors
       url:  ./chapter5/compile_errors.html
     - page: Understanding UGens, channels, mixing and panning

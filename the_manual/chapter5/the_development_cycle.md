@@ -1,0 +1,5 @@
+# Chapter 5 - Recreating the beep Synth
+
+## Make it work in SuperCollider
+
+The way to do this is to get your synth working in SuperCollider first before you save it as a SynthDef and start using it in Sonic Pi

@@ -1,6 +1,6 @@
 # For Reviewers
 
-## If you are an experience Sonic Pi or SuperCollider developer
+## If you are an experienced Sonic Pi or SuperCollider developer
 
 I need your help to improve quality:
 

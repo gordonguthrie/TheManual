@@ -19,6 +19,7 @@ https://gordonguthrie.github.io/TheManual/chapter3/how_sonic_pi_plays_synths.htm
 https://gordonguthrie.github.io/TheManual/chapter4/how_built_in_synths_are_defined_in_Sonic_Pi.html \
 https://gordonguthrie.github.io/TheManual/chapter4/the_synth_beep.html \
 https://gordonguthrie.github.io/TheManual/chapter5/planning_our_new_synth.html \
+https://gordonguthrie.github.io/TheManual/chapter5/the_development_cycle.html \
 https://gordonguthrie.github.io/TheManual/chapter5/compile_errors.html \
 https://gordonguthrie.github.io/TheManual/chapter5/ugens_channels_mixing_and_panning.html \
 https://gordonguthrie.github.io/TheManual/chapter5/mysecondsynth_supercollider.html \
