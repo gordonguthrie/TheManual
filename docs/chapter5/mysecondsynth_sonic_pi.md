@@ -6,6 +6,6 @@
 
 If you have just restarted Sonic Pi after editing the Ruby and you look at the synth page our new synth isn't there:
 
-![No synth](../../docs/images/chapter5/no_synth.png)
+![No synth](../images/chapter5/no_synth.png)
 
 
