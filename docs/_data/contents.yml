@@ -69,6 +69,8 @@ toc:
       url:  ./chapter5/mythirdsynth_ruby.html
     - page: My Third Synth (Sonic Pi)
       url:  ./chapter5/mythirdsynth_sonic_pi.html
+    - page: The Env uGen and the plot function in SuperCollider
+      url:  ./chapter5/the_env_ugen.html
     - page: My Fourth And Final Synth (SuperCollider)
       url:  ./chapter5/myfourthsynth_supercollider.html
     - page: Moar UGen stuff
