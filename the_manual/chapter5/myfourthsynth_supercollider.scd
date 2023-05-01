@@ -30,7 +30,7 @@ This synth accepts the following parameters:
 * the default value of `decay_level` is -1 even tho the only valid values of `decay_level`
 * that Sonic Pi will ever accept are a greater than zero - this is used to test if a `decay_level` has been set
 */
-(SynthDef("myfourthsynth", {| out = 0,
+(SynthDef("sonic-pi-myfourthsynth", {| out = 0,
 	                        note = 52.0, note_slide = 0, note_slide_shape = 1, note_slide_curve = 0,
 	                        amp = 1, amp_slide = 0, amp_slide_shape = 1, amp_slide_curve = 0,
 	                        pan = 0, pan_slide = 0, pan_slide_shape = 1, pan_slide_curve = 0,
