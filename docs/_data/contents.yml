@@ -73,6 +73,10 @@ toc:
       url:  ./chapter5/the_env_ugen.html
     - page: My Fourth And Final Synth (SuperCollider)
       url:  ./chapter5/myfourthsynth_supercollider.html
+    - page: My Fourth And Final Synth (Ruby)
+      url:  ./chapter5/myfourthsynth_ruby.html
+    - page: My Fourth And Final Synth (Sonic Pi)
+      url:  ./chapter5/myfourthsynth_sonic_pi.html
     - page: Moar UGen stuff
       url:  ./chapter5/moar_ugen_stuff.html
     - page: Your First Synth
