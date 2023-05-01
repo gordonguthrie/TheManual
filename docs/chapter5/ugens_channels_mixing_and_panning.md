@@ -2,7 +2,7 @@
 <!-- https://gordonguthrie.github.io/literatecodereader/ -->
 # Chapter 5 - Recreating the beep synth
 
-## uGens
+## uGens, channels, mixing and panning
 
 Before we can start making our simple synthesizer fit for use with Sonic Pi we need to learn a little about SuperCollider, in particular:
 

@@ -72,7 +72,7 @@ This function is called when the displaying the gui. If we go to [the `doc` func
 
 This function is called during the compile process (not at run time) and is used to generate the entry about the synth in the gui.
 
-![Screenshot of edited synth entry](../images/chapter4/synths_in_the_gui.png).
+![Screenshot of edited synth entry](../images/chapter4/synths_in_the_gui.png)
 
 ### function arg_defaults
 

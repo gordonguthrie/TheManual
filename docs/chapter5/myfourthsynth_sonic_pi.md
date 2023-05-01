@@ -2,39 +2,24 @@
 <!-- https://gordonguthrie.github.io/literatecodereader/ -->
 # Chapter 5 - Recreating the beep synth
 
-## Third Version
+## Using the fourth version
 
-We have added extra synth controls compared to version 2, so lets just test those out.
+We have added extra synth controls compared to version 3, so lets just test those out.
 
 ```ruby
-use_synth(:mythirdsynth)
+load_synthdefs "/Users/gordonguthrie/.synthdefs"
 
-use_osc_logging true
+use_synth(:myfourthsynth)
 
-play 65
+play 54, pan: 0.9, amp: 0.4, attack: 1, decay: 0.5, sustain: 3
 
-sleep 1
+sleep 0.5
 
-s = play 69, duration: 12, note_slide: 0.2, note_slide_curve: 0.4, amp_slide: 0.4, amp_slide_shape: 4, pan_slide: 0.4, pan_slide_shape: 7
+play 58, pan: -0.3, amp: 0.7
 
-print(s)
+sleep 0.5
 
-sleep 1
-
-control s, note: 72, amp: 0.7, pan: 0.3
-
-sleep 1
-
-control s, note: 72, amp: 0.5, pan: 0.37
-
-sleep 1
-
-control s, note: 69, amp: 0.85, pan: -0.35
-
-sleep 1
-
-control s, note: 75, amp: 0.4, pan: 0.8
-
+play 92, pan: 0.3, amp: 1.0
 ```
 If you get errors when you do this, go back and read the section on running Version 2 for tips.
 

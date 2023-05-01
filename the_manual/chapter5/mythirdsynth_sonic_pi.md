@@ -1,6 +1,6 @@
 # Chapter 5 - Recreating the beep synth
 
-## Third Version
+## Using the third version
 
 We have added extra synth controls compared to version 2, so lets just test those out.
 
@@ -32,7 +32,6 @@ control s, note: 69, amp: 0.85, pan: -0.35
 sleep 1
 
 control s, note: 75, amp: 0.4, pan: 0.8
-
 ```
 If you get errors when you do this, go back and read the section on running Version 2 for tips.
 

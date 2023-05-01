@@ -2,7 +2,7 @@
 
 ## The Clojure library: Overtone
 
-For earlier versions of Sonic Pi synths were written not in SuperCollider but with a Clojure library called Overtone.
+For earlier versions of Sonic Pi synths were written not in SuperCollider but with a Clojure library called [Overtone](https://github.com/overtone/overtone).
 
 Remember that FX and sample handling and anything that also affects sound is handled in SuperCollider under the covers and the source code that you find in the [Clojure synths](https://github.com/sonic-pi-net/sonic-pi/tree/710107fe22c5977b9fa5e83b71e30f847610e240/etc/synthdefs/designs/overtone/sonic-pi/src/sonic_pi) directory will include code to do that too.
 
@@ -25,7 +25,7 @@ If we scroll down to the [bottom](https://github.com/sonic-pi-net/sonic-pi/blob/
    (core/save-synthdef sonic-pi-dsaw)
    ...
 ```
-If we scroll back up to the [top](https://github.com/sonic-pi-net/sonic-pi/blob/710107fe22c5977b9fa5e83b71e30f847610e240/etc/synthdefs/designs/overtone/sonic-pi/src/sonic_pi/basic.clj#L945) we can find the definition of the `beep` synth in Clojure:
+If we scroll back up to the [top](https://github.com/sonic-pi-net/sonic-pi/blob/710107fe22c5977b9fa5e83b71e30f847610e240/etc/synthdefs/designs/overtone/sonic-pi/src/sonic_pi/basic.clj#L19) we can find the definition of the `beep` synth in Clojure:
 
 ```clojure
 (without-namespace-in-synthdef

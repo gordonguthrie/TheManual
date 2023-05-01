@@ -2,7 +2,7 @@
 <!-- https://gordonguthrie.github.io/literatecodereader/ -->
 # Chapter 5 - Recreating the beep synth
 
-## Where's my synth?
+## So I went to use the 2nd version and where's it gone?
 
 If you have just restarted Sonic Pi after editing the Ruby and you look at the synth page our new synth isn't there:
 

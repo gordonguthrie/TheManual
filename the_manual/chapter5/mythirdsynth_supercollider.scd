@@ -2,7 +2,7 @@
 
 ## Chapter 5 - Recreating the beep Synth
 
-A simple beep synthesiser - third version
+A simple beep synthesiser - third version in SuperCollider
 
 This synth accepts the following parameters:
 

@@ -2,8 +2,6 @@
 <!-- https://gordonguthrie.github.io/literatecodereader/ -->
 # Chapter 3 - Deep dive
 
-##
-
 ## How built-in synthdefs are loaded
 
 Lets go hunting for the code that loads synth definitions and see what it does.
