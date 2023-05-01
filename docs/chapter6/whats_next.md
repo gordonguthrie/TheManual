@@ -6,7 +6,7 @@
 
 At the moment the loading of a synth and the presentation of it as built in are in two separate places.
 
-The load command doens't know or check if the synth description, parameters and validations are loaded. The runtime looks and treats synths one way if they are built in and a different way if they are not recognised.
+The load command doesn't know or check if the synth description, parameters and validations are loaded. The runtime looks and treats synths one way if they are built in and a different way if they are not recognised.
 
 The strategic view is to merge these two things - to have a load process that loads both the synthesiser and the synth description, parameters and validation.
 
@@ -22,8 +22,9 @@ When there is a single integrated way of loading synths without recompiling the 
 
 This manual is compiled with the [Literate Code Reader](https://gordonguthrie.github.io/literatecodereader/) escript which means that valid SuperCollider code will compile into a readable html page.
 
-This means that simply by commiting a working SuperCollider synth for Sonic Pi it will be added to the book.
+This means that simply by committing a working SuperCollider synth for Sonic Pi it will be added to the book.
 
 ## Custom effects (FXs)
 
 In theory you should be able to write and load your own effects (FXs) in Sonic Pi. This is out of scope for this manual, but could be in scope for the 2nd edition.
+

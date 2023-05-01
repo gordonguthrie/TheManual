@@ -1,15 +1,15 @@
 # Chapter 5 - Recreating the beep synth
 
-## UGens, channels, mixing and panning
+## uGens
 
 Before we can start making our simple synthesizer fit for use with Sonic Pi we need to learn a little about SuperCollider, in particular:
 
-* UGens - Unit Generators
+* uGens - Unit Generators
 * Channels - how SuperCollider outputs sound signals
 * Mixing - how we merge sound signals
 * Panning - how we place sounds in the stereo field
 
-## UGens
+## uGens
 
 The code that we write for SuperCollider seems familiar, it seems like normal computer code, but its not.
 
@@ -31,7 +31,7 @@ b={SinOsc(440 0, 0.2)};
 
 What value does `b` have? Well it fluctuates between -1 and 1 440 times a second. `b` is not a variable like in `javascript` or `c` which holds discrete values, it holds a signal.
 
-`SinOsc` is a `UGen` - a unit generator - a bit of code that generates a signal.
+`SinOsc` is a `uGen` - a unit generator - a bit of code that generates a signal.
 
 ## Channels
 
@@ -150,9 +150,9 @@ So what happens if I have a 2 speaker setup, with Channel 0 on the left and Chan
 
 The way we solve this problem is by `mixing`.
 
-## The Mix UGen
+## The Mix uGen
 
-`Mix` is a `UGen` that takes an array of channels in, adds the signals together and outputs them on a single channel:
+`Mix` is a `uGen` that takes an array of channels in, adds the signals together and outputs them on a single channel:
 
 ```
    Channel 0────┐
@@ -169,11 +169,11 @@ The way we solve this problem is by `mixing`.
 
 Great, so now if we get our `SinOsc` to play a chord, we can mix all the beeps together and actually hear them all, as a single thing. But its still in the left speaker only. Maybe we want it one the left, maybe on the right, maybe in the middle. (Now this is not how a well behaved Sonic Pi synth plays a chord - it sends each note to a clone of the same synth. In building our `beep` clone we won't be using `Mix` but it make sense for you to know the context in which `Pan` operates.)
 
-We can use a `UGen` called `Pan` to do this.
+We can use a `uGen` called `Pan` to do this.
 
-## The Pan UGen
+## The Pan uGen
 
-`Pan` is a `UGen` that takes a single channel input and splits it into two:
+`Pan` is a `uGen` that takes a single channel input and splits it into two:
 
 ```
                  ╔════════════╗
@@ -203,4 +203,5 @@ So the first thing we have to do to get our synth ready is put all these things 
                             │       1320Hz together           ║            ║        Half the volume on Channel 0
                             └─▶                          ────▶║  Pan 0.0   ║───────▶
                                   Output on Channel 0         ║            ║        Half the volume on Channel 1
+                                                              ╚════════════╝ 
 ```

@@ -10,7 +10,7 @@ Lets look at some simple sounds:
 {SinOsc.ar(440, 0, 0.2)}.play;
 ```
 
-This will give us a continous sound.
+This will give us a continuous sound.
 
 You can assign this to a variable and invoke `play` on it:
 

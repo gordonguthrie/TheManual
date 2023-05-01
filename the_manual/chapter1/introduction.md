@@ -1,6 +1,6 @@
 # Chapter 1 - First beeps
 
-## SonicPi and SuperCollider
+## Sonic Pi and SuperCollider
 
 [Sonic Pi](https://sonic-pi.net/) is a user-friendly live-coding environment that lets people start making music very quickly and is focussed on ease of use and quick starts.
 
@@ -28,7 +28,7 @@ This manual is for people who can **already** use [Sonic Pi](https://sonic-pi.ne
 
 SuperCollider offers functionality that allows you **build** and **play** synthesisers.
 
-This manual focusses on **building** them only: for people to play them using SonicPi.
+This manual focusses on **building** them only: for people to play them using Sonic Pi.
 
 SuperCollider is a major programming environment in its own right and to learn how to get the most out of it you will need to study it. There
 
@@ -52,7 +52,7 @@ This OPTIONAL chapter does a deep dive into how synths are loaded and invoked - 
 
 The chapter goes through how built in synths behave in terms of:
 
-* paramaters, default values and validations
+* parameters, default values and validations
 * error messages
 * integration with the documentation/in Sonic Pi help
 * in relation to other synths - to be well behaved members of the Sonic Pi synth family

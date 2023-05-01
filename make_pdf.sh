@@ -26,8 +26,11 @@ https://gordonguthrie.github.io/TheManual/chapter5/mysecondsynth_supercollider.h
 https://gordonguthrie.github.io/TheManual/chapter5/mysecondsynth_ruby.html \
 https://gordonguthrie.github.io/TheManual/chapter5/mysecondsynth_sonicpi.html \
 https://gordonguthrie.github.io/TheManual/chapter5/mysthirdsynth_supercollider.html \
+https://gordonguthrie.github.io/TheManual/chapter5/mythirdsynth_ruby.html \
+https://gordonguthrie.github.io/TheManual/chapter5/mythirdsynth_sonicpi.html \
 https://gordonguthrie.github.io/TheManual/chapter5/myfourthsynth_supercollider.html \
 https://gordonguthrie.github.io/TheManual/chapter5/moar_ugen_stuff.html \
 https://gordonguthrie.github.io/TheManual/chapter5/funky_stuff_part_uno_variables.html \
+https://gordonguthrie.github.io/TheManual/chapter5/your_first_synth.html \
 https://gordonguthrie.github.io/TheManual/chapter6/whats_next.html \
 the_manual.pdf

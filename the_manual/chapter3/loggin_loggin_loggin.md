@@ -2,15 +2,15 @@
 
 ## Loggin, loggin, loggin
 
-To mess around with the bit of SonicPi that handles synths you will need to download the source and compile your own instance of SonicPi.
+To mess around with the bit of Sonic Pi that handles synths you will need to download the source and compile your own instance of Sonic Pi.
 
 The various markdown files at the root level in the [source code](https://github.com/sonic-pi-net/sonic-pi) have instructions on how to build for many platforms.
 
-For this exploration we will be looking at the `ruby` part of SonicPi.
+For this exploration we will be looking at the `ruby` part of Sonic Pi.
 
-Luckily once SonicPi is built this is very straightforward. `ruby` is an interpreted and not a compiled language and by simply editing `ruby` source code and stopping and restarting SonicPi we can see the changes.
+Luckily once Sonic Pi is built this is very straightforward. `ruby` is an interpreted and not a compiled language and by simply editing `ruby` source code and stopping and restarting Sonic Pi we can see the changes.
 
-Once we have compiled a built SonicPi we can start and run it by invoking the binary `sonic-pi` which is created in the directory `app/build/gui/qt`.
+Once we have compiled a built Sonic Pi we can start and run it by invoking the binary `sonic-pi` which is created in the directory `app/build/gui/qt`.
 
 Lets look at 5 techniques for understanding what is going on:
 
@@ -28,7 +28,7 @@ The Sonic Pi language has a couple of ***false friend*** functions - things that
 
 They are the commands `use_debug` and `with_debug` in the language reference. They only affect logging of synth triggers to the front end.
 
-If we run the following code in the SonicPI gui:
+If we run the following code in the Sonic PI gui:
 
 ```ruby
 use_synth :bass_foundation

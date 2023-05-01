@@ -174,12 +174,11 @@ This function contains a big set of standard, well-named common parameters. Diff
 * `mod_wave`
 * `mod_invert_wave`
 
-Using these parameters (where appropriate) with these names and the default validations in them will determine if your synthesiser ***feels like*** a well behaved SonicPi synthesiser.
+Using these parameters (where appropriate) with these names and the default validations in them will determine if your synthesiser ***feels like*** a well behaved Sonic Pi synthesiser.
 
-To understand that better you will need to study the synthesiser definitions in SonicPi and figure out which synth uses which parameter and then dig in and see how it is defined in the synthdefs.
+To understand that better you will need to study the synthesiser definitions in Sonic Pi and figure out which synth uses which parameter and then dig in and see how it is defined in the synthdefs.
 
 Some, of course, will be in `Overtone` and you will have to reverse engineer the underlying `SuperCollider` form.
-
 
 ### function name
 
@@ -201,7 +200,7 @@ Both of these are preset for you during the [class inheritance chain](https://gi
     end
 ```
 
-Remember that SonicPi uses SuperCollider to:
+Remember that Sonic Pi uses SuperCollider to:
 
 * define and play synths
 * define and wire up FX
@@ -211,7 +210,7 @@ This code base is used to support all three - but the dip into `SynthInfo` makes
 
 ### function synth_name
 
-This is the name of the synth as used in SonicPi code - all lowercase and spaces replaced with `_`s.
+This is the name of the synth as used in Sonic Pi code - all lowercase and spaces replaced with `_`s.
 
 These names are also aliased in the definition of [``@@synth_infos``](https://github.com/sonic-pi-net/sonic-pi/blob/710107fe22c5977b9fa5e83b71e30f847610e240/app/server/ruby/lib/sonicpi/synths/synthinfo.rb#L8118)
 
@@ -221,7 +220,7 @@ This function is used by FXs and not synths - so don't worry about it.
 
 ### function specific_arg_info
 
-The function `specific_arg_info` lets you do validation on arguements that you have added to your synth that aren't part of the set that was discussed in the section `arg_defaults` - they take the same format.
+The function `specific_arg_info` lets you do validation on arguments that you have added to your synth that aren't part of the set that was discussed in the section `arg_defaults` - they take the same format.
 
 In addition synths commonly add the functions `arg_defaults` and `specific_arg_info`.
 

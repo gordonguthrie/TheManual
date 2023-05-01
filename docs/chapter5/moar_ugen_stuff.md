@@ -6,7 +6,7 @@
 
 The code for synthesisers is pretty confusing. Good documentation is key to understanding how they are built and why. This chapter lays the ground work for understanding our documentation going forward.
 
-## Moar UGen Stuff
+## Moar uGen Stuff
 
 Generally we can diagram a `UGen` like this:
 
@@ -22,7 +22,7 @@ Generally we can diagram a `UGen` like this:
                   │       ┌─────────────────────────────────┐     │
  Signal 1 in──────┤       │                                 │     ├────▶Signal 1 out
                   │       │                                 │     │
- Signal 2 in──────┼──────▶│              UGen               │─────┘─ ─ ▶Signal 2 out
+ Signal 2 in──────┼──────▶│              uGen               │─────┘─ ─ ▶Signal 2 out
                           │                                 │     │
  Signal 3 in─ ─ ─ ┤       │                                 │      ─ ─ ▶Signal 3 out
                           └─────────────────────────────────┘     │
@@ -62,11 +62,11 @@ We saw earlier that `SinOsc` has two output modes:
 * `.ar` or audio rate
 * `.kr` or control rate
 
-We know understand a bit better what that means. `audio rate` means the stream is fine grained and of high enough quality that it can be used to generate sounds (think representing an analog sound wave by a digital signal that goes up and down in tiny steps - the `.ar` is 44,100 steps per second.). `control rate` is a lower quality, less fine grained signal that is good enough for controls (think turning volumes up or down in big-ish steps - the `.kr` is 1/64th of the `.ar` or 690 steps per second).
+We know understand a bit better what that means. `audio rate` means the stream is fine grained and of high enough quality that it can be used to generate sounds (think representing an analogue sound wave by a digital signal that goes up and down in tiny steps - the `.ar` is 44,100 steps per second.). `control rate` is a lower quality, less fine grained signal that is good enough for controls (think turning volumes up or down in big-ish steps - the `.kr` is 1/64th of the `.ar` or 690 steps per second).
 
 `.ar` signals are 64 times as expensive to calculate than `.kr` ones. You can use `.ar` for everything (including controls) but best practice is not to.
 
-With this understanding of `.kr` and `.ar` we see that there are two main `UGen` configurations - ones for manipulating sounds:
+With this understanding of `.kr` and `.ar` we see that there are two main `uGen` configurations - ones for manipulating sounds:
 
 ```
                                          │
@@ -78,7 +78,7 @@ With this understanding of `.kr` and `.ar` we see that there are two main `UGen`
                         ┌─────────────────────────────────┐
                         │                                 │
            .ar          │                                 │             .ar
- ─────(audio input)────▶│              UGen               │────────(audio output)───────▶
+ ─────(audio input)────▶│              uGen               │────────(audio output)───────▶
                         │                                 │
                         │                                 │
                         └─────────────────────────────────┘
@@ -97,22 +97,22 @@ and ones for preparing control signals:
                         ┌─────────────────────────────────┐
                         │                                 │
            .kr          │                                 │             .kr
- ───(control output)───▶│              UGen               │───────(control output)──────▶
+ ───(control output)───▶│              uGen               │───────(control output)──────▶
                         │                                 │
                         │                                 │
                         └─────────────────────────────────┘
 ```
 
-(Sometimes you might want to use an audio signal both in sound processing and in controlling another `UGen` so don't obsess about this.)
+(Sometimes you might want to use an audio signal both in sound processing and in controlling another `uGen` so don't obsess about this.)
 
-## Hidden Ugens - + and *
+## Hidden uGens - + and *
 
-There are a couple of hidden `Ugens` in Supercollider code - our old friends `*` and `+`.
+There are a couple of hidden `uGens` in Supercollider code - our old friends `*` and `+`.
 
 ```
                            ┌─────────────────────────────────┐
                            │                                 │
- Signal 0 in───────┐       │   * is a UGen that multiplies   │
+ Signal 0 in───────┐       │   * is a uGen that multiplies   │
                    ├──────▶│      two signals together       │──────────▶Signal 0 out
  Signal 1 in───────┘       │                                 │
                            │                                 │
@@ -122,7 +122,7 @@ There are a couple of hidden `Ugens` in Supercollider code - our old friends `*`
 ```
                            ┌─────────────────────────────────┐
                            │                                 │
- Signal 0 in───────┐       │      + is a UGen that adds      │
+ Signal 0 in───────┐       │      + is a uGen that adds      │
                    ├──────▶│      two signals together       │──────────▶Signal 0 out
  Signal 1 in───────┘       │                                 │
                            │                                 │

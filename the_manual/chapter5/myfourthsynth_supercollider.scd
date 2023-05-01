@@ -26,12 +26,30 @@ This synth accepts the following parameters:
 * `decay_level` sound level in decay phase
 * `sustain_level` sound level in sustain phase
 * `env_curve` shape of the curve of volume transition
+*
+* the default value of `decay_level` is -1 even tho the only valid values of `decay_level`
+* that Sonic Pi will ever accept are a greater than zero - this is used to test if a `decay_level` has been set
 */
-(SynthDef("myfourthsynth", {arg out = 0, note = 52.0, note_slide = 0, note_slide_shape = 1, note_slide_curve = 0, amp = 1, amp_slide = 0, amp_slide_shape = 1, amp_slide_curve = 0, pan = 0, pan_slide = 0, pan_slide_shape = 1, pan_slide_curve = 0;
+(SynthDef("myfourthsynth", {| out = 0,
+	                        note = 52.0, note_slide = 0, note_slide_shape = 1, note_slide_curve = 0,
+	                        amp = 1, amp_slide = 0, amp_slide_shape = 1, amp_slide_curve = 0,
+	                        pan = 0, pan_slide = 0, pan_slide_shape = 1, pan_slide_curve = 0,
+	                        attack = 0, decay = 0, sustain = 0, release = 1,
+	                        attack_level = 1, decay_level = -1, sustain_level = 1,
+	                        env_curve = 1 |
 	// define the variables that we will use later
     var snd, env, freq, slid_note, slid_amp, slid_pan;
-	// set up an envelope that kills the sound after 1 second
-	env = Line.kr(0.1, 0.0, 1.0, doneAction: 2);
+	// use the Select uGen and the invalid default value to make the `decay_level` be the 
+	// same as the `sustain_level` if no `decay_level` is set
+	// if the `decay_level` isn't minus one - use the zeroth member of the index, itself
+	// otherwise use the first member - the `sustain_level`
+	decay_level = Select.kr(if((decay_level != -1), 0, 1), [decay_level, sustain_level]);
+	// Create an envelope with the full attack, decay, sustain, release shape
+	// NOTE: there are 5 levels, but only 4 times and curves - the levels are the start and end of each section
+	//       the times and curves are the section itself - in this synth the curve is the same for all elements
+	env = EnvGen.kr(Env.new(levels: [0, attack_level, decay_level, sustain_level, 0],
+		                    times:  [attack, decay, sustain, release], 
+		                    curve:  Array.fill(4, env_curve)), doneAction: 2);
 	// slide the note
 	slid_note = VarLag.kr(note, note_slide, note_slide_curve, note_slide_shape);
 	slid_amp = VarLag.kr(amp, amp_slide, amp_slide_curve, amp_slide_shape);
@@ -43,4 +61,4 @@ This synth accepts the following parameters:
 	snd = Pan2.ar(SinOsc.ar(freq, 0, env), pos: slid_pan, level: slid_amp);
 	// play
 	Out.ar(out, snd)
-}).writeDefFile("/Users/gordonguthrie/.synthdefs"))
+}).writeDefFile("/home/gordon/.synthdefs"))

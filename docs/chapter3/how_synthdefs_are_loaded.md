@@ -12,7 +12,7 @@ This is the boot sequence:
 
 ![boot sequence](../images/uml/boot_sequence.png)
 
-Using a combination of the logging techiques in the previous section we can soon find out roughly how it works.
+Using a combination of the logging techniques in the previous section we can soon find out roughly how it works.
 
 The very earliest message we see in the GUI is:
 

@@ -4,7 +4,7 @@
 
 ## The Clojure library: Overtone
 
-For earlier versions of Sonic Pi synths were written not in SuperCollider but with a Clojure libary called Overtone.
+For earlier versions of Sonic Pi synths were written not in SuperCollider but with a Clojure library called Overtone.
 
 Remember that FX and sample handling and anything that also affects sound is handled in SuperCollider under the covers and the source code that you find in the [Clojure synths](https://github.com/sonic-pi-net/sonic-pi/tree/710107fe22c5977b9fa5e83b71e30f847610e240/etc/synthdefs/designs/overtone/sonic-pi/src/sonic_pi) directory will include code to do that too.
 
@@ -93,14 +93,14 @@ If we go through this code we can see a lot of things that are clearly UGens and
 * `midicps` - the class [midicps](https://doc.sccode.org/Classes/AbstractFunction.html#-midicps)
 * `sin-osc` - the [SinOsc UGen](https://doc.sccode.org/Classes/SinOsc.html)
 * `env-gen` - the [EnvGen UGen](https://doc.sccode.org/Classes/EnvGen.html)
-* `core/shaped-adsr` - something that invokes [asdr](https://doc.sccode.org/Classes/Env.html#*adsr) somehow
+* `core/shaped-adsr` - an overtone library that generates an asdr envelope [asdr](https://doc.sccode.org/Classes/Env.html#*adsr) (we will have to do this manually)
 * `out` - the [Out UGen](https://doc.sccode.org/Classes/Out.html)
 * `pan` - one of the [Pan UGen](https://doc.sccode.org/Classes/Pan2.html) family
 * `:action` - related to [doneAction](https://doc.sccode.org/Classes/SerialPort.html#-doneAction) somehow
 
-We can also see that when a `UGen` offers a `.kr` and `.ar` option the clojure default is `.ar` and we have to specify `.kr` explicitly. This makes sense as we use `.ar` for sound signals (that we care a lot about) and `.kr` for control signals that we are a bit meh about.
+We can also see that when a `uGen` offers a `.kr` and `.ar` option the clojure default is `.ar` and we have to specify `.kr` explicitly. This makes sense as we use `.ar` for sound signals (that we care a lot about) and `.kr` for control signals that we are a bit meh about.
 
-This synth uses the UGen `SinOsc` to generate its output - just like the first synth in Chapter 1. This is the synth we will be recreating in Chapter 3.
+This synth uses the uGen `SinOsc` to generate its output - just like the first synth in Chapter 1. This is the synth we will be recreating in Chapter 3.
 
 If we look at our old first synth definition we can see some of these elements and how we have to compose them:
 
@@ -123,7 +123,7 @@ If we look at our old first synth definition we can see some of these elements a
 
      // send the new note to the output channel 0
      Out.ar(out, note);
-}).writeDefFile("/Users/gordonguthrie/.synthdefs"))
+}).writeDefFile("/home/gordon/.synthdefs"))
 ```
 
 So using the Overtone library we can transcribe a SuperCollider definition of a synthesizer into a Lisp format and then use a compiler against that to emit the appropriate compiled `SuperCollider` bytecode for Sonic Pi to use.

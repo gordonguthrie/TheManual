@@ -77,7 +77,7 @@ The sound has changed - the note played is different. What's that about?
  └─ synth :beep, {notes: 60, note: 52.0}
 ```
 
-So whereas when we passed a list tagged `notes` SonicPi recognised it as a list and said, "ooh, notes is just the plural of note, lets move this value to the note slot".
+So whereas when we passed a list tagged `notes` Sonic Pi recognised it as a list and said, "ooh, notes is just the plural of note, lets move this value to the note slot".
 
 We can go crazy and bung a nutty list in there:
 
@@ -358,7 +358,7 @@ Giving:
 
 We have learned that Sonic Pi monkey's about with the parameters you have passed in before it sends them on to SuperCollider.
 
-If you are using a built-in synth, Sonic Pi checks your parameters systematically - but passes on additional parameters unchecked - this makes Sonic Pi work seemlessly, if you switch a built-in synth with additional parameters out for a simpler one the extended values are silently dropped.
+If you are using a built-in synth, Sonic Pi checks your parameters systematically - but passes on additional parameters unchecked - this makes Sonic Pi work seamlessly, if you switch a built-in synth with additional parameters out for a simpler one the extended values are silently dropped.
 
 By contrast with a synth that Sonic Pi doesn't recognise - it just sends all the parameters unchanged to the synth.
 

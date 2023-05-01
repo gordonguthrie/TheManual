@@ -20,11 +20,15 @@ This synth accepts the following parameters:
 * `amp_slide` - like `note_slide` but for `amp`
 * `amp_slide_shape` - like `note_slide_shape` but for `amp`
 * `amp_slide_curve` - like `note_slide_curve` but for `amp`
-* `release` the time the sound lasts
+* `sustain` the time the sound lasts - WATCH OUT! - see the 2nd synth for why this isn't `duration`
 
 
 ```supercollider
-(SynthDef("mythirdsynth", {arg out = 0, note = 52.0, note_slide = 0, note_slide_shape = 1, note_slide_curve = 0, amp = 1, amp_slide = 0, amp_slide_shape = 1, amp_slide_curve = 0, pan = 0, pan_slide = 0, pan_slide_shape = 1, pan_slide_curve = 0, release = 1;
+(SynthDef('sonic-pi-mythirdsynth', {| out = 0,
+									  note = 52.0, note_slide = 0, note_slide_shape = 1, note_slide_curve = 0,
+									  pan = 0, pan_slide = 0, pan_slide_shape = 1, pan_slide_curve = 0,
+									  amp = 1, amp_slide = 0, amp_slide_shape = 1, amp_slide_curve = 0,
+									  sustain = 1|
 ```
 
 define the variables that we will use later
@@ -33,10 +37,10 @@ define the variables that we will use later
     var snd, env, freq, slid_note, slid_amp, slid_pan;
 ```
 
-set up an envelope that kills the sound after 1 second
+set up an envelope that last as long as the sustain value
 
 ```supercollider
-	env = Line.kr(0.1, 0.0, release, doneAction: 2);
+	env = Line.kr(0.1, 0.0, sustain, doneAction: 2);
 ```
 
 slide the note
@@ -64,6 +68,6 @@ play
 
 ```supercollider
 	Out.ar(out, snd)
-}).writeDefFile("/Users/gordonguthrie/.synthdefs"))
+}).writeDefFile("/home/gordon/.synthdefs"))
 
 ```

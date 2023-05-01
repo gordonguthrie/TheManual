@@ -19,7 +19,7 @@ Oops it doesn't work.
 SuperCollider has 3 types of variable name:
 
 * one letter global variables like `f`
-* long global variables that begin with a tilda - like `~my_synth`
+* long global variables that begin with a tilde - like `~my_synth`
 * local variables that are multi-letter like `mysynth`
 
 By convention the letter `s` is used to control the local server:
@@ -31,3 +31,4 @@ s.boot;
 
 s.quit;
 ```
+

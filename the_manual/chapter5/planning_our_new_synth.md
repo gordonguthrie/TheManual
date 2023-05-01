@@ -43,10 +43,10 @@ By inspecting the `Overtone` source in Chapter 2 we know what components we need
 * `midicps` - the class [midicps](https://doc.sccode.org/Classes/AbstractFunction.html#-midicps)
 * `sin-osc` - the [SinOsc UGen](https://doc.sccode.org/Classes/SinOsc.html)
 * `env-gen` - the [EnvGen UGen](https://doc.sccode.org/Classes/EnvGen.html)
-* `core/shaped-adsr` - something that invokes [asdr](https://doc.sccode.org/Classes/Env.html#*adsr) somehow
+* `core/shaped-adsr` - we have to manually create an asdr envelope in SuperCollider here
 * `out` - the [Out UGen](https://doc.sccode.org/Classes/Out.html)
 * `pan` - one of the [Pan UGen](https://doc.sccode.org/Classes/Pan2.html) family
-* `:action` - related to [doneAction](https://doc.sccode.org/Classes/SerialPort.html#-doneAction) somehow
+* `:action` - is a [doneAction](https://doc.sccode.org/Classes/SerialPort.html#-doneAction)
 
 This was our first attempt in Chapter 1:
 
@@ -67,9 +67,9 @@ Our synth uses a `doneAction: 2` and `Overtone` has an `:action: FREE` to destro
 
 Our synth has use the `Line` uGen whereas the `Overtone` one uses `EnvGen` - the fact that our `Line` uGen is bound to a variable called `envelope` does give the game away a bit here - our synth plays a constant volume, but `beep` has an envelope with `attack`, `decay`, `sustain` and `release`.
 
-There's some wierd stuff tho. The `Overtone` definition has all the default arguments from the function `arg_defaults` baked in too, along with an outbus set to `0` (which just means play the sound on the computer). But a couple are different. In `Overtone` the `env_curve` default is `1` and the `sustain_level` is -` whereas in `arg_defaults` both are set to `1`.
+There's some weird stuff tho. The `Overtone` definition has all the default arguments from the function `arg_defaults` baked in too, along with an outbus set to `0` (which just means play the sound on the computer). But a couple are different. In `Overtone` the `env_curve` default is `1` and the `decay_level` is -1` whereas in `arg_defaults` both are set to `1`.
 
-***This is just belt and braces tho, when the synth is written in SuperCollider it makes sense to bake in the default values as you develop it, you will be writing, running and debugging the code in SuperCollider and will want to know what it sounds like when its played in SonicPi. In theory you could then copy the defaults to your*** `arg_default` ***function and delete them in your SuperCollider synth defintion. But why bother?***
+***There are good reasons that default values are different in the Sonic Pi ruby and the SuperCollider code - read the example synth code in Chapter5 carefully to understand this***
 
 ## So whats the plan?
 

@@ -41,4 +41,12 @@ You didn't edit the file name in the synth def and it can't save the compiled ou
 ```supercollider
 }).writeDefFile("/Users/gordonguthrie/.synthdefs"))
 ```
+If you see errors like this in the `~/.sonic-pi/logs/scsynth.log`
+
+```
+*** ERROR: SynthDef sonic-pi-mythirdsynth not found
+FAILURE IN SERVER /s_new SynthDef not found
+```
+
+Something has either gone wrong with your synth naming, or you are not loading the synthdefs from where you have stashed them.
 

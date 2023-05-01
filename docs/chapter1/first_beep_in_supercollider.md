@@ -79,7 +79,7 @@ We can see that the parameters in our invocation are:
 * `0` - the phase
 * `0.2` - the `mul` (or multiplier)
 
-In this instance the `mul` is effectively the volume, make it higher and the note will sound lounder, lower it will be quieter.
+In this instance the `mul` is effectively the volume, make it higher and the note will sound louder, lower it will be quieter.
 
 Lets look again at the interface and the two methods `ar` and `kr`. The `ar`/`kr` pairing appears throughout SuperCollider so its important to understand what they mean.
 

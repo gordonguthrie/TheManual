@@ -21,9 +21,9 @@ toc:
     subfolderitems:
     - page: All the synths
       url:  ./chapter2/the_synths.html
-    - page: How synths are currently defined and invoked (Part 1 Overtone)
+    - page: How synths are currently defined (Part 1 Overtone)
       url:  ./chapter2/overtone_synths.html
-    - page: How synths are currently defined and invoked (Part 2 SuperCollider)
+    - page: How synths are currently defined (Part 2 SuperCollider)
       url:  ./chapter2/supercollider_synths.html
   - title: Chapter 3 - Deep dive
     subfolderitems:
@@ -65,10 +65,16 @@ toc:
       url:  ./chapter5/mysecondsynth_sonic_pi.html
     - page: My Third Synth (SuperCollider)
       url:  ./chapter5/mythirdsynth_supercollider.html
+    - page: My Third Synth (Ruby)
+      url:  ./chapter5/mythirdsynth_ruby.html
+    - page: My Third Synth (Sonic Pi)
+      url:  ./chapter5/mythirdsynth_sonic_pi.html
     - page: My Fourth And Final Synth (SuperCollider)
       url:  ./chapter5/myfourthsynth_supercollider.html
     - page: Moar UGen stuff
       url:  ./chapter5/moar_ugen_stuff.html
+    - page: Your First Synth
+      url:  ./chapter5/your_first_synth.html
   - title: Chapter 6 - What's next
     subfolderitems:
     - page: What's next

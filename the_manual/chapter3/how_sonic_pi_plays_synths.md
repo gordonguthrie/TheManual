@@ -23,7 +23,7 @@ It then calls the function [synth](https://github.com/sonic-pi-net/sonic-pi/blob
 
 `synth` does a call to `Synths::SynthInfo.get_info(sn_sym)` to pick up the information about the synth - this will be used later on.
 
-***This is the critical part for the difference between handling built-in synths and user-defined ones***. If the call to `get_info` returns `nil` then SonicPi knows that its not a built-in synth and will simply not try and use the validation that comes with built-in synths.
+***This is the critical part for the difference between handling built-in synths and user-defined ones***. If the call to `get_info` returns `nil` then Sonic Pi knows that its not a built-in synth and will simply not try and use the validation that comes with built-in synths.
 
 In `Sonic PI V5.0.0 Tech Preview 2` code for built in synths is extended over a base class called [BaseInfo](https://github.com/sonic-pi-net/sonic-pi/blob/710107fe22c5977b9fa5e83b71e30f847610e240/app/server/ruby/lib/sonicpi/synths/synthinfo.rb#L16) in the file `synthinfo.rb`.
 
