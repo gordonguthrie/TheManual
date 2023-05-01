@@ -8,9 +8,9 @@ We need to add this class definition to the file `synthifo.rb` under the path `a
 The name needs to be variable (ie no spaces or funky characters please).
 =end
 
-    class MyThirdSynth < SonicPiSynth
+    class MyFourthSynth < SonicPiSynth
       def name
-        "My Beep V3"
+        "My Beep V4"
       end
 
       def introduced
@@ -18,11 +18,11 @@ The name needs to be variable (ie no spaces or funky characters please).
       end
 
       def synth_name
-        "mythirdsynth"
+        "myfourthsynth"
       end
 
       def doc
-        "my sine wave improved"
+        "my sine wave improved and finished"
       end
       
       def arg_defaults
@@ -40,7 +40,14 @@ The name needs to be variable (ie no spaces or funky characters please).
           :pan_slide_shape => 1,
           :pan_slide_curve => 0,
 
-          :sustain => 1 # WATCH OUT! - see the 2nd synth for why this isn't `duration`
+          :attack => 0,
+          :decay => 0,
+          :sustain => 0,
+          :release => 1,
+          :attack_level => 1,
+          :decay_level => :sustain_level,
+          :sustain_level => 1,
+          :env_curve => 2
         }
       end
     end
@@ -48,4 +55,4 @@ The name needs to be variable (ie no spaces or funky characters please).
     
 # We also need to add this line to the `BaseInfo` class under the variable name `@@synth_infos`
 
-        :mythirdsynth => MyThirdSynth.new,
+        :myfourthsynth => MyFourthSynth.new,
