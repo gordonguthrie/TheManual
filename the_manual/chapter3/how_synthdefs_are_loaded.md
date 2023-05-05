@@ -2,7 +2,7 @@
 
 ## How built-in synthdefs are loaded
 
-Lets go hunting for the code that loads synth definitions and see what it does.
+Let's go hunting for the code that loads synth definitions and see what it does.
 
 This is the boot sequence:
 
@@ -35,7 +35,7 @@ That function `__load_buffer` is called in one place and one place only, by the 
 
 We know that the `spider-server` is special because it sits in `app/bin` and not `app/server/ruby/lib/sonicpi` like the rest of the ruby code.
 
-Spider has its own log in `~/.sonci-pi/logs` and if we look at them we can figure out what's going on:
+Spider has its own log in `~/.sonic-pi/logs` and if we look at them we can figure out what's going on:
 
 ```
 Sonic Pi Spider Server booting...

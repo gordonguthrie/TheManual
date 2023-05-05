@@ -12,7 +12,7 @@ Luckily once Sonic Pi is built this is very straightforward. `ruby` is an interp
 
 Once we have compiled a built Sonic Pi we can start and run it by invoking the binary `sonic-pi` which is created in the directory `app/build/gui/qt`.
 
-Lets look at 5 techniques for understanding what is going on:
+Let's look at 5 techniques for understanding what is going on:
 
 * existing log messages
 * built in messaging inside the runtime
@@ -28,7 +28,7 @@ The Sonic Pi language has a couple of ***false friend*** functions - things that
 
 They are the commands `use_debug` and `with_debug` in the language reference. They only affect logging of synth triggers to the front end.
 
-If we run the following code in the Sonic PI gui:
+If we run the following code in the Sonic Pi GUI:
 
 ```ruby
 use_synth :bass_foundation
@@ -73,7 +73,7 @@ You can get a lot more info if you go into the [util module](https://github.com/
     end
 ```
 
-***BEWARE***: there is more than one module called `util.lib` you want the one in `/app/server/ruby/lib/sonicpi/`
+***BEWARE***: there is more than one module called `util.lib` - you want the one in `/app/server/ruby/lib/sonicpi/`
 
 
 ## Built in messaging inside the runtime
@@ -160,7 +160,7 @@ So by simply adding lines to our ruby that calls this `__info` function we can s
 
 The runtime logging is great but what happens when you want to figure out what is happening during boot before the GUI is available to show your messages?
 
-Well it turns out that Sonic Pi has that sorted too. You can write a message to a buffer and when the boot is completed the buffer is dumped into the log window. Lets see that in action in the [studio module](https://github.com/sonic-pi-net/sonic-pi/blob/dev/app/server/ruby/lib/sonicpi/studio.rb#L67) which handles the boot process and the creation of the GUI.
+Well it turns out that Sonic Pi has that sorted too. You can write a message to a buffer and when the boot is completed the buffer is dumped into the log window. Let's see that in action in the [studio module](https://github.com/sonic-pi-net/sonic-pi/blob/dev/app/server/ruby/lib/sonicpi/studio.rb#L67) which handles the boot process and the creation of the GUI.
 
 If I invoke the function `message` with a string, as I do here, it will appear in the log screen on boot.
 
@@ -175,7 +175,7 @@ If I invoke the function `message` with a string, as I do here, it will appear i
 and as expected printing my message in the GUI's log window:
 
 ```
-ome to Sonic Pi v5.0.0-Tech Preview 2
+Welcome to Sonic Pi v5.0.0-Tech Preview 2
 
 => Running on Ruby v2.7.4
 
