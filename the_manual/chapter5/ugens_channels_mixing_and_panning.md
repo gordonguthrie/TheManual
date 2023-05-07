@@ -11,7 +11,7 @@ Before we can start making our simple synthesizer fit for use with Sonic Pi we n
 
 ## uGens
 
-The code that we write for SuperCollider seems familiar, it seems like normal computer code, but its not.
+The code that we write for SuperCollider seems familiar, it seems like normal computer code, but it's not.
 
 Most computer programmes work on `values`, SuperCollider works on `signals`.
 
@@ -167,7 +167,7 @@ The way we solve this problem is by `mixing`.
 
 ```
 
-Great, so now if we get our `SinOsc` to play a chord, we can mix all the beeps together and actually hear them all, as a single thing. But its still in the left speaker only. Maybe we want it one the left, maybe on the right, maybe in the middle. (Now this is not how a well behaved Sonic Pi synth plays a chord - it sends each note to a clone of the same synth. In building our `beep` clone we won't be using `Mix` but it make sense for you to know the context in which `Pan` operates.)
+Great, so now if we get our `SinOsc` to play a chord, we can mix all the beeps together and actually hear them all, as a single thing. But it's still in the left speaker only. Maybe we want it on the left, maybe on the right, maybe in the middle. (Now this is not how a well behaved Sonic Pi synth plays a chord - it sends each note to a clone of the same synth. In building our `beep` clone we won't be using `Mix` but it make sense for you to know the context in which `Pan` operates.)
 
 We can use a `uGen` called `Pan` to do this.
 

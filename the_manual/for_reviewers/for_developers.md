@@ -9,11 +9,11 @@ I need your help to improve quality:
 
 There are some aspects that I still don't know but would like to, so I can finish this damn manual off and get on with writing my own synths:
 
-* some parameters can be changed with `control` and some can't. What are the mechanics of that? Is it something Sonic Pi does or SuperCollider?
-* how can I get debuggin information out of SuperCollider to investigate what is happening at runtime - I can't seem to work it out
-* how can I get a trace of a dump of OSC commands between the Sonic Pi server and the running SuperCollider instance? setting `use_osc_logging` to `true` only gives me error messages.
-* can I pass arrays to my new synth, or is it only values? and is that a limitation of the Sonic Pi implementation or OSC or what?
-* how does BPM management work - I pass in beat-length values for `attack`, `sustain`, `decay`, `release` but they magically change in reality with changes of BPM - I presume that Sonic Pi manages some global BPM value for SuperCollider?
+* Some parameters can be changed with `control` and some can't. What are the mechanics of that? Is it something Sonic Pi does or SuperCollider?
+* How can I get debugging information out of SuperCollider to investigate what is happening at runtime - I can't seem to work it out
+* How can I get a trace of a dump of OSC commands between the Sonic Pi server and the running SuperCollider instance? Setting `use_osc_logging` to `true` only gives me error messages.
+* Can I pass arrays to my new synth, or is it only values? And is that a limitation of the Sonic Pi implementation or OSC or what?
+* How does BPM management work - I pass in beat-length values for `attack`, `sustain`, `decay`, `release` but they magically change in reality with changes of BPM - I presume that Sonic Pi manages some global BPM value for SuperCollider?
 
 ```
 
