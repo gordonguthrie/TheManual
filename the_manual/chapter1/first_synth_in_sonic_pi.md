@@ -88,7 +88,6 @@ We will add the following functions and defaults:
 * `release` - default `1`
 * `attack_level`
 * `decay_level`
-* `sustain_level`
 * `sustain_level` - default `1`
 * `env_curve` - default `2`
 
