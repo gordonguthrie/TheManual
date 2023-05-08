@@ -252,8 +252,8 @@ This plays (in mono) the same sound as `beep`:
 
 We can throw options (sensible or otherwise at it):
 
- ```ruby
- load_synthdefs "/Users/gordonguthrie/.synthdefs"
+```ruby
+load_synthdefs "/Users/gordonguthrie/.synthdefs"
 
 use_synth(:myfirstsynth)
 
@@ -356,7 +356,7 @@ Giving:
 
 ## So what have we learned?
 
-We have learned that Sonic Pi monkey's about with the parameters you have passed in before it sends them on to SuperCollider.
+We have learned that Sonic Pi monkeys about with the parameters you have passed in before it sends them on to SuperCollider.
 
 If you are using a built-in synth, Sonic Pi checks your parameters systematically - but passes on additional parameters unchecked - this makes Sonic Pi work seamlessly, if you switch a built-in synth with additional parameters out for a simpler one the extended values are silently dropped.
 
