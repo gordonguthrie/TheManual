@@ -30,7 +30,7 @@ This synth accepts the following parameters:
 * the default value of `decay_level` is -1 even tho the only valid values of `decay_level`
 * that Sonic Pi will ever accept are a greater than zero - this is used to test if a `decay_level` has been set
 */
-(SynthDef("sonic-pi-myfourthsynth", {| out = 0,
+(SynthDef("sonic-pi-myfourthsynth", {| out_bus = 0,
 	                        note = 52.0, note_slide = 0, note_slide_shape = 1, note_slide_curve = 0,
 	                        amp = 1, amp_slide = 0, amp_slide_shape = 1, amp_slide_curve = 0,
 	                        pan = 0, pan_slide = 0, pan_slide_shape = 1, pan_slide_curve = 0,
@@ -41,9 +41,9 @@ This synth accepts the following parameters:
     var snd, env, freq, slid_note, slid_amp, slid_pan;
 	// use the Select uGen and the invalid default value to make the `decay_level` be the 
 	// same as the `sustain_level` if no `decay_level` is set
-	// if the `decay_level` isn't minus one - use the zeroth member of the index, itself
+	// if the `decay_level` is less than zero (i.e., the default -1) - use the zeroth member of the index, itself
 	// otherwise use the first member - the `sustain_level`
-	decay_level = Select.kr(if((decay_level != -1), 0, 1), [decay_level, sustain_level]);
+	decay_level = Select.kr(decay_level < 0, [decay_level, sustain_level]);
 	// Create an envelope with the full attack, decay, sustain, release shape
 	// NOTE: there are 5 levels, but only 4 times and curves - the levels are the start and end of each section
 	//       the times and curves are the section itself - in this synth the curve is the same for all elements
