@@ -252,8 +252,8 @@ This plays (in mono) the same sound as `beep`:
 
 We can throw options (sensible or otherwise at it):
 
- ```ruby
- load_synthdefs "/Users/gordonguthrie/.synthdefs"
+```ruby
+load_synthdefs "/Users/gordonguthrie/.synthdefs"
 
 use_synth(:myfirstsynth)
 
