@@ -58,7 +58,7 @@ toc:
     - page: Understanding UGens, channels, mixing and panning
       url:  ./chapter5/ugens_channels_mixing_and_panning.html
     - page: The out_bus parameter and FXs
-      url:  outbus_and_fxs.html
+      url:  ./chapter5/outbus_and_fxs.html
     - page: My Second Synth (SuperCollider)
       url:  ./chapter5/mysecondsynth_supercollider.html
     - page: My Second Synth (Ruby)
