@@ -34,7 +34,7 @@ This synth accepts the following parameters:
 
 
 ```supercollider
-(SynthDef("sonic-pi-myfourthsynth", {| out = 0,
+(SynthDef("sonic-pi-myfourthsynth", {| out_bus = 0,
 	                        note = 52.0, note_slide = 0, note_slide_shape = 1, note_slide_curve = 0,
 	                        amp = 1, amp_slide = 0, amp_slide_shape = 1, amp_slide_curve = 0,
 	                        pan = 0, pan_slide = 0, pan_slide_shape = 1, pan_slide_curve = 0,
@@ -51,11 +51,11 @@ define the variables that we will use later
 
 use the Select uGen and the invalid default value to make the `decay_level` be the
 same as the `sustain_level` if no `decay_level` is set
-if the `decay_level` isn't minus one - use the zeroth member of the index, itself
+if the `decay_level` is less than zero (i.e., the default -1) - use the zeroth member of the index, itself
 otherwise use the first member - the `sustain_level`
 
 ```supercollider
-	decay_level = Select.kr(if((decay_level != -1), 0, 1), [decay_level, sustain_level]);
+	decay_level = Select.kr(decay_level < 0, [decay_level, sustain_level]);
 ```
 
 Create an envelope with the full attack, decay, sustain, release shape
@@ -92,7 +92,7 @@ and set the volume
 play
 
 ```supercollider
-	Out.ar(out, snd)
+	Out.ar(out_bus, snd)
 }).writeDefFile("/home/gordon/.synthdefs"))
 
 ```

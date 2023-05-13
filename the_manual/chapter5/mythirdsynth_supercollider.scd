@@ -20,7 +20,7 @@ This synth accepts the following parameters:
 * `amp_slide_curve` - like `note_slide_curve` but for `amp`
 * `sustain` the time the sound lasts - WATCH OUT! - see the 2nd synth for why this isn't `duration`
 */
-(SynthDef('sonic-pi-mythirdsynth', {| out = 0,
+(SynthDef('sonic-pi-mythirdsynth', {| out_bus = 0,
 									  note = 52.0, note_slide = 0, note_slide_shape = 1, note_slide_curve = 0,
 									  pan = 0, pan_slide = 0, pan_slide_shape = 1, pan_slide_curve = 0,
 									  amp = 1, amp_slide = 0, amp_slide_shape = 1, amp_slide_curve = 0,
@@ -39,5 +39,5 @@ This synth accepts the following parameters:
 	// and set the volume
 	snd = Pan2.ar(SinOsc.ar(freq, 0, env), pos: slid_pan, level: slid_amp);
 	// play
-	Out.ar(out, snd)
+	Out.ar(out_bus, snd)
 }).writeDefFile("/home/gordon/.synthdefs"))

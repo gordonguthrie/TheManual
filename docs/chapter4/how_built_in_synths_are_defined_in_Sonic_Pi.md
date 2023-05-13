@@ -14,7 +14,7 @@ This section is going to look at [synthinfo.rb](https://github.com/sonic-pi-net/
 
 All synthesiser objects inherit from the base class `BaseInfo` mostly by the chain of indirection: `SonicPiSynth < SynthInfo < BaseInfo`.
 
-But looking at all the synthesiser classes we see a simple pattern synths come in families and often descend from a common base class.
+But looking at all the synthesiser classes we see a simple pattern - synths come in families and often descend from a common base class.
 
 Note that sometimes synth names are just aliases for each other `sine`/`beep` and `mod_sine`/`mod_beep`. This aliasing happens in the global variable [@@synth_info](https://github.com/sonic-pi-net/sonic-pi/blob/710107fe22c5977b9fa5e83b71e30f847610e240/app/server/ruby/lib/sonicpi/synths/synthinfo.rb#L8118).
 
@@ -56,13 +56,13 @@ We can tell what functions are designed to be implemented in the sub-classes by 
       end
 ```
 
-There is an extra function `specific_arg_info` which isn't in this list and by default which returns an empty hashes.
+There is an extra function `specific_arg_info` which isn't in this list and by default which returns empty hashes.
 
-Lets go through them one by one.
+Let's go through them one by one.
 
 ### function doc
 
-This function is called when the displaying the gui. If we go to [the `doc` function for the `beeb` synth](https://github.com/sonic-pi-net/sonic-pi/blob/710107fe22c5977b9fa5e83b71e30f847610e240/app/server/ruby/lib/sonicpi/synths/synthinfo.rb#L805) and edit it to add the word ***yowza***:
+This function is called when the displaying the GUI. If we go to [the `doc` function for the `beeb` synth](https://github.com/sonic-pi-net/sonic-pi/blob/710107fe22c5977b9fa5e83b71e30f847610e240/app/server/ruby/lib/sonicpi/synths/synthinfo.rb#L805) and edit it to add the word ***yowza***:
 
 ```ruby
       def doc
@@ -70,7 +70,7 @@ This function is called when the displaying the gui. If we go to [the `doc` func
       end
 ```
 
-This function is called during the compile process (not at run time) and is used to generate the entry about the synth in the gui.
+This function is called during the compile process (not at run time) and is used to generate the entry about the synth in the GUI.
 
 ![Screenshot of edited synth entry](../images/chapter4/synths_in_the_gui.png)
 

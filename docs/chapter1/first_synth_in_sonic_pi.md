@@ -13,11 +13,11 @@ We will make this oscillator into a synthesiser that we can use in Sonic Pi:
 If we run this definition in Super Collider we can get a synth that we can play in Sonic Pi. Notice that it is writing the synthdef to a default location in my home directory (on a Mac) where Sonic Pi will find it - you will need to put your home directory in whatever operating system you use into that path.
 
 ```supercollider
-(SynthDef("myfirstsynth", {arg out = 0;
+(SynthDef("myfirstsynth", {arg out_bus = 0;
      var note, envelope;
      envelope = Line.kr(0.1, 0.0, 1.0, doneAction: 2);
      note = SinOsc.ar(440, 0, envelope);
-     Out.ar(out, note);
+     Out.ar(out_bus, note);
 }).writeDefFile("/Users/gordonguthrie/.synthdefs"))
 ```
 
@@ -44,10 +44,10 @@ We will fix both of these things later on. But first lets breakdown the synth de
 ```supercollider
 /*
 Define the synth - give it a name "myfirstsynth"
-let it take one argument: `out`
+let it take one argument: `out_bus`
 */
 
-(SynthDef("myfirstsynth", {arg out = 0;
+(SynthDef("myfirstsynth", {arg out_bus = 0;
 
      // define 2 variables
      var note, envelope;
@@ -64,7 +64,7 @@ let it take one argument: `out`
      note = SinOsc.ar(440, 0, envelope);
 
      // send the new note to the output channel 0
-     Out.ar(out, note);
+     Out.ar(out_bus, note);
 }).writeDefFile("/Users/gordonguthrie/.synthdefs"))
 ```
 
@@ -75,7 +75,7 @@ We have had to do a bit more work to get it to play nice with Sonic Pi. It has a
 * it plays in the left speaker only - it needs to be in stereo
 * each note is 1 second in duration - we need to be able to control how long a note lasts
 
-But its not all bad - the line that determines the length of the note also calls a self-destruct function that cleans up and frees resources - without it your computer would gradually fill up with unused instances of synthesisers consuming both memory and CPU and eventually would just crash.
+But it's not all bad - the line that determines the length of the note also calls a self-destruct function that cleans up and frees resources - without it your computer would gradually fill up with unused instances of synthesisers consuming both memory and CPU and eventually would just crash.
 
 In Chapter 3 we will gradually build up this synthesiser until it is a clone of the `sine` synthesiser that is built into Sonic Pi.
 
@@ -90,7 +90,6 @@ We will add the following functions and defaults:
 * `release` - default `1`
 * `attack_level`
 * `decay_level`
-* `sustain_level`
 * `sustain_level` - default `1`
 * `env_curve` - default `2`
 

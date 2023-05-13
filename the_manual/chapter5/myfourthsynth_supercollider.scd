@@ -60,5 +60,5 @@ This synth accepts the following parameters:
 	// and set the volume
 	snd = Pan2.ar(SinOsc.ar(freq, 0, env), pos: slid_pan, level: slid_amp);
 	// play
-	Out.ar(out, snd)
+	Out.ar(out_bus, snd)
 }).writeDefFile("/home/gordon/.synthdefs"))

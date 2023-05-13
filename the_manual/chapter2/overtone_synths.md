@@ -103,7 +103,7 @@ This synth uses the uGen `SinOsc` to generate its output - just like the first s
 If we look at our old first synth definition we can see some of these elements and how we have to compose them:
 
 ```supercollider
-(SynthDef("myfirstsynth", {arg out = 0;
+(SynthDef("myfirstsynth", {arg out_bus = 0;
 
      // define 2 variables
      var note, envelope;
@@ -120,7 +120,7 @@ If we look at our old first synth definition we can see some of these elements a
      note = SinOsc.ar(440, 0, envelope);
 
      // send the new note to the output channel 0
-     Out.ar(out, note);
+     Out.ar(out_bus, note);
 }).writeDefFile("/home/gordon/.synthdefs"))
 ```
 

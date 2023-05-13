@@ -4,7 +4,7 @@
 
 ## How Sonic Pi plays synths
 
-Lets put some logging in and see what happens when we write a simple synth command:
+Let's put some logging in and see what happens when we write a simple synth command:
 
 ```ruby
 use_synth :beep
@@ -61,7 +61,7 @@ A call to a built-in synth may (if it is a chord) be passed onto the function [t
 
 ![Chords as notes](../images/uml/play_chord.png)
 
-IT does some housekeeping - including calling [normalise_and_resolve_synth_args](https://github.com/sonic-pi-net/sonic-pi/blob/710107fe22c5977b9fa5e83b71e30f847610e240/app/server/ruby/lib/sonicpi/lang/sound.rb#L3753) - to make sure that SuperCollider behaves well - the synth that plays each note is grouped, the volume of each note is normalised - the volume of each note is divided by the number of the notes so that the chord as a whole sounds as loud as the specified volume.
+It does some housekeeping - including calling [normalise_and_resolve_synth_args](https://github.com/sonic-pi-net/sonic-pi/blob/710107fe22c5977b9fa5e83b71e30f847610e240/app/server/ruby/lib/sonicpi/lang/sound.rb#L3753) - to make sure that SuperCollider behaves well - the synth that plays each note is grouped, the volume of each note is normalised - the volume of each note is divided by the number of the notes so that the chord as a whole sounds as loud as the specified volume.
 
 `trigger_chord` ends up calling [trigger_synth](https://github.com/sonic-pi-net/sonic-pi/blob/710107fe22c5977b9fa5e83b71e30f847610e240/app/server/ruby/lib/sonicpi/lang/sound.rb#L3525).
 
@@ -72,7 +72,7 @@ IT does some housekeeping - including calling [normalise_and_resolve_synth_args]
 
 ### normalise_and_resolve_synth_args function in sound.rb
 
-Lets look at how Sonic Pi [handles synth arguments](https://github.com/sonic-pi-net/sonic-pi/blob/710107fe22c5977b9fa5e83b71e30f847610e240/app/server/ruby/lib/sonicpi/lang/sound.rb#L3753) in some more details. Here is the function:
+Let's look at how Sonic Pi [handles synth arguments](https://github.com/sonic-pi-net/sonic-pi/blob/710107fe22c5977b9fa5e83b71e30f847610e240/app/server/ruby/lib/sonicpi/lang/sound.rb#L3753) in some more details. Here is the function:
 
 ```ruby
       def normalise_and_resolve_synth_args(args_h, info, combine_tls=false)

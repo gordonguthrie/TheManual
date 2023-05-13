@@ -6,7 +6,7 @@
 
 The way to do this is to get your synth working in SuperCollider first before you save it as a SynthDef and start using it in Sonic Pi.
 
-Lets look at some simple sounds:
+Let's look at some simple sounds:
 
 ```supercollider
 {SinOsc.ar(440, 0, 0.2)}.play;

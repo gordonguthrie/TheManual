@@ -11,7 +11,7 @@ This synth accepts the following parameters:
 * `pan` a location to pan to
 * `sustain` the time the sound lasts: WATCH OUT! - this is not called `duration`
 */
-(SynthDef('sonic-pi-mysecondsynth', {| out = 0, note = 52.0, amp = 1, pan = 0, sustain = 1 |
+(SynthDef('sonic-pi-mysecondsynth', {| out_bus = 0, note = 52.0, amp = 1, pan = 0, sustain = 1 |
      // define the variables that we will use later
      var snd, env, freq;
      // convert the midi note to frequency
@@ -22,5 +22,5 @@ This synth accepts the following parameters:
      // and set the volume
      snd = Pan2.ar(SinOsc.ar(freq, 0, env), pos: pan, level: amp);
      // play
-     Out.ar(out, snd)
+     Out.ar(out_bus, snd)
 }).writeDefFile("/home/gordon/.synthdefs"))

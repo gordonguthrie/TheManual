@@ -4,7 +4,7 @@
 
 ## Using the third version
 
-We have added extra synth controls compared to version 2, so lets just test those out.
+We have added extra synth controls compared to version 2, so let's just test those out.
 
 ```ruby
 use_synth(:mythirdsynth)
@@ -37,7 +37,7 @@ control s, note: 75, amp: 0.4, pan: 0.8
 ```
 If you get errors when you do this, go back and read the section on running Version 2 for tips.
 
-Just like in version have to use `load_synthdefs` unless we actually save the synthdef to the correct boot directory - which is `etc/synthdefs/compiled`
+Just like in version 2 we have to use `load_synthdefs` unless we actually save the synthdef to the correct boot directory - which is `etc/synthdefs/compiled`
 
 
 

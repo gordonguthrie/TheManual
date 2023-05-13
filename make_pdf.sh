@@ -23,6 +23,7 @@ https://gordonguthrie.github.io/TheManual/chapter5/the_development_cycle.html \
 https://gordonguthrie.github.io/TheManual/chapter5/funky_stuff_part_uno_variables.html \
 https://gordonguthrie.github.io/TheManual/chapter5/compile_errors.html \
 https://gordonguthrie.github.io/TheManual/chapter5/ugens_channels_mixing_and_panning.html \
+https://gordonguthrie.github.io/TheManual/chapter5/outbus_and_fxs.html \
 https://gordonguthrie.github.io/TheManual/chapter5/mysecondsynth_supercollider.html \
 https://gordonguthrie.github.io/TheManual/chapter5/mysecondsynth_ruby.html \
 https://gordonguthrie.github.io/TheManual/chapter5/mysecondsynth_sonic_pi.html \

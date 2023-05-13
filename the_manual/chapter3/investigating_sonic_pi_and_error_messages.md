@@ -145,7 +145,7 @@ play :c4, pan: 0.3
 
 gives:
 
-```
+```ðƒ
 {run: 25, time: 0.0}
  └─ synth :beep, {note: 60.0, pan: 0.3}
 ```
@@ -163,17 +163,17 @@ It seems to be kept:
  └─ synth :beep, {note: 60.0, pan: 0.3, gordon: 99}
 ```
 
-Just for badness, trust me it will make sense later, lets go again with a non-option but make it `out`:
+Just for badness, trust me it will make sense later, lets go again with a non-option but make it `out_bus`:
 
 ```ruby
-play 60, out: 3
+play 60, out_bus: 3
 ```
 
 and as you would expect the note plays:
 
 ```
 {run: 55, time: 0.0}
- └─ synth :beep, {note: 60.0, out: 3}
+ └─ synth :beep, {note: 60.0, out_bus: 3}
 ```
 
 What happens if we try and leave out the note, is there a default value here? The result from passing in a single value in `notes` would tend to suggest there is:
@@ -272,11 +272,11 @@ and it just plays:
 When we read the code for our synthesizer we realise this is a bit odd. Our function only takes one argument `out` and yet we are calling it with 3, none of which is `out`.
 
 ```supercollider
-(SynthDef("myfirstsynth", {arg out = 0;
+(SynthDef("myfirstsynth", {arg out_bus = 0;
      var note, envelope;
      envelope = Line.kr(0.1, 0.0, 1.0, doneAction: 2);
      note = SinOsc.ar(440, 0, envelope);
-     Out.ar(out, note);
+     Out.ar(out_bus, note);
 }).writeDefFile("/Users/gordonguthrie/.synthdefs"))
 ```
 
@@ -287,19 +287,17 @@ load_synthdefs "/Users/gordonguthrie/.synthdefs"
 
 use_synth(:myfirstsynth)
 
-play 60, out: 3
+play 60, out_bus: 3
 ```
 
-Well the logs say all is well:
+It plays.
 
 ```
 {run: 55, time: 0.0}
- └─ synth :beep, {note: 60.0, out: 3}
+ └─ synth :beep, {note: 60.0, out_bus: 3}
 ```
 
-but actually there is no sound. To understand this we need to trace through where the `out` value is used in our code. We use it as the first parameter in the uGen `Out`. It determines the output channel. The way Sonic Pi is wired up the channel `0` makes our computer play noise, any other channel is not connected to something to turn signal into sound - hence the silence.
-
-With a built-in synthesiser we can set `out` to `3` but when the synth is called the output plays - implying that the `out` parameter has been set to `0` in the munging.
+The fact that it plays is a clue - because on reading the SuperCollider code it shouldn't. We use it as the first parameter in the uGen `Out`. It determines the output channel. The way Sonic Pi is wired up the channel `0` makes our computer play noise, any other channel is not connected to something to turn signal into sound - so passing in a different value of `out_bus` should cause silence. The fact that it doesn't shows that Sonic Pi is overwritting it.
 
 Let's look at some other incantations - particularly around notes.
 

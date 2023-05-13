@@ -5,7 +5,7 @@
 
 ## The synth beep
 
-Lets look at this, as it is what we are reimplementing:
+Let's look at this, as it is what we are reimplementing:
 
 
 ```ruby

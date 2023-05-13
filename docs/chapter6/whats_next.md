@@ -10,7 +10,7 @@ The load command doesn't know or check if the synth description, parameters and 
 
 The strategic view is to merge these two things - to have a load process that loads both the synthesiser and the synth description, parameters and validation.
 
-The load process should enable user-defined synths to be well-behaved (ie behave like and are subject to the same possible transforms as built-in ones) or badly-behaved.
+The load process should enable user-defined synths to be well-behaved (i.e. behave like and are subject to the same possible transforms as built-in ones) or badly-behaved.
 
 ## The future of this manual
 

@@ -8,14 +8,15 @@ Most of the synths you are used to calling in Sonic Pi are implemented in Super 
 
 This tutorial is to enable you to write your own synths and for you, or other people, to use them in Sonic Pi.
 
-Obviously if you can write Super Collider code you could just programme Super Collider without Sonic Pi. And this manual will help you learn some, but not all, of how to do just that.
+Obviously if you can write Super Collider code you could just program Super Collider without Sonic Pi. And this manual will help you learn some, but not all, of how to do just that.
 
 Like Sonic Pi this manual has an overriding design principle - to get from nothing to make a noise as quickly as possible.
 
 With Sonic Pi that's just:
 
 ```ruby
-play :beep 69
+use_synth :beep
+play 69
 ```
 
 With Super Collider it is nearly as fast.
@@ -28,7 +29,7 @@ This can be done with the menu item: `Server -> Boot Server`
 
 You then need to check the log window to see if there are error messages. Sometimes you will need to edit audio settings on your machine to get SuperCollider to work.
 
-The Super Collider version of `play :beep 69` is:
+The Super Collider version of `use_synth :beep; play 69` is:
 
 ```supercollider
 {SinOsc.ar(440, 0, 0.2)}.play;

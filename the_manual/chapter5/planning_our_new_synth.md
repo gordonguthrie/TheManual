@@ -51,11 +51,11 @@ By inspecting the `Overtone` source in Chapter 2 we know what components we need
 This was our first attempt in Chapter 1:
 
 ```supercollider
-(SynthDef("myfirstsynth", {arg out = 0;
+(SynthDef("myfirstsynth", {arg out_bus = 0;
      var note, envelope;
      envelope = Line.kr(0.1, 0.0, 1.0, doneAction: 2);
      note = SinOsc.ar(440, 0, envelope);
-     Out.ar(out, note);
+     Out.ar(out_bus, note);
 }).writeDefFile("/Users/gordonguthrie/.synthdefs"))
 ```
 
@@ -67,7 +67,7 @@ Our synth uses a `doneAction: 2` and `Overtone` has an `:action: FREE` to destro
 
 Our synth has use the `Line` uGen whereas the `Overtone` one uses `EnvGen` - the fact that our `Line` uGen is bound to a variable called `envelope` does give the game away a bit here - our synth plays a constant volume, but `beep` has an envelope with `attack`, `decay`, `sustain` and `release`.
 
-There's some weird stuff tho. The `Overtone` definition has all the default arguments from the function `arg_defaults` baked in too, along with an outbus set to `0` (which just means play the sound on the computer). But a couple are different. In `Overtone` the `env_curve` default is `1` and the `decay_level` is -1` whereas in `arg_defaults` both are set to `1`.
+There's some weird stuff tho. The `Overtone` definition has all the default arguments from the function `arg_defaults` baked in too, along with an outbus set to `0` (which just means play the sound on the computer). But a couple are different. In `Overtone` the `env_curve` default is `1` and the `decay_level` is `-1` whereas in `arg_defaults` both are set to `1`.
 
 ***There are good reasons that default values are different in the Sonic Pi ruby and the SuperCollider code - read the example synth code in Chapter5 carefully to understand this***
 

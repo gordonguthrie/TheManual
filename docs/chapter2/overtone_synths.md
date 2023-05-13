@@ -12,7 +12,7 @@ The reason for this is that it is easier to incorporate Clojure source code into
 
 `Sonic PI V5.0.0 Tech Preview 2` has some newer, more sophisticated synths written directly in SuperCollider.
 
-To see how `Sonic PI V5.0.0 Tech Preview 2` handles the built in synths written in `overtone` lets look the file [basic.clj](https://github.com/sonic-pi-net/sonic-pi/blob/710107fe22c5977b9fa5e83b71e30f847610e240/etc/synthdefs/designs/overtone/sonic-pi/src/sonic_pi/basic.clj)
+To see how `Sonic PI V5.0.0 Tech Preview 2` handles the built in synths written in `overtone` let's look at the file [basic.clj](https://github.com/sonic-pi-net/sonic-pi/blob/710107fe22c5977b9fa5e83b71e30f847610e240/etc/synthdefs/designs/overtone/sonic-pi/src/sonic_pi/basic.clj)
 
 If we scroll down to the [bottom](https://github.com/sonic-pi-net/sonic-pi/blob/710107fe22c5977b9fa5e83b71e30f847610e240/etc/synthdefs/designs/overtone/sonic-pi/src/sonic_pi/basic.clj#L945) we can see the synths being compiled:
 
@@ -105,7 +105,7 @@ This synth uses the uGen `SinOsc` to generate its output - just like the first s
 If we look at our old first synth definition we can see some of these elements and how we have to compose them:
 
 ```supercollider
-(SynthDef("myfirstsynth", {arg out = 0;
+(SynthDef("myfirstsynth", {arg out_bus = 0;
 
      // define 2 variables
      var note, envelope;
@@ -122,11 +122,11 @@ If we look at our old first synth definition we can see some of these elements a
      note = SinOsc.ar(440, 0, envelope);
 
      // send the new note to the output channel 0
-     Out.ar(out, note);
+     Out.ar(out_bus, note);
 }).writeDefFile("/home/gordon/.synthdefs"))
 ```
 
 So using the Overtone library we can transcribe a SuperCollider definition of a synthesizer into a Lisp format and then use a compiler against that to emit the appropriate compiled `SuperCollider` bytecode for Sonic Pi to use.
 
-We we develop our own version of beep we will reverse engineer this Overtone description into SuperCollider code.
+When we develop our own version of beep we will reverse engineer this Overtone description into SuperCollider code.
 

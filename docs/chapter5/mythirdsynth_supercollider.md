@@ -24,7 +24,7 @@ This synth accepts the following parameters:
 
 
 ```supercollider
-(SynthDef('sonic-pi-mythirdsynth', {| out = 0,
+(SynthDef('sonic-pi-mythirdsynth', {| out_bus = 0,
 									  note = 52.0, note_slide = 0, note_slide_shape = 1, note_slide_curve = 0,
 									  pan = 0, pan_slide = 0, pan_slide_shape = 1, pan_slide_curve = 0,
 									  amp = 1, amp_slide = 0, amp_slide_shape = 1, amp_slide_curve = 0,
@@ -67,7 +67,7 @@ and set the volume
 play
 
 ```supercollider
-	Out.ar(out, snd)
+	Out.ar(out_bus, snd)
 }).writeDefFile("/home/gordon/.synthdefs"))
 
 ```

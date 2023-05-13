@@ -9,8 +9,9 @@ This manual is based on **Sonic Pi 5 (Technical Preview)**.
 
 #### Author - Gordon Guthrie
 
+#### Contributors: zahara, emlyn, ethancrawford
+
 ```
- 
            _       _                 
      /\   | |     | |                
     /  \  | |_ __ | |__   __ _       
@@ -26,10 +27,10 @@ This manual is based on **Sonic Pi 5 (Technical Preview)**.
  | |__) |_____   ___  _____      _| |
  |  _  // _ \ \ / / |/ _ \ \ /\ / / |
  | | \ \  __/\ V /| |  __/\ V  V /|_|
- |_|  \_\___| \_/ |_|\___| \_/\_/ (_)
-                                     
+ |_|  \_\___| \_/ |_|\___| \_/\_/ (_)                                     
 ```
 This manual is now ready for review - please read the ***For Reviewers*** section.
+
 
 ## PDF Version
 
