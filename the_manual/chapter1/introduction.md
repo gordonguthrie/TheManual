@@ -30,7 +30,7 @@ SuperCollider offers functionality that allows you **build** and **play** synthe
 
 This manual focusses on **building** them only: for people to play them using Sonic Pi.
 
-SuperCollider is a major programming environment in its own right and to learn how to get the most out of it you will need to study it. There <</***** TODO: is this sentence meant to continue?>>
+SuperCollider is a major programming environment in its own right and to learn how to get the most out of it you will need to study it.
 
 To learn how to do this, you will need to install SuperCollider.
 
