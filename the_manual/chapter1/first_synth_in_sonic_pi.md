@@ -73,7 +73,7 @@ We have had to do a bit more work to get it to play nice with Sonic Pi. It has a
 * it plays in the left speaker only - it needs to be in stereo
 * each note is 1 second in duration - we need to be able to control how long a note lasts
 
-But its not all bad - the line that determines the length of the note also calls a self-destruct function that cleans up and frees resources - without it your computer would gradually fill up with unused instances of synthesisers consuming both memory and CPU and eventually would just crash.
+But it's not all bad - the line that determines the length of the note also calls a self-destruct function that cleans up and frees resources - without it your computer would gradually fill up with unused instances of synthesisers consuming both memory and CPU and eventually would just crash.
 
 In Chapter 3 we will gradually build up this synthesiser until it is a clone of the `sine` synthesiser that is built into Sonic Pi.
 
@@ -88,7 +88,6 @@ We will add the following functions and defaults:
 * `release` - default `1`
 * `attack_level`
 * `decay_level`
-* `sustain_level`
 * `sustain_level` - default `1`
 * `env_curve` - default `2`
 

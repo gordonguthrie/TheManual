@@ -2,9 +2,9 @@
 
 ## Investigating Sonic Pi and error messages
 
-We can learn a lot about how a system works by using it and also looking at error messages, so lets try and break Sonic Pi and see what we can learn.
+We can learn a lot about how a system works by using it and also looking at error messages, so let's try and break Sonic Pi and see what we can learn.
 
-Lets just muck about with this programme, first with a built-in Sonic Pi synth (by default `beep`) and then with our own one.
+Let's just muck about with this programme, first with a built-in Sonic Pi synth (by default `beep`) and then with our own one.
 
 ## Built-in synths
 
@@ -301,7 +301,7 @@ but actually there is no sound. To understand this we need to trace through wher
 
 With a built-in synthesiser we can set `out` to `3` but when the synth is called the output plays - implying that the `out` parameter has been set to `0` in the munging.
 
-Lets look at some other incantations - particularly around notes.
+Let's look at some other incantations - particularly around notes.
 
 ```ruby
 load_synthdefs "/Users/gordonguthrie/.synthdefs"
@@ -356,7 +356,7 @@ Giving:
 
 ## So what have we learned?
 
-We have learned that Sonic Pi monkey's about with the parameters you have passed in before it sends them on to SuperCollider.
+We have learned that Sonic Pi monkeys about with the parameters you have passed in before it sends them on to SuperCollider.
 
 If you are using a built-in synth, Sonic Pi checks your parameters systematically - but passes on additional parameters unchecked - this makes Sonic Pi work seamlessly, if you switch a built-in synth with additional parameters out for a simpler one the extended values are silently dropped.
 

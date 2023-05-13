@@ -23,7 +23,7 @@ If you want to add your own well-behaved user-defined synth in Sonic Pi and comp
 
 But if you want your synth to be a bit funky, to not work quite like the built-in ones then you will need to take a swatch at the source code to figure out why it works as it does and how your synth may or may nor work with all the features of Sonic Pi.
 
-This section doesn't cover all the pathways by which your synth will be called, nor is it exhaustive in the one, main pathway it explores - its job is to cut a track through the jungle - its up to you to make the journey
+This section doesn't cover all the pathways by which your synth will be called, nor is it exhaustive in the one, main pathway it explores - its job is to cut a track through the jungle - it's up to you to make the journey
 
 ## Small apology
 

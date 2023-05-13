@@ -74,7 +74,7 @@ There's some weird stuff tho. The `Overtone` definition has all the default argu
 ## So whats the plan?
 
 * `mysecondsynth` will use the `note` parameter and the `midicps` uGen to turn SonicPi midi notes into frequencies and let our synth play plain notes without a bend. It will also implement `amp` and `pan` (with the `Pan2` uGen) to let us control the volume and placing the sound on the left or right and `release` to determine the length of the note
-* `mythirdsynth` will use the `VarLag` uGen to let us slide the `note`, `amp` and `pan` paramaters
+* `mythirdsynth` will use the `VarLag` uGen to let us slide the `note`, `amp` and `pan` parameters
 * `myfourthsynth` will switch out from a `Line` envelope to a proper one using `env-gen` and take the `attack`, `decay`, `sustain` and `release` parameters - it will also use the `env_curve` to alter the shape of the envelope
 
 Each of these synths will be implemented in both Sonic Pi and SuperCollider so they will have working error checking and can play chords.
